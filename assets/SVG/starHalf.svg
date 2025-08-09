@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 14 14">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-3 {
+        fill: #f2d338;
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-1" x=".7" y=".06" width="6.67" height="12.41"/>
+    </clipPath>
+  </defs>
+  <g id="layerCont">
+    <g>
+      <rect class="cls-1" width="14" height="14"/>
+      <g>
+        <path class="cls-3" d="m11.04,12.21l-3.67-1.93-3.67,1.93.7-4.08-2.97-2.89,4.1-.6,1.83-3.71,1.83,3.71,4.1.6-2.97,2.89.7,4.08ZM3.05,5.76l2.16,2.11-.51,2.97,2.67-1.4,2.67,1.4-.51-2.97,2.16-2.11-2.98-.43-1.33-2.71-1.34,2.71-2.98.43Z"/>
+        <g class="cls-2">
+          <polygon class="cls-3" points="7.37 9.86 10.54 11.53 9.93 8 12.5 5.5 8.96 4.99 7.37 1.78 5.79 4.99 2.25 5.5 4.81 8 4.2 11.53 7.37 9.86"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60.09 64">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #e78005;
+        mix-blend-mode: multiply;
+      }
+
+      .cls-3 {
+        isolation: isolate;
+      }
+    </style>
+  </defs>
+  <g class="cls-3">
+    <g id="_レイヤー_2" data-name="レイヤー 2">
+      <g id="_レイヤー_1-2" data-name="レイヤー 1">
+        <g>
+          <g>
+            <circle class="cls-2" cx="43.99" cy="47.2" r="15.95"/>
+            <circle class="cls-2" cx="24.15" cy="25" r="24.15"/>
+          </g>
+          <rect class="cls-1" x=".09" width="60" height="64"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

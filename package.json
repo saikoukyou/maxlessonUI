@@ -1,0 +1,48 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "devDependencies": {
+    "@nuxtjs/seo": "^2.0.0-rc.10",
+    "@pinia-plugin-persistedstate/nuxt": "^1.2.1",
+    "@vicons/ionicons5": "^0.12.0",
+    "nuxt-paypal": "^0.0.1-beta",
+    "nuxt-windicss": "^3.0.1"
+  },
+  "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.25.9",
+    "@babel/preset-env": "^7.26.0",
+    "@ckeditor/ckeditor5-build-classic": "^43.3.1",
+    "@pinia/nuxt": "^0.5.5",
+    "agora-rtc-sdk-ng": "^4.22.0",
+    "agora-rtm": "^2.2.2",
+    "aplayer": "^1.10.1",
+    "axios": "^1.6.8",
+    "cors": "^2.8.5",
+    "date-fns-tz": "^2.0.0",
+    "install": "^0.13.0",
+    "naive-ui": "^2.38.0",
+    "nuxt": "^3.13.2",
+    "nuxt-swiper": "^1.1.0",
+    "nuxt-vue3-google-signin": "^0.0.10",
+    "nuxtjs-naive-ui": "^1.0.2",
+    "or": "^0.2.0",
+    "pinia": "^2.2.4",
+    "plyr": "^3.7.8",
+    "pnpm": "^8.15.8",
+    "qrcode": "^1.5.1",
+    "sass": "^1.68.0",
+    "sass-loader": "^13.3.2",
+    "sortablejs": "^1.15.2",
+    "swiper": "^10.0.4",
+    "vue-cropper": "^1.1.4",
+    "yarn": "^1.22.22"
+  },
+  "resolutions": {
+    "@css-render/vue3-ssr": "^0.15.14"
+  }
+}

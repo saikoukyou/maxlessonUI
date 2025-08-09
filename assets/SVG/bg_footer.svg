@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1440 303.18">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        clip-path: url(#clippath-1);
+      }
+
+      .cls-5 {
+        clip-path: url(#clippath-2);
+      }
+
+      .cls-6 {
+        fill: url(#_名称未設定グラデーション);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-1" width="1440" height="303.18"/>
+    </clipPath>
+    <clipPath id="clippath-1">
+      <rect class="cls-1" width="1440" height="303.18"/>
+    </clipPath>
+    <linearGradient id="_名称未設定グラデーション" data-name="名称未設定グラデーション" x1="-320.46" y1="-7237.43" x2="-319.46" y2="-7237.43" gradientTransform="translate(-2336414.8 -103180.21) rotate(-90) scale(322.92 -322.92)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#eeb113"/>
+      <stop offset=".77" stop-color="#fac014"/>
+      <stop offset="1" stop-color="#fac014"/>
+    </linearGradient>
+    <clipPath id="clippath-2">
+      <rect class="cls-1" x="1" y="0" width="1439" height="269.19"/>
+    </clipPath>
+  </defs>
+  <g id="_レイヤー_9" data-name="レイヤー 9">
+    <g id="_アートワーク_36" data-name="アートワーク 36">
+      <g class="cls-2">
+        <g class="cls-4">
+          <rect class="cls-6" x="0" width="1440" height="303.18"/>
+        </g>
+        <g class="cls-5">
+          <path class="cls-3" d="m1729.53-119.76c0,143.65-451.53,260.09-1008.53,260.09S-287.53,23.88-287.53-119.76,164.01-379.86,721-379.86s1008.53,116.45,1008.53,260.09"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,10 @@
+version: '3' #使用docker-compose版本
+services: #服务
+  nuxt-container-test: #
+    container_name: new-netchina-ui-test
+    user: "root"
+    build: . #Dockerfile源码编译
+    restart: always #异常退出后自动重启服务
+    command: ["node", ".output/server/index.mjs"]
+    ports:
+      - "3001:3000"

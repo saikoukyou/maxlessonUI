@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #f28705;
+      }
+    </style>
+  </defs>
+  <g id="_2023Design" data-name="2023Design">
+    <g>
+      <path class="cls-2" d="m7.5,2.76c2.61,0,4.74,2.13,4.74,4.74s-2.13,4.74-4.74,4.74-4.74-2.13-4.74-4.74S4.89,2.76,7.5,2.76m0-2.4C3.56.36.36,3.56.36,7.5s3.2,7.14,7.14,7.14,7.14-3.2,7.14-7.14S11.44.36,7.5.36h0Z"/>
+      <rect class="cls-1" width="15" height="15"/>
+    </g>
+  </g>
+</svg>

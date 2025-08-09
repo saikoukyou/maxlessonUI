@@ -1,0 +1,291 @@
+.ticket-plan-main {
+    display: flex;
+    letter-spacing: 2px;
+    font-family: "Noto Sans JP", sans-serif;
+    padding: 20px 0px;
+    font-weight: 700;
+    background-color: #FFEDA8;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+.ticket-plan-sub-l {
+    flex:2;
+    height:118px;
+    text-align: center;
+    background-image: url("../images/bg_ticket_desc_left.png");
+    background-repeat: no-repeat;
+    background-size: 95px 104px;
+    background-position: top;
+    padding-top:30px;
+}
+.ticket-plan-sub-r {
+    flex:3;
+    font-weight: 700;
+    padding-top:30px;
+}
+.ticket-plan-sub-r-child {
+    display: flex;
+    margin-top:10px;
+}
+.ticket-plan-sub-r-child-l {
+    flex:1;
+    color:#DA2237;
+    font-size: 38px;
+    font-weight: 700;
+    margin-right: 5px;
+}
+.ticket-plan-sub-r-child-r {
+    flex:1
+}
+
+
+.ori_font{text-align: center; display: block; font-size: 12px; font-weight: normal;}
+.singleLesson{text-align: center; display: block; font-size: 12px; font-weight: normal; color: #DA2237; margin-top: 4px;}
+.monthNone{text-decoration: line-through;font-size: 14px;}
+
+.month-plan-sub-r-child{
+    width: 70%;
+}
+
+.month-plan-main {
+    display: flex;
+    padding: 6px 0 10px 0;
+    font-weight: 700;
+    background-color: #fff;
+    margin-bottom: 10px;
+    margin: 0 auto 0 auto;
+}
+.month-plan-sub-l {
+    flex:2;
+    height:108px;
+    text-align: center;
+    background-image: url("../images/bg_month_desc_left.png");
+    background-repeat: no-repeat;
+    background-size: 80px 100px;
+    background-position: top;
+    padding-top:15px;
+}
+.month-plan-sub-l .des {
+    text-align: center;
+    padding-bottom: 8px;
+}
+.month-plan-sub-l .des-title {
+    background-color:#F27639;
+    padding: 0px 2px;
+    color:white;
+    font-size: 12px;
+}
+.month-plan-sub-r {
+    flex: 3;
+    padding: 15px 15px 0 15px;
+}
+.month-plan-sub-r-child {
+    display: flex;
+    margin-top:10px;
+    color:#DA2237;
+    width: 90%;
+    margin: auto;
+    position: relative;
+}
+.month-plan-sub-r-child-l {
+    position: relative;
+    flex:1;
+    font-size: 35px;
+    letter-spacing: -1px;
+    font-weight: 700;
+    margin-bottom: 1px;
+    font-family: Murecho;
+    text-align: center;
+    width: 90%;
+    color: #da2237;
+}
+.monthFont{
+    display: block;
+    position: absolute;
+    bottom: 5px;
+}
+.month-plan-sub-r-child-r {
+    flex:1;
+    text-align: center;
+    position: absolute;
+    right: 0;
+    bottom: 6px;
+}
+.pay-desc {
+    font-size: 10px;
+    text-align: center;
+    padding: 6px 3px;
+    position: absolute;
+    top: 40px;
+    display: block;
+    width: 56px; /* 寬度可以根據需要調整 */
+    height: 36px; /* 高度可以根據需要調整 */
+    background-color: #F2762E; /* 背景色，灰色 */
+    color: #FFFFFF;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+}
+.font-weight-700 {
+    font-weight: 700;
+}
+.font-size-24 {
+    font-size: 24px;
+}
+.font-size-30 {
+    font-size: 30px;
+}
+.font-size-26 {
+    font-size: 26px;
+}
+.font-size-18 {
+    font-size: 18px;
+}
+.font-size-16 {
+    font-size: 16px;
+}
+.font-size-14 {
+    font-size: 16px;
+}
+.font-size-12 {
+    font-size: 12px;
+}
+.font-size-11 {
+    font-size: 11px;
+}
+.font-size-10 {
+    font-size: 10px;
+}
+.margin-top-10 {
+    margin-top: 10px;
+}
+.margin-top-20 {
+    margin-top: 20px;
+}
+.margin-top-30 {
+    margin-top: 30px;
+}
+.margin-top-5 {
+    margin-top: 5px;
+}
+.margin-right-10 {
+    margin-right: 10px;
+}
+
+.learn-type-div{
+    font-size: 15px;
+    color: #424242;
+    padding: 10px 0;
+    font-weight: bold;
+}
+
+.learn-type-div>span:nth-child(2) {
+    margin-left:0;
+}
+
+.learn-type-div input[type="radio"] {
+    display: inline-block;
+    margin-left: 8px;
+    margin-right: 16px;
+    transform: scale(1.5);
+    margin-top: -4px;
+    position: relative; /* 必须是相对定位，以便伪元素能正确定位 */
+    width: 16px; /* 设置宽度和高度 */
+    height: 16px;
+}
+
+.learn-type-div input[type="radio"]::before {
+    content: "";
+    display: block;
+    width: 16px; /* 和radio大小一致 */
+    height: 16px; /* 和radio大小一致 */
+    border-radius: 50%;
+    border: 1px solid #DADADA; /* 初始的灰色边框颜色 */
+    background: #fff; /* 背景色 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box; /* 包括边框的尺寸计算 */
+}
+
+.learn-type-div input[type="radio"]:checked::after {
+    content: "";
+    display: block;
+    width: 10px; /* 内部橙色圈圈的大小 */
+    height: 10px;
+    border-radius: 50%;
+    background: #EF6D20; /* 橙色 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.month-type-title {
+    font-weight: bold;
+    font-size: 30px;
+    color: #D92332;
+    letter-spacing: 0.1em;
+    width: 100%;
+    max-width: 1098px;
+    margin: 60px 0 0 60px;
+}
+
+@media screen and (max-width: 520px) {
+    .learn-type-div span{
+        display: block;
+        height: auto;
+        padding: 4px 0;
+    }
+
+    .learn-type-div{
+        position: relative;
+    }
+
+    .learn-type-div input{
+        margin-left: 4px;
+    }
+    .yearLayout{
+        margin-left: 0;
+    }
+    .selectdiv>span{
+        line-height: 30px;
+    }
+    .Detail1{
+        padding: 0;
+    }
+    .LanguageLevel{
+        margin-bottom: 0;
+        gap:0;
+    }
+    .LanguageLevel>span{
+        line-height: 30px;
+    }
+    .KeywordTextbox{
+        width: 100%;
+    }
+    .Language span{
+        display: block;
+    }
+    .levelOption{
+        margin: 10px 0 10px 0;
+        height: auto;
+    }
+    .levelOption span{
+        height: 30px;
+    }
+    .addOption{
+        margin-top: 5px;
+    }
+    .addOption li{
+        width: 49%;
+        font-size: 13px;
+        border-radius: 4px;
+        margin: 1% 0 2% 0;
+    }
+    .addOption li:nth-child(odd){
+        margin-right: 2%;
+    }
+    .select_teachers .teacherInfo>a>img{
+        margin-left: 0;
+    }
+}

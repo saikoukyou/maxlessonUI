@@ -1,0 +1,245 @@
+.hbg{
+    background-color: #F4F6FB !important;
+}
+.FVimg {
+    background-color: #65ABE9 !important;
+}
+.head_navi{
+    background-color: #65ABE9 !important;
+}
+.lbutton{
+    background-color: #65ABE9 !important;
+}
+.lt{
+    color: #65ABE9 !important;;
+}
+.desdes a{
+    color: #65ABE9 !important;;
+}
+.link{
+    color: #65ABE9 !important;;
+}
+.addOption input[type=checkbox]:checked+label{
+    border: 2px solid #3682E0 !important;
+    color: #3682E0 !important;
+}
+.teacherInfo .favorite{
+    background-color: #ffffff !important;
+}
+
+.dot.active{
+    background-color: #3682E0 !important;
+}
+
+.OneWeekList {
+    background-color: #65ABE9 !important;
+}
+.OneWeekList li.selected{
+    background-color:#F4F6FB !important;
+}
+.OneWeekList> :nth-child(n+2):nth-child(-n+9):hover {
+    background-color:#F4F6FB !important;
+}
+
+.reserved_Teacher_Wrap{
+    background-color: #F4F6FB !important;
+}
+.CompletedFirst{
+    background-color: #F9F9F9 !important;
+}
+
+.netchina_contents .lessonTrial_head_navi {
+    background-color: #65ABE9 !important;
+}
+
+.netchina_contents .lessonTrial_head_navi li {
+    border-top: 4px solid #65ABE9 !important;
+    color: #424242;
+}
+.st , .lt{
+    color: #65ABE9 !important;
+}
+.sbutton , .lbutton{
+    color: #FFFFFF !important;
+    background-color: #65ABE9 !important;
+}
+.HelpBackBtn{
+    background-color: #3682E0;
+}
+
+/*#tab1:checked ~ .tab-label[for="tab1"],*/
+/*#tab2:checked ~ .tab-label[for="tab2"] {*/
+/*    background: #65ABE9 !important;*/
+/*}*/
+
+@media screen and (max-width: 520px) {
+    swiper-container::part(button-next){
+        background-color: #65ABE9 !important;
+    }
+    swiper-container::part(button-prev) {
+        background-color: #65ABE9 !important;
+    }
+}
+/*.mypageSideMenu li.active{*/
+/*    color: #3682E0 !important;*/
+/*}*/
+.button_confirm{
+    background-color: #3682E0 !important;
+}
+.cancelBtn{
+    background-color: white !important;
+}
+.arrowContent{
+    background-image: url("../images/buttonArrowBlue.svg") !important;
+    color: #333333 !important;
+}
+.webBtn{
+    background-color: #3682E0 !important;
+    -moz-box-shadow: 2px 2px 8px 3px rgb(54 130 224 / 50%);
+    -webkit-box-shadow: 2px 2px 8px 3px rgb(254 130 224 / 50%);
+    -ms-box-shadow: 2px 2px 8px 3px rgb(54 130 224 / 50%);
+    box-shadow: 0 0 0 0 rgb(54 130 224 / 50%) !important;
+}
+
+.learn-type-div input[type="radio"]:checked::after{
+    background-color: #65ABE9 !important;
+}
+
+.OneWeekList li.selected{
+    color: #3682E0 !important;
+}
+.OneWeekList> :nth-child(n+2):nth-child(-n+9):hover {
+    color: #3682E0 !important;
+}
+.netchina_menu{
+    background-color: #F4F6FB !important;
+}
+.netchina_contents{
+    background-color: #F4F6FB !important;
+}
+
+.mypageTemplate .select_menu{
+    background-color:#F4F6FB !important;
+}
+
+.hbg .select_menu{
+    background-color:#F4F6FB !important;
+}
+
+
+.subb{
+    background-color:#F4F6FB !important;
+}
+.Submit_search{
+    background-color: #3682E0;
+}
+.netchina_contents .lessonTrial_head_navi li.selected{
+    background-color:#F4F6FB !important;
+    color: #3682E0;
+}
+.netchina_contents .lessonTrial_head_navi li.selected .Bit{
+    color: #3682E0;
+}
+.netchina_contents .lessonTrial_head_navi li:hover {
+    background-color:#F4F6FB !important;
+    color: #3682E0;
+}
+.netchina_contents .lessonTrial_head_navi li:hover .Bit{
+    color: #3682E0;
+}
+.netchina_contents .lessonTrial_head_navi li:last-child{
+    border-right: 1px solid #F4F6FB;
+}
+.netchina_contents .lessonTrial_head_navi li{
+    border-left: 1px solid #F4F6FB;
+}
+.select_teachers .timeGrid li{
+    color: #3682E0;
+}
+.select_teachers .timeGrid li:hover {
+    background-color: #3682E0;
+    color: #fff;
+    /*-moz-box-shadow: 2px 2px 8px 3px rgb(54 130 224 / 50%);*/
+    /*-webkit-box-shadow: 2px 2px 8px 3px rgb(254 130 224 / 50%);*/
+    /*-ms-box-shadow: 2px 2px 8px 3px rgb(54 130 224 / 50%);*/
+    /*box-shadow: 2px 2px 8px 3px rgb(54 130 224 / 50%);*/
+}
+.seaT{
+    background-color: #F4F6FB !important;
+}
+.linkStyle{
+    color: #3682E0;
+}
+
+.hbg .select_date {
+    background-color: #65ABE9 !important;
+}
+.hbg .select_date>li.selected{
+    color: #3682E0;
+    background-color: #F4F6FB !important;
+    border-left: #F4F6FB;
+}
+
+.hbg .select_date>li:hover {
+    background-color: #F4F6FB;
+    color: #3682E0;
+}
+
+.netchina_contents .lessonTrial_head_navi li .Bit{
+    color: #424242;
+}
+.select_date>li{
+    color: #424242;
+    border-right: 1px solid #F4F6FB;
+}
+.select_date> :first-child{
+    border-left: 1px solid #F4F6FB;
+}
+/*.accordionDetail{*/
+/*    color: #3682E0;*/
+/*    background-image: url("../images/searchMore_b.png");*/
+/*}*/
+.clearSelect{
+    color: #3682E0;
+}
+.netchina_main{
+    background-color: #F4F6FB !important;
+}
+.hbg .select_help .selected{
+    border-left: 8px solid #3682E0;
+}
+.hbg .select_help li:hover{
+    background-color: #3682E0;
+    border: 0;
+}
+.actionBtn{
+    color: #3682E0 !important;
+}
+.personTitleImg{
+    background-color: #F4F6FB !important;
+}
+.personTitle{
+    background-color: #F4F6FB !important;
+}
+.hbg .n-select .n-base-selection {
+    --n-border: 1px solid #DADADA !important; /* 使用 !important 強制覆蓋 */
+}
+.hbg .n-input{
+    --n-border: 1px solid #DADADA;
+}
+.mypageSideMenu li:not(.bannerTrial):not(.active):hover {
+    font-weight: bold;
+    background-color: #FFFFFF !important;
+    border-radius: 8px;
+}
+
+
+@media screen and (max-width: 520px) {
+    .hbg .select_help .selected{
+        border:solid #65ABE9;
+        border-width: 10px 0 0 0;
+    }
+    .arrowContent{
+        background-color: #E6F0FF !important;
+    }
+}
