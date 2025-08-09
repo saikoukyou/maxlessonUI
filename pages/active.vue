@@ -11,6 +11,7 @@
   </div>
   <div style="height: 150px; width: 100%;"></div>
 </template>
+
 <script setup>
 import {onMounted} from "vue";
 import {createDiscreteApi} from "naive-ui";
