@@ -58,7 +58,7 @@
           <th scope="row">
             E-mail
             </th>
-          <td>info@bizchina.jp</td>
+          <td>info@netkorea.jp</td>
         </tr>
         <tr>
           <th scope="row">

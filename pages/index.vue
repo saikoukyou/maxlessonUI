@@ -1,142 +1,209 @@
 <template>
     <div class="topTemplate">
 
-      <div class="FVspace"></div>
-      <div class="FV">
-        <div class="maskBg"></div>
-        <div class="FVimg">
-          <div class="no1Wrap">
-            <div class="FV_title"></div>
-            <div class="FV_model"></div>
-            <router-link v-if="logged == false" to="/plan">
-              <p class="TopBtn">{{register_text}}</p>
-            </router-link>
-          </div>
+<!--      <router-link v-if="logged == false" to="/plan">-->
+<!--        <p class="TopBtn">{{register_text}}</p>-->
+<!--      </router-link>-->
+
+      <div class="top-bg-wrap">
+      <div class="top-section">
+        <div class="content">
+          <button class="peach-cta">
+            <span>
+              <b>今から</b>
+              <b>始める</b>
+            </span>
+            <img src="../assets/images/top_arrow.png">
+          </button>
         </div>
       </div>
+      <div class="mobile-section">
+        <img class="m1-img" src="../assets/images/netkorea_topbg_m.png">
+        <div class="m2-block">
+          <button class="mobile-cta-btn">
+            <span>今から始める</span>
+            <img src="../assets/images/arrow_w.png" alt="arrow">
+          </button>
+        </div>
+      </div>
+      <section class="reasons">
+        <div class="reasons__in">
+          <div class="reasons__left">
+            <img class="eyebrow" src="../assets/images/resons_eyebrow.png">
+            <h2 class="topPage">ネットコリアが<br>選ばれている理由</h2>
+            <span class="leadWord">韓国人ネイティブ講師が日本語で優しく指導。初心者も安心して学べます。
+              好きな時に受講でき、日本人スタッフのサポートも万全！</span>
+            <button class="top-cta">
+              <span>100円体験</span>
+              <img src="../assets/images/arrow_w.png" alt="arrow">
+            </button>
+          </div>
 
-      <div class="FV_m">
-        <img width="100%" src="../assets/images/KV_m1.png" />
-        <router-link v-if="logged == false" to="/plan">
-          <img width="100%" src="../assets/images/KV_m2.png" />
-        </router-link>
+          <ul class="reasons__grid">
+              <li class="materials">
+                <img src="../assets/images/r_materials.png" alt="オリジナル教材">
+                <h3>オリジナル教材</h3>
+                <p>2000課無料</p>
+              </li>
+              <li class="teacher">
+                <img src="../assets/images/r_teacher.png" alt="講師と1対1">
+                <h3>講師と1対1</h3>
+                <p>韓国語ネイティブ</p>
+              </li>
+              <li class="video">
+                <img src="../assets/images/r_video.png" alt="動画レッスン">
+                <h3>動画レッスン</h3>
+                <p>予習・復習</p>
+              </li>
+              <li class="jp">
+                <img src="../assets/images/r_jp.png" alt="日本語でレッスン">
+                <h3>日本語でレッスン</h3>
+                <p>初心者に優しい</p>
+              </li>
+              <li class="hours">
+                <img src="../assets/images/r_hours.png" alt="朝6時〜深夜25時">
+                <h3>朝6時〜深夜25時</h3>
+                <p>年中無休</p>
+              </li>
+          </ul>
+        </div>
+        <button class="top-cta mobile-btn">
+          <span>100円体験</span>
+          <img src="../assets/images/arrow_w.png" alt="arrow">
+        </button>
+      </section>
       </div>
 
-      <div class="blogUp">
-        <p class="intro_title" style="margin-bottom: 6px;">最新記事</p>
-        <ul class="bloglist">
-          <li class="blogitem" v-for="(tblog) in topBlogs">
-            <a @click="goBlogInfo(tblog.id)" class="blogitem-link">
-              <div class="meta">
-                <span class="date">{{tblog.registered.substring(0,11)}}</span>
-                <span class="category-tag" style="color: #da1111; border-color: #da1111;">
-                  {{tblog.name}}
-                </span>
+      <section class="tutors">
+        <div class="tutors__inner">
+          <img class="eyebrow" src="../assets/images/eye_OurTutors.png">
+          <h2 class="topPage">経験豊富な講師陣と楽しく学ぶ</h2>
+          <span class="leadWord">いつでも、どこでも韓国人講師とマンツーマン</span>
+          <ul class="tutor-grid">
+            <!-- 1 -->
+            <li class="tutor-card">
+              <div class="tutor-card__meta">
+                <strong class="tutor-card__name">パク・ヒヨン</strong><span class="tutor-card__role">講師</span>
+                <div class="tutor-card__loc"><b>韓国・群山</b></div>
+                <div class="tutor-card__bio">専攻 生物情報工学<br>趣味 食べ歩き、ゴロゴロ</div>
               </div>
-              <div class="title">
-                <h3>{{tblog.title}}</h3>
+              <div class="tutor-card__photo">
+                <img src="../assets/images/tutor1.png" alt="パク・ヒヨン">
               </div>
-              <div class="arrow">→</div>
-            </a>
-          </li>
-        </ul>
-      </div>
+            </li>
 
-      <main id="main" class="main" style="position: relative">
-<!--        <div class="GridBg">-->
-<!--          <div class="GridBgContents">-->
-<!--            <p class="intro_title">オンライン中国語学習を、気軽に 身近に。</p>-->
-<!--            <p class="intro_content">中国語も現地の事情も<br>-->
-<!--              手軽に、スマートに<br>-->
-<!--              楽しく、着実に学ぶ<br>-->
-<!--              ビズチャイナだから上達できる。</p>-->
-<!--          </div>-->
-<!--          <div class="GridBgSide"></div>-->
-<!--        </div>-->
+            <!-- 2 -->
+            <li class="tutor-card">
+              <div class="tutor-card__meta">
+                <strong class="tutor-card__name">キム・ヒジョン</strong><span class="tutor-card__role">講師</span>
+                <div class="tutor-card__loc"><b>韓国・群山</b></div>
+                <div class="tutor-card__bio">専攻 国語国文学科<br>趣味 日本旅行</div>
+              </div>
+              <div class="tutor-card__photo">
+                <img src="../assets/images/tutor2.png" alt="キム・ヒジョン">
+              </div>
+            </li>
 
+            <!-- 3 -->
+            <li class="tutor-card">
+              <div class="tutor-card__meta">
+                <strong class="tutor-card__name">キム・ヒジョン</strong><span class="tutor-card__role">講師</span>
+                <div class="tutor-card__loc"><b>韓国・釜山</b></div>
+                <div class="tutor-card__bio">専攻 ホテル経営学<br>趣味 ベーキング、サーフィン</div>
+              </div>
+              <div class="tutor-card__photo">
+                <img src="../assets/images/tutor3.png" alt="キム・ヒジョン">
+              </div>
+            </li>
 
-          <div class="messageSpace">
-            <p class="intro_title">ビズチャイナが選ばれている理由</p>
-            <ul class="tsuyomiul">
-              <li><img src="../assets/images/tsuyomi_1.png" /><span class="tsuyomititle">講師と1対1</span><span class="tsuyomides">中国語ネイティブ</span></li>
-              <li><img src="../assets/images/tsuyomi_2.png" /><span class="tsuyomititle">日本語でレッスン</span><span class="tsuyomides">初心者にも安心</span></li>
-              <li><img src="../assets/images/tsuyomi_3.png" /><span class="tsuyomititle">オリジナルweb教材</span><span class="tsuyomides">2000課無料</span></li>
-              <li><img src="../assets/images/tsuyomi_4.png" /><span class="tsuyomititle">文法の解説動画</span><span class="tsuyomides">予習・復習</span></li>
-              <li><img src="../assets/images/tsuyomi_5.png" /><span class="tsuyomititle">朝6時～深夜25時</span><span class="tsuyomides">年中無休</span></li>
-            </ul>
-          </div>
-          <div class="aboutSide"></div>
-          <div class="aboutContents"></div>
+            <!-- 4 -->
+            <li class="tutor-card">
+              <div class="tutor-card__meta">
+                <strong class="tutor-card__name">イ・スンヒ</strong><span class="tutor-card__role">講師</span>
+                <div class="tutor-card__loc"><b>韓国・ソウル</b></div>
+                <div class="tutor-card__bio">専攻 日本語<br>趣味 旅行、登山</div>
+              </div>
+              <div class="tutor-card__photo">
+                <img src="../assets/images/tutor4.png" alt="イ・スンヒ">
+              </div>
+            </li>
+            <!-- 5 -->
+            <li class="tutor-card">
+              <div class="tutor-card__meta">
+                <strong class="tutor-card__name">ファン・ジホ</strong><span class="tutor-card__role">講師</span>
+                <div class="tutor-card__loc"><b>韓国・ソウル</b></div>
+                <div class="tutor-card__bio">韓国語教育課程2級取得<br>趣味 映画</div>
+              </div>
+              <div class="tutor-card__photo">
+                <img src="../assets/images/tutor5.png" alt="ファン・ジホ">
+              </div>
+            </li>
+          </ul>
+          <button class="top-cta">
+            <span>講師一覧</span>
+            <img src="../assets/images/arrow_w.png" alt="arrow">
+          </button>
+        </div>
+      </section>
 
-
-        <div class="teacherBG">
-          <div class="maskBg"></div>
-          <div class="teacherContent">
-            <div class="teacherTitle">
-              <span class="intro_title">多彩な講師陣から</span><br>
-              <span class="intro_content">自分にあった講師を選べる</span>
-            </div>
-            <div class="teacherPossible">
-              <img width="20" src="../assets/images/teachericon.png" />受付中の講師
-            </div>
-            <Scroll :items="teachers_today"></Scroll>
-            <div class="teacherMore"><NuxtLink to="/timetable" @click="closeMenu">もっと見る →</NuxtLink></div>
-          </div>
+      <section class="count">
+        <div class="count--inner">
+          <div class="SumLesson">
+        <div class="weekCount">
+          <img src="../assets/images/icon_total.png" />
+          <ul class="countBlock">
+            <li class="countTitle">累計実施レッスン数</li>
+            <li><span class="countNumber">{{ formattedLessonNum }}</span>
+              <span class="lessonComa">コマ</span></li>
+          </ul>
         </div>
 
+        <div class="totalCount">
+          <img src="../assets/images/icon_weekcount.png" />
+          <ul class="countBlock">
+            <li class="countTitle">今週予約可能レッスン数</li>
+            <li><span class="countNumber">{{formattedWeekOpenNum}}</span>
+              <span class="lessonComa">コマ</span></li>
+          </ul>
+        </div>
+      </div>
+        </div>
+      </section>
+
+      <section class="step3-wrap">
+        <div class="step3-inner">
+          <!-- 裝飾線條 -->
+          <img class="step3-eye step3-eye--left"  src="../assets/images/leftEye.png"  alt="" aria-hidden="true">
+          <img class="step3-eye step3-eye--right" src="../assets/images/rightEye.png" alt="" aria-hidden="true">
+
+          <!-- 標題：圖片3 + 文字 -->
+          <h2 class="step3-title">
+            上達できる<img class="step3-num" src="../assets/images/step3.png" alt="3">
+            <span>つのステップ</span>
+          </h2>
+
+          <!-- 短說明 -->
+          <p class="step3-lead">
+            プロ講師開発の教材を使い、「文法→練習→実践」の3ステップで学ぶ、基礎から応用まで対応した韓国語カリキュラムです。
+          </p>
+
+          <!-- 一大張圖（含三個圓圈） -->
+          <div class="step3-illustration">
+            <picture>
+              <!-- 手機版 -->
+              <source srcset="../assets/images/pic_m.png" media="(max-width: 520px)">
+              <!-- 預設桌機版 -->
+              <img src="../assets/images/pic1.png" alt="3ステップのイラスト">
+            </picture>
+          </div>
 
 
-                    <div class="SumLesson">
-                      <div class="weekCount">
-                          <img src="../assets/images/icon_total.png" />
-                          <ul class="countBlock">
-                            <li class="countTitle">累計実施レッスン数</li>
-                            <li><span class="countNumber">{{ formattedLessonNum }}</span>
-                              <span class="lessonComa">コマ</span></li>
-                          </ul>
-                      </div>
-
-                      <div class="totalCount">
-                        <img src="../assets/images/icon_weekcount.png" />
-                        <ul class="countBlock">
-                          <li class="countTitle">今週予約可能レッスン数</li>
-                          <li><span class="countNumber">{{formattedWeekOpenNum}}</span>
-                            <span class="lessonComa">コマ</span></li>
-                        </ul>
-                      </div>
-                    </div>
-
-
-
-                <div class="CV_bg">
-                  <div>中国語初心者の方もご安心ください。<br>
-                    総合コースでは、8割以上の講師が日本語能力試験最上級の「N1」を保持しています。</div>
-                  <router-link v-if="logged == false" to="/plan"><p class="MiddleBtn">{{register_text}}</p></router-link>
-                </div>
-                <div class="CV_color"></div>
-
-                        <div class="textbookContent">
-                          <p class="intro_title">2000以上の無料オリジナルweb教材</p>
-                          <p class="intro_content">初心者から上級者向けの多彩なジャンルの教材をご提供、<br>
-                          ご自身の中国語レベルと学習目的に合わせて教材を選べます。</p>
-                          <Textbook></Textbook>
-                        </div>
-
-
-
-                      <div class="videoContent">
-                        <div class="videoWord">
-                        <p class="intro_title">インプット用の解説動画</p>
-                        <p class="intro_content">初心者も安心。日本人による文法解説</p>
-                          <p class="intro_span">
-                            動画・音声コンテンツも豊富！<br>
-                            忙しい方でも手軽にインプット<br>
-                            自習はもちろん、レッスンの予習・復習にも
-                          </p>
-                        </div>
-                      </div>
-        <img class="video_m" src="../assets/images/video_m.png" width="100%"/>
-
+          <button class="top-cta--reverse">
+            <span>教材一覧</span>
+            <img src="../assets/images/arrow_g.png" alt="">
+          </button>
+        </div>
+      </section>
 
         <section class="topix">
                                 <div class="topixContents">
@@ -165,95 +232,9 @@
                               </section>
 
 
-                                     <section class="pageCV">
-                                       <div class="CVarea">
-                                         <p class="intro_title">教材数、講師数、動画数 NO.1</p>
-                                         <p class="intro_content">オンライン中国語学習を、 気軽に 身近に。</p>
-                                         <router-link to="/plan">
-                                           <NuxtLink v-if="logged" to="/plan" >
-                                             <p class="MiddleBtn">
-                                             100円体験
-                                             </p>
-                                           </NuxtLink>
-                                           <NuxtLink v-else to="/plan" ><p class="MiddleBtn">{{register_text}}</p></NuxtLink>
-                                         </router-link>
-                                       </div>
-                                     </section>
-
-        <div class="cv_container">
-          <div class="sectionDiv">
-            <div class="intro_title">ビズチャイナはオンライン中国語サービスの使い勝手の良さを追求しています。</div>
-
-            <div class="section">
-              <img src="../assets/images/newpoint1.png">
-              <div>
-                <p class="highlight">学習目的に合わせて、二つのコース</p>
-                <p><span>総合コースは</span>、９割以上の講師が日本語で説明可能です。学習内容は文法、練習、会話、ビジネス、HSKなどと幅広くなっており、中国語初心者や中国語を体系的に習得したい方向けのコースです。</p>
-                <p><span>会話コースは</span>、中国各出身地の講師がレッスンを担当します。講師は日本語が出来ないため、より実践に近い形で中国語の会話力を磨いていただくコースになります。会話能力の向上を図りたい方に最適です。</p>
-              </div>
-            </div>
-            <div class="section">
-              <img src="../assets/images/newpoint2.png">
-              <div>
-                <p class="highlight">ネット学習に特化した教材、２５分で完結</p>
-                <p>中国語能力試験のHSKの基準に合わせて、教材は社内で開発しており、文法や会話をはじめ、ビジネスやニュース教材など、体系的に中国語を習得していただけます。ネット学習の特徴に合わせて、基本的に２５分で1課を完結できるように作っており、学習タイムパフォーマンスの最大化を目指しています。</p>
-              </div>
-            </div>
-            <div class="section">
-              <img src="../assets/images/newpoint3.png">
-              <div>
-                <p class="highlight">「１００円」で７日間体験可能</p>
-                <p>ビズチャイナは利用しやすさを最大限に追及しています。予約は最短５分前から予約可能で、体験プランは100円でご利用いただけます。総合コース・会話コースのどちらかをお選びいただけます。</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="cvimg_container">
-          <div class="cvcontent">
-          <div class="intro_word">
-            <div class="intro_title">ビズチャイナが考える<br>オンライン中国語学習の在り方</div>
-            私たちは、時間とお金をかけてオンラインで中国語を学んでいる方々を最大限にサポートしたいと考えています。
-            そのため、講師のあっせんだけにとどまらず、講師の採用、サイトの構築、教材の開発、日本人による学習サポートなど、多方面から総合的にサポートを行いたいと考えています。
-            中国語学習においては、タイムパフォーマンスが非常に重要です。ビズチャイナを選んで利用いただいている皆様の貴重な時間が、しっかりと成果に結びつくように、スタッフ一同、全力で努めてまいります。
-          </div>
-          </div>
-        </div>
 
 
-
-                                             <section class="topix column">
-                                               <p class="intro_title">コラム</p>
-                                               <p class="intro_content">自分が興味のある日本語記事、ニュース、論文などを講師に中国語で紹介するという練習方法はいかがでしょうか。<br>
-                                                 語学の練習だけでなく、マンツーマンで説明することで実用的な知識の定着も図れます。</p>
-                                               <div class="columnArea">
-                                                 <div v-for="(bcategory,bkey) in blog_list" :class="bkey == 0 ? 'reportChina' : bkey == 1 ? 'learnChina' : 'newsChina'">
-                                                   <div>{{bcategory.name}}</div>
-                                                   <ul v-for="(blog2) in bcategory.child" @click="goBlogInfo(blog2.id)">
-                                                     <li class="columnDate">{{blog2.registered}}</li>
-                                                     <li class="columnDes">{{blog2.title}}</li>
-                                                   </ul>
-
-                                                   <button class="more-button-c more-button-p">
-                                                     <router-link :to="`/blogs?id=${bcategory.id}`">もっと見る
-                                                       <span class="arrow-circle-c">→</span>
-                                                     </router-link>
-                                                   </button>
-
-                                                 </div>
-                                               </div>
-                                             </section>
-
-                                             <div class="CV_short">
-                                               <div class="CV_shortContent">
-                                                 <div class="intro_title">オンライン中国語<br>気軽に、身近に</div>
-                                                 <router-link v-if="logged == false" to="/plan"><p class="RightBtn">{{register_text}}</p>
-                                                 </router-link>
-                                               </div>
-                                             </div>
-                                             <GotoTop />
-      </main>
-
+      <GotoTop />
     </div>
 </template>
 
@@ -345,229 +326,529 @@ function goBlogInfo(bid) {
 
 
 <style scoped>
-ul {
-  list-style-type: none;
-  padding: 0;
+/* ===== 3 steps block ===== */
+.step3-wrap{
+  width:100%;
+  background:#25909A;          /* 綠背景，可依品牌調整 */
+  color:#fff;
+  padding: 64px 24px;
+  overflow:hidden;              /* 防止裝飾超出 */
+}
+.step3-inner{
+  width:100%;
+  max-width:1000px;             /* 中間資訊區 w1000px 置中 */
+  margin:0 auto;
+  position:relative;
+  text-align:center;
 }
 
-.card {
-  background: #fefefe;
+/* 左右裝飾線條 */
+.step3-eye{
+  position:absolute;
+  top:-8px;
+  user-select:none; -webkit-user-drag:none; pointer-events:none;
+  opacity:.95;
+}
+.step3-eye--left{ left:180px;  width:70px; max-width:30vw; }
+.step3-eye--right{ right:200px; top: 0; width:50px; max-width:26vw; }
+
+/* 標題（圖片3 + 文字） */
+.step3-title{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-size:32px;
+  line-height:1.3;
+  margin:0 0 10px;
+  font-weight:800;
+}
+.step3-num{
+  width:54px; height:auto; display:block;
+  margin-top: -12px;
+}
+
+/* 短說明 */
+.step3-lead{
+  margin:6px auto 28px;
+  font-size:15px;
+  line-height:1.9;
+  opacity:.95;
+}
+
+/* 下方一大張圖（含三圓） */
+.step3-illustration img{
+  width: 760px;
+  margin: 24px auto;
+}
+.top-bg-wrap {
+  background: linear-gradient(#F5F0E7, #FAF7F3);
+}
+.reasons{
+  width: 100%;
+  margin: 0 auto;
+  min-height: 640px;
+}
+.reasons__in {
+  max-width: 960px;   /* 固定內容寬度 */
+  margin: 0 auto;      /* 置中 */
+  display: flex;
+  justify-content: space-between; /* 左右分開 */
+  align-items: flex-start;        /* 頂端對齊 */
+  gap: 32px;                      /* 左右間距 */
+}
+.reasons .top-cta{
+  margin: 24px 0;
+}
+.tutors{
+  background: linear-gradient(#F5F0E7, #FAF7F3);
+  padding: 64px 24px;
+}
+.tutors__inner{
+  max-width: 1130px;         /* 你要的內容寬 */
+  margin: 0 auto;
+  text-align: center;
+}
+
+.tutors .eyebrow{
+  width: 180px;
+  margin: 10px auto;
+}
+
+/* 卡片網格 */
+.tutor-grid{
+  list-style:none;
+  margin: 24px 0 40px 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0,1fr));
+  gap: 20px;
+}
+
+/* 卡片 */
+.tutor-card{
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr;
   height: 300px;
 }
+.tutor-card:nth-child(1),
+.tutor-card:nth-child(3),
+.tutor-card:nth-child(5){
+  margin-top: 24px;  /* 第 2、4 張卡片往下 */
+}
+/* 上半文字區 */
+.tutor-card__meta{
+  text-align: left;
+  padding: 16px;
+}
+.tutor-card__name{
+  font-size: 18px;
+  font-weight: 800;
+  margin-right: 6px;
+}
+.tutor-card__role{
+  font-size: 13px;
+}
+.tutor-card__loc{
+  color: #1aa7ad;
+  margin: 6px 0 4px;
+  font-size: 14px;
+}
+.tutor-card__bio{
+  color: #444;
+  font-size: 13px;
+  line-height: 1.5;
+}
 
-.slider-container {
+/* 下半照片 */
+.tutor-card__photo{
+  position: relative;
+  background: radial-gradient(240px 240px at 40% 100%, #eaf0f2 0, #eaf0f2 49%, transparent 50%);
+}
+.tutor-card__photo img{
   width: 100%;
-  height: 600px;
-  overflow: hidden;
+  height: auto;
+  display: block;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+
+
+/* 左欄固定寬，右欄自動伸展 */
+.reasons__left {
+  flex: 0 0 350px; /* 不縮不長，固定 300px 寬 */
+  margin-top: 120px;
   position: relative;
 }
 
-.slider-slides-group {
-  width: 100%;
-  height: 600px;
-  left: 0%;
-  transition: 0.5s all ease-out;
-  position: absolute;
-  z-index: 10;
-}
-
-.slider-slide {
-  position: absolute;
-  top: 0%;
-  width: 100%;
-  height: 86vh;
-  background-size: cover;
-  background-color: ;
-  background-position: center center;
-  background-repeat: no-repeat;
-  padding: 0px;
-  border-radius: 0px;
-  z-index: 10;
-  transition: 0.5s all ease-out;
-}
-
-.slider-slide.active-slide {
-  left: 0%;
-}
-
-.slider-cursor-left {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  background: #a5ced2;
-  position: absolute;
-  z-index: 30;
-  top: calc(50% - 32px);
-  left: 12px;
-  cursor: pointer;
-  border-radius: 50%;
-}
-
-.slider-cursor-left img {
+.reasons__grid {
+  flex: 1;         /* 佔滿剩餘空間 */
   position: relative;
-  left: -2px;
+  background-color: #00a0e9;
+  margin-top: -130px;
 }
 
-.slider-cursor-right {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  background: #a5ced2;
+.reasons .eyebrow{
+  width: 122px;
+  left: -10px;
+  top: -40px;
   position: absolute;
-  z-index: 30;
-  top: calc(50% - 32px);
-  right: 12px;
-  cursor: pointer;
-  border-radius: 50%;
 }
 
-.slider-cursor-righ img {
-  position: relative;
-  right: -2px;
+h2.topPage{
+  font-family: "Murecho", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 48px;
+  margin:12px 0 12px 0;
 }
 
-div.slider-indicators-container {
+.leadWord{
+  display: inline-block;      /* 讓行高生效更穩定 */
+  font-size: 16px;
+  line-height: 26px;
+}
+.top-cta {
   display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -ms-flex-align: center;
   align-items: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  height: 60px;
-  position: relative;
-}
-
-ul.slider-indicators {
-  list-style: none;
-  padding: 0px;
-  margin-bottom: 32px;
-  position: absolute;
-  top: 12px;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  z-index: 20;
-}
-
-li.slider-indicator {
-  width: 12px;
-  height: 12px;
-  margin: 32px 12px 32px 8px;
-  background: #3a3a3a;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-li.slider-indicator.active-indicator {
-  transform: scale(1.1);
-  background: #f2b705;
-  /* background: linear-gradient(90deg, rgba(214, 189, 98, 1) 0%, rgba(114, 101, 54, 1) 100%); */
-}
-
-ul {
-  /* display: block; */
-}
-
-.button_slider-indicator {
+  gap: 8px;
+  padding: 10px 24px;
+  margin: 12px auto;
+  background-color: #25909A; /* 按鈕背景色 */
   color: #fff;
-  letter-spacing: 0.1em;
-  list-style: none;
-  background-color: ;
-  width: 100%;
-  height: 96px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 999px; /* 膠囊形狀 */
   cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: background-color 0.25s ease, transform 0.2s ease;
 }
 
-.button_slider-indicator:nth-of-type(1),
-.button_slider-indicator:nth-of-type(4) {
-  background-color: ;
+.top-cta--reverse {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  margin: 12px auto; /* 左右 auto 就置中 */
+  background-color: #FFFFFF; /* 按鈕背景色 */
+  color: #25909A;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 999px; /* 膠囊形狀 */
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: background-color 0.25s ease, transform 0.2s ease;
 }
 
-.button_slider-indicator:nth-of-type(2),
-.button_slider-indicator:nth-of-type(5) {
-  background-color: ;
+.top-cta--reverse:hover {
+  background-color: #f2f9f9; /* hover 時淺淺變色 */
+  transform: translateY(-1px);
 }
 
-.button_slider-indicator:nth-of-type(3) {
-  background-color: ;
+.reasons__grid li {
+  background: #fff;
+  width: 250px;
+  border-radius: 16px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.btn_movie {
+.reasons__grid li img {
+  width: 170px;
+  height: auto;
+  margin-bottom: 8px;
+}
+
+.reasons__grid li h3 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.reasons__grid li p {
+  font-size: 16px;
+  margin: 0;
+  color: #555;
+}
+
+.reasons__grid li{position: absolute;}
+.reasons__grid .materials { top: 0; right:0; }
+.reasons__grid .teacher   { top: 160px; right:280px;}
+.reasons__grid .video     { top: 290px; right:0; }
+.reasons__grid .jp        { top: 450px; right:280px;}
+.reasons__grid .hours     { top: 580px; right:0; }
+
+.top-cta img,
+.top-cta--reverse img{
+  width: 18px;
   height: 18px;
-  width: 230px;
-  cursor: pointer;
-  margin-top: 16px;
+}
+.top-cta:hover {
+  background-color: #149ca1;
+  transform: translateY(-1px);
+}
+.peach-cta{
+  position: absolute;
+  right: 240px;
+  top: 414px;
+  --size: 140px;
+  width:var(--size);
+  height:var(--size);
+  border:0;
+  border-radius:50%;
+  color:#fff;
+  cursor:pointer;
+  box-shadow:
+      0 14px 20px rgba(255,120,110,.35),
+      0 4px 12px rgba(0,0,0,.05);
+  isolation:isolate;
+  background: linear-gradient(160deg, #ffa9a0 0%, #ff8f86 100%);
+  transition: background 0.4s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-header .header_inner .header_nav {
-  margin-right: 24px;
+/* 內圈高光 */
+.peach-cta::before{
+  content:"";
+  position:absolute; inset:0.8%;
+  border-radius:50%;
+  box-shadow: inset 0 0 0 10px rgba(255,255,255,.1);
 }
 
-.notosans {
-  font-family: "Noto Sans JP", sans-serif;
+/* 外圈光暈（初始） */
+.peach-cta::after {
+  content:"";
+  position:absolute; inset:-4%;
+  border-radius:50%;
+  box-shadow: 0 0 0 2px rgba(255,150,140,.18);
+  z-index:-1;
+  transition: box-shadow 0.4s ease;
 }
-.teacherTitle .intro_title{
-  padding-right: 3%;
+
+/* hover 時外圈光暈加深 */
+.peach-cta:hover::after {
+  box-shadow: 0 0 0 2px rgba(255,150,140,.28),
+  0 0 10px rgba(255,150,140,.25);
 }
-.teacherTitle .intro_content{
-  padding-right: 3%;
+
+
+.peach-cta:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(200deg, #ffa297 25%, #ff867e 75%);
+  box-shadow: 0 12px 24px rgba(255,120,110,0.35);
+}
+
+.peach-cta span{
+  display:grid;
+  gap:.14em;
+  line-height:1;
+  text-align:center;
+  font-weight:800;
+  letter-spacing:.06em;
+  text-shadow: 0 1px 0 rgba(0,0,0,.05);
+  font-size: 24px;
+  margin-top: 6px;
+}
+.peach-cta img{
+  width: 72px; margin: 8px auto 0 auto;
+}
+
+
+.top-section {
+  margin-top: -36px;
   width: 100%;
+  background:
+      url('../assets/images/netkorea_topbg.png') center top no-repeat;
+  background-size: 1920px auto;
 }
-.teacherTitle{
-  background-size: 90px;
-  background-position: 0 40px;
+
+.top-section .content {
+  width: 1130px;
+  margin: 0 auto -30px auto;
+  height: 920px;
+  position: relative;
 }
-.intro_title{
-  font-size: 26px;
-  line-height: normal;
-}
-.CV_shortContent{
-  width: 840px;
-}
-.CV_shortContent{
-  padding-top: 20px;
-}
-.RightBtn{
-  margin-top: 12px;
+
+
+.mobile-section,
+.mobile-btn{
+  display: none;
 }
 
 @media screen and (max-width: 520px) {
-  .RightBtn{
-    display: block;
-    line-height: 56px;
+  .mobile-btn{
+    display: flex;
+    margin: 0 auto !important;
   }
-  .CV_short{
+  .step3-title{font-size:24px; margin-top: 24px;}
+  .step3-eye--left,
+  .step3-eye--right{
+    display: none;
+  }
+  .reasons,
+  .tutors,
+  .step3-wrap,
+  .count{
+    padding: 32px 0;
+    position: relative;
+  }
+  .tutor-card{
     height: auto;
-    padding-bottom: 4%;
+    min-height: 270px;
   }
-  .intro_title{
-    font-size: 26px;
-    line-height: normal;
+  .tutor-card__photo{
+    background: radial-gradient(240px 240px at 40% 120%, #eaf0f2 0, #eaf0f2 49%, transparent 50%);
   }
-  .CV_shortContent{
+
+  .tutor-card__photo img{
+    bottom: 0;
+    position: absolute;
+  }
+  .tutor-card:nth-child(1),
+  .tutor-card:nth-child(3),
+  .tutor-card:nth-child(5){
+    margin-top: 0;  /* 第 2、4 張卡片往下 */
+  }
+  .tutor-grid{
+    width: 96%;
+    margin: 16px auto;
+    position: static;
+    background: transparent;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .tutor-card__name{ font-size: 16px; }
+  .tutor-card__bio{ font-size: 12px; }
+  .tutor-grid .tutor-card:last-child{
+    display: none;
+  }
+
+
+  .reasons{ min-height: auto; }
+
+
+  .top-cta{
+    margin:auto;
+  }
+  .reasons__in  .top-cta{
+    display: none;
+  }
+
+  .reasons__in,
+  .tutors__inner,
+  .step3-inner,
+  .count-inner{
+    padding: 0 16px;
+    margin: 0 auto;
+    display: block;                /* 左右改上下 */
+    gap: 0;
+  }
+  .reasons__left{
+    flex: none;
     width: 100%;
+    margin-top: 32px;
+    position: relative;
+    text-align: center;
   }
-  .CV_shortContent{
-    padding-top: 20px;
+  .reasons .eyebrow{
+    position: static;              /* 眉標置中 */
+    display: block;
+    margin: 0 auto 8px;
   }
-  .RightBtn{
-    margin-top: 12px;
+  h2.topPage{
+    font-size: 28px;
+    width: 90%;
+    margin: 8px auto;
+    line-height: 38px;
+  }
+  .leadWord{
+    font-size: 15px;
+    text-align: center;
+    width: 90%;
+  }
+
+  /* 右側卡片：兩欄網格；取消 absolute */
+  .reasons__grid{
+    width: 96%;
+    margin: 16px auto 0 auto;
+    position: static;
+    background: transparent;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .reasons__grid li{
+    position: static;              /* 取消桌機的 absolute */
+    width: 100%;
+    padding: 16px 14px;
+  }
+  .reasons__grid li img{
+    width: 120px;                  /* 手機縮小一點 */
+    margin-bottom: 10px;
+  }
+  .reasons__grid li h3{
+    font-size: 18px;
+    margin: 0 0 2px;
+  }
+  .reasons__grid li p{
+    font-size: 14px;
+    margin: 0 auto;
+  }
+  /* 最後一張卡片滿版（佔兩欄） */
+  .reasons__grid .hours{
+    grid-column: 1 / -1;
+    margin-bottom: 20px;
+  }
+  .top-section {
+    display: none;
+  }
+  .mobile-section {
+    display: block;
+    width: 100%;
+    margin-top: 26px;
+  }
+  .m1-img {
+    width: 100%;
+    display: block;
+  }
+  .m2-block {
+    width: 100%;
+    background: url('../assets/images/netkorea_topbg_m2.png') center top / cover no-repeat;
+    position: relative;
+    height: 80px;
+  }
+  .mobile-cta-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 76%;
+    padding: 14px;
+    min-height: 48px;
+    background: linear-gradient(200deg, #ffa297 25%, #ff867e 75%);
+    border-radius: 8px;
+    border: none;
+    color: #fff;
+    font-size: 21px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px; /* 文字和箭頭間距 */
+    box-shadow: 0 6px 16px rgba(255, 120, 110, 0.4);
+  }
+  .mobile-cta-btn img {
+    height: 20px;
   }
 }
 </style>

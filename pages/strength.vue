@@ -2,7 +2,7 @@
   <div style="background-color: #F9F9F9;">
     <section class="PlanPrice">
       <div class="subPosition">
-        <span class="subTitle">初めての方へ</span>
+        <span class="subTitle">NetKOREAについて</span>
       </div>
     </section>
 

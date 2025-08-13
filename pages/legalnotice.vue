@@ -27,7 +27,7 @@
         </tr>
         <tr>
           <th>お問い合わせ先</th>
-          <td>info@bizchina.jp</td>
+          <td>info@netkorea.jp</td>
         </tr>
         <tr>
           <th>支払方法</th>

@@ -1,16 +1,13 @@
 <template>
   <div id="top-head">
-    <h1 class="smmlogo">
+    <div class="inner">
+    <div class="smmlogo">
       <NuxtLink to="/" >
         <img :src="LogoNetchina" alt="ビズチャイナ" class="smmlogoImg" @click="goHomeAndCloseMenu" />
       </NuxtLink>
-    </h1>
-    <div class="inner">
+    </div>
       <nav id="global-nav">
         <div class="g-nav-wrap">
-          <div class="forB">
-            <a href="/corporate" target="_blank" rel="noopener noreferrer">企業向け</a>
-          </div>
           <ul>
             <li
                 v-for="(item, index) in menus"
@@ -24,74 +21,21 @@
         </div>
         <div v-if="logged === true" class="loginBTNs">
           <NuxtLink to="/mypage/mypageReserved">
-            <p class="BtnLogin"><img :src="IconLoginRed" alt="" class="icon_login"> マイページ</p>
+            <p class="BtnLogin">マイページ</p>
           </NuxtLink>
         </div>
         <div v-else class="loginBTNs">
             <NuxtLink to="/login">
-            <p class="BtnLogin"><img :src="IconLoginRed" alt="" class="icon_login"> ログイン</p>
+              <img src="../assets/images/loginBtn.png">
+            <p class="BtnLogin">ログイン</p>
             </NuxtLink>
           <NuxtLink to="/plan">
             <p class="BtnLogin2">100円体験</p>
           </NuxtLink>
         </div>
       </nav>
-
-    </div>
-
-    <div id="app">
-      <div id="top-toggle" class="sp">
-        <div class="barres">
-          <input type="checkbox" id="menu-toggle" class="menu-toggle" ref="menuToggle">
-          <label for="menu-toggle" class="menu-btn"></label>
-          <div id="menu" class="menu-content">
-            <ul>
-              <NuxtLink to="/strength" @click="closeMenu"><li class="num1">初めての方へ</li></NuxtLink>
-              <NuxtLink to="/plan" @click="closeMenu"><li class="num2">料金プラン</li></NuxtLink>
-              <NuxtLink to="/timetable" @click="closeMenu"><li class="num3">講師一覧</li></NuxtLink>
-              <NuxtLink to="/textbook" @click="closeMenu"><li class="num4">教材一覧</li></NuxtLink>
-              <NuxtLink to="/help" @click="closeMenu"><li class="num5">よくある質問</li></NuxtLink>
-
-              <NuxtLink v-if="logged === true" to="/mypage/mypageReserved" @click="closeMenu">
-                <li class="menumy">マイページ</li>
-              </NuxtLink>
-              <NuxtLink v-else to="/login" @click="closeMenu">
-                <li class="menu6">ログイン</li>
-              </NuxtLink>
-              <NuxtLink v-if="!logged" to="/plan" @click="closeMenu">
-                <li class="menu7">100円体験</li>
-              </NuxtLink>
-
-              <li class="hr"></li>
-              <NuxtLink to="/corporate" @click="closeMenu"><li class="corporate">企業向け</li></NuxtLink>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
     <div class="GsapMenu">
       <div class="menu sp sp_head_menu">
-<!--        <div class="loginBTNs">-->
-<!--          <nuxt-link to="/login">-->
-<!--            <p-->
-<!--                class="BtnLogin"-->
-<!--                :class="{ activeLogin: isLoginActive }"-->
-<!--            >-->
-<!--              ログイン-->
-<!--            </p>-->
-<!--          </nuxt-link>-->
-<!--          <nuxt-link to="/signup">-->
-<!--            <p-->
-<!--                class="BtnLogin2"-->
-<!--                :class="{ highlighted: isSignupActive }"-->
-<!--            >-->
-<!--              今すぐ体験-->
-<!--            </p>-->
-<!--          </nuxt-link>-->
-<!--        </div>-->
-
         <div v-if="logged === true" class="loginBTNs">
           <NuxtLink to="/mypage/mypageReserved">
             <p class="MyLogin">
@@ -117,20 +61,34 @@
             </p>
           </NuxtLink>
         </div>
+      </div>
+    </div>
+    </div>
+    <div id="app">
+      <div id="top-toggle" class="sp">
+        <div class="barres">
+          <input type="checkbox" id="menu-toggle" class="menu-toggle" ref="menuToggle">
+          <label for="menu-toggle" class="menu-btn"></label>
+          <div id="menu" class="menu-content">
+            <ul>
+              <NuxtLink to="/strength" @click="closeMenu"><li class="num1">NetKOREAについて</li></NuxtLink>
+              <NuxtLink to="/plan" @click="closeMenu"><li class="num2">料金プラン</li></NuxtLink>
+              <NuxtLink to="/timetable" @click="closeMenu"><li class="num3">講師一覧</li></NuxtLink>
+              <NuxtLink to="/textbook" @click="closeMenu"><li class="num4">教材一覧</li></NuxtLink>
+              <NuxtLink to="/help" @click="closeMenu"><li class="num5">よくある質問</li></NuxtLink>
 
-
-        <ul class="list">
-          <li><nuxt-link to="/strength">初めての方へ</nuxt-link><span class="BG"></span></li>
-          <li><nuxt-link to="/plan">料金プラン</nuxt-link><span class="BG"></span></li>
-          <li><NuxtLink to="/timetable" >予約・講師検索</NuxtLink><span class="BG"></span></li>
-          <li><nuxt-link to="/textbook">WEB教材</nuxt-link><span class="BG"></span></li>
-          <li><nuxt-link ot="/help">ヘルプ</nuxt-link><span class="BG"></span></li>
-        </ul>
-        <ul class="list2">
-          <li>会社法人</li>
-          <li>学校法人</li>
-        </ul>
-
+              <NuxtLink v-if="logged === true" to="/mypage/mypageReserved" @click="closeMenu">
+                <li class="menumy">マイページ</li>
+              </NuxtLink>
+              <NuxtLink v-else to="/login" @click="closeMenu">
+                <li class="menu6">ログイン</li>
+              </NuxtLink>
+              <NuxtLink v-if="!logged" to="/plan" @click="closeMenu">
+                <li class="menu7">100円体験</li>
+              </NuxtLink>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -153,10 +111,7 @@ const isSignupActive = computed(() => route.path === "/signup");
 
 
 const menus = [{
-  name: "HOME",
-  path: "/"
-},{
-    name: "初めての方へ",
+    name: "NetKOREAについて",
     path: "/strength"
 }, {
     name: "料金プラン",
@@ -252,6 +207,7 @@ export default {
   background-size: cover;
   position: relative;
   z-index: 2; /* 確保按鈕在最上層 */
+  background-color: #25909A;
 }
 
 /* 切換到關閉圖標 */
@@ -262,75 +218,70 @@ export default {
 /* 菜單內容 */
 .menu-content {
   display: none;
-  animation: fadeInOut 0.5s ease;
-  width: 100%; /* 確保 menu-content 寬度為 100% */
-  background-color: #f4f4f4; /* 增加背景色以便查看效果 */
-  position: fixed; /* 固定在螢幕上 */
-  top: 48px; /* 從頂部開始 */
-  left: 0; /* 從左側開始 */
-  z-index: 1; /* 確保菜單在按鈕下方 */
+  animation: fadeInOut 0.3s ease;      /* 動畫快一點 */
+  width: 100%;
+  background: linear-gradient(#F5F0E7, #FAF7F3); /* 用今天配色 */
+  position: fixed;
+  top: 48px;
+  left: 0;
+  z-index: 1000;                       /* 提高層級 */
   height: fit-content;
-  padding-bottom: 4vh;
-  /* 添加陰影 */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 可調整陰影的大小和透明度 */
+  padding: 8px 0 4vh;                 /* 頂部/底部間距調整 */
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12); /* 陰影更柔和更大 */
 }
 
 .menu-content ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  z-index: 999;
 }
 
 .menu-content li {
-  height: 10%;
-  margin: 6% 0 8% 4%;
-  font-size: 1.4em;
+  text-align: center;
+  margin: 0 16px;
+  font-size: 20px; /* 字級統一 */
   font-weight: bold;
-  padding-left: 10px;
-  border-radius: 4px;
+  padding: 24px 12px;
+  border-bottom: 1px solid #E7E2DA;
+  color: #20959A;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.8); /* 白陰影 */
 }
 
-.menu-content li.num1 { border-left: 8px solid #04b445; }
-.menu-content li.num2 { border-left: 8px solid #039b3c; }
-.menu-content li.num3 { border-left: 8px solid #ff7700; }
-.menu-content li.num4 { border-left: 8px solid #e78005; }
-.menu-content li.num5 { border-left: 8px solid #FBA13E; }
+.menu-content li a {
+  display: block;
+  text-decoration: none;
+}
 
+/* 白底紅字按鈕 */
 .menu-content li.menu6 {
-  text-align: center;
-  border: 2px solid #b12332;
-  border-radius: 48px;
-  height: 48px;
-  align-items: center;
-  line-height: 48px;
-  width: 70%;
-  margin: 0 auto 16px auto;
+  height: auto;
+  line-height: 1.4;
+  margin: 32px 16px 0 16px;
   font-size: 16px;
-  background-color: #ffffff;
-  padding-left: 0;
-  color: #b12332;
+  background-color: #25909A;
+  color: #FFFFFF;
+  padding: 16px 0;
+  border-radius: 8px;
 }
+
+/* 紅底白字按鈕 */
 .menu-content li.menu7 {
-  text-align: center;
-  border: 2px solid #b12332;
-  border-radius: 48px;
-  height: 48px;
-  align-items: center;
-  line-height: 48px;
-  width: 70%;
-  margin: auto;
+  border-radius: 8px;
+  margin: 20px 16px;
+  height: auto;
+  line-height: 1.4;
   font-size: 16px;
   color: #ffffff;
-  background-color: #b12332;
-  padding-left: 0;
+  background: linear-gradient(200deg, #ffa297 25%, #ff867e 75%);
+  padding: 16px 0;
+  border: 0;
 }
-.menu-content li.menu6 a{
-  color: #b12332 !important;
-}
-.menu-content li.menu7 a{
-  color: #ffffff !important;
-}
+
+/* 按鈕內文字顏色 */
+.menu-content li.menu6 a { color: #b12332 !important; }
+.menu-content li.menu7 a { color: #ffffff !important; }
+
+
 .menu-content li.menumy {
   text-align: center;
   border: 0;

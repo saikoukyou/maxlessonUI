@@ -15,7 +15,7 @@
         <ul>
           <li><NuxtLink to="/">HOME</NuxtLink></li>
           <li><NuxtLink to="/blogs?id=18">記事一覧</NuxtLink></li>
-          <li><NuxtLink to="/strength">初めての方へ</NuxtLink></li>
+          <li><NuxtLink to="/strength">NetKOREAについて</NuxtLink></li>
           <li><NuxtLink to="/plan">料金プラン</NuxtLink></li>
           <li><NuxtLink to="/timetable">講師一覧（先生で検索）</NuxtLink></li>
           <li><NuxtLink to="/everytime">講師一覧（時間で検索）</NuxtLink></li>

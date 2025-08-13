@@ -16,7 +16,7 @@
           <nuxt-link to="/">
           <img src="../assets/images/footer_logo.png" width="282">
           </nuxt-link></li>
-        <li>info@bizchina.jp</li>
+        <li>info@netkorea.jp</li>
         <li>24時間メール受付中</li>
       </ul>
       <ul class="footerMenu firstmenu">

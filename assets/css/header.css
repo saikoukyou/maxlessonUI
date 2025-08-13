@@ -6,10 +6,16 @@
 }
 
 #top-head {
-  padding-top: 12px;
-  height: 126px;
-  width: 100%;
-  z-index: 999;
+  position: fixed;       /* 固定位置 */
+  top: 0;                /* 貼齊頁面最上方 */
+  left: 0;               /* 貼齊左邊 */
+  width: 100%;           /* 滿版寬度 */
+  z-index: 999;          /* 蓋住其他內容 */
+  background-color: #25909A;
+  display: flex;
+  align-items: center; /* 垂直置中 */
+  justify-content: flex-start; /* 從左開始排列 */
+  height: 54px;
 }
 
 #top-head a,
@@ -28,8 +34,10 @@
 
 #top-head .inner {
   position: relative;
+  display: flex;
   width: 1130px;
   margin: auto;
+  justify-content: space-between; /* 兩端對齊，最後一個靠右 */
 }
 
 #top-head .logo {
@@ -53,41 +61,24 @@
 }
 
 #global-nav {
-  display:block;
-  position: absolute;
-  justify-content: flex-end;
-  width: 100%;
+  display: flex;
+  align-items: center;
 }
-
-.g-nav-wrap {
-  width: 100%;
-  position: absolute;
-  top: 10px;
-}
-
 #global-nav ul {
-  width: 100%;
-  font-size: clamp(12px, 1.3vw, 16.8px);
-  padding-top: 10px;
-}
-
-#global-nav ul {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: bold;
-  margin: 8px 0 0 auto;
-
 }
 #global-nav ul li {
   position: relative;
   display: inline-block;
-  margin-right: 38px;
-  color: #424242;
+  color: #FFFFFF;
   cursor: pointer;
+  margin-right: 18px;
 }
 
 #global-nav ul li a {
   position: relative;
-  color: #333333;
+  color: #FFFFFF;
   font-weight: bold;
   padding: 1px 0 0 10px;
   text-decoration: none;
@@ -98,11 +89,11 @@
 #global-nav ul li .BG {
   content: "";
   position: absolute;
-  bottom: -14px; /* 控制線條距離文字的距離 */
+  bottom: -18px; /* 控制線條距離文字的距離 */
   left: 10px; /* 配合 a padding-left，這樣線和文字對齊 */
   height: 4px;
   width: 0;
-  background:  #EF6D20;
+  background:  #FFFFFF;
   z-index: 1;
 }
 
@@ -126,61 +117,33 @@
   -moz-transition: top 0.65s ease-in;
 }
 
-
 #top-head #global-nav .loginBTNs {
-  position: absolute;
-  right: 0;
-  top: -37px;
-  cursor: pointer;
-}
-
-#top-head #global-nav .BtnLogin {
-  width: 136px;
-  height: 36px;
-  line-height: 34px;
-  border: 2px solid #D92332;
-  color: #D92332;
-  border-radius: 20px;
-  font-size: 16px;
-  font-weight: bold;
-  letter-spacing: 0.1em;
   display: inline-block;
-  align-items: center;
-  justify-content: center;
-  transition: .24s ease;
+  margin-left: 16px;
+}
+#top-head #global-nav .BtnLogin{
+  padding: 0 0 0 16px;
+  margin-right: 8px;
+}
+.loginBTNs img{
+  position: absolute;
+  width: 16px;
+  margin: 8px 0 0 11px;
+}
+#top-head #global-nav .BtnLogin,
+#top-head #global-nav .BtnLogin2{
+  width: 110px;
+  color: #25909A;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  display: inline-block;
   background: #fff;
   text-align: center;
-  padding-left: 14px;
-  padding-right: -2px;
-  cursor: pointer;
-}
-#top-head #global-nav .BtnLogin2 {
-  width: 136px;
-  height: 36px;
-  line-height: 34px;
-  border: 2px solid #D92332;
-  color: #fff;
-  text-align: center;
-  border-radius: 20px;
-  font-size: 16px;
-  font-weight: bold;
-  display: inline-block;
-  align-items: center;
-  justify-content: center;
-  transition: .24s ease;
-  background: #D92332;
-  margin-left: 14px;
-}
-
-#top-head #global-nav .BtnLogin:hover {
-  background: #D92332;
-  border: 3px solid #D92332;
-  color: #fff;
   cursor: pointer;
 }
 
 /* sp_head_menu */
-
 header .sp_head_menu {
   background-color: #ffc73b!important;
 }
@@ -329,8 +292,11 @@ header .no_icon_logo {
   height: 90px;
 }
 
-@media screen and (max-width: 640px) {
-
+@media screen and (max-width: 520px) {
+  #top-head .inner{
+    display: block;
+    width: auto;
+  }
   .sp_head_menu .list{
     display: none;
   }
@@ -352,9 +318,9 @@ header .no_icon_logo {
     top: 0;
     position: fixed;
     margin-top: 0;
-    background-color: #ffffff;
     height: 48px;
     z-index: 999;
+    display: block;
   }
 
   /* Fixed reset */
@@ -467,7 +433,7 @@ header .no_icon_logo {
     width: 48px;
     height: 48px;
     border-left: 1px solid #f4f4f4;
-    color: #EF6D20;
+    color: #FFFFFF;
     font-size: 9px;
     font-weight:normal;
     letter-spacing: 0em;
@@ -486,7 +452,7 @@ header .no_icon_logo {
     width: 48px;
     height: 48px;
     border: 0;
-    color: #EF6D20;
+    color: #20959A;
     border-radius: 0px;
     font-size: 9px;
     font-weight:normal;

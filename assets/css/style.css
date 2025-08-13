@@ -6,10 +6,8 @@
     border-color: #ccc !important;
     background-color: #f5f5f5 !important;
 }
-
-
 body {
-    margin: 0;
+    margin-top: 54px;
     font-family: Arial, "Noto Sans JP";
 }
 
@@ -98,11 +96,6 @@ svg {
     transform: translateX(-50%);
 }
 
-.smmlogo {
-    position: relative;
-    width: 1130px;
-    margin: auto;
-}
 
 .smmlogo_my {
     width: 1130px;
@@ -122,10 +115,8 @@ svg {
 }
 
 .smmlogoImg {
-    width: 260px;
-    padding-left: 8px;
-    padding-top: 12px;
-    cursor: pointer;
+    width: 204px;
+    padding-top: 2px;
 }
 .smmlogoImg_my {
     width: 160px;
@@ -260,36 +251,6 @@ svg {
     text-align: center;
     margin: 60px auto 0 auto;
 }
-
-.tsuyomiul{
-    margin-top: 20px;
-}
-.tsuyomiul li{
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 16px 0 16px;
-    vertical-align: top;
-}
-.tsuyomiul li img{
-    width: 200px;
-    height: 200px;
-    vertical-align: top;
-}
-.tsuyomiul li .tsuyomititle{
-    font-weight: bold;
-    font-size: 18px;
-    display: block;
-    margin-top: 20px;
-}
-
-.tsuyomiul li .tsuyomides{
-    font-size: 15px;
-    margin-top: 5px;
-    display: block;
-    line-height: 22px;
-}
-.aboutSide {}
 .aboutContents {
     background-repeat: no-repeat;
     background-size: cover;
@@ -570,10 +531,6 @@ svg {
 
 /* MENU */
 
-.GsapMenu {
-    width: 100%;
-}
-
 header .menu {
     position: fixed;
     background: rgba(255, 150, 0, 0.82);
@@ -727,14 +684,15 @@ header .menu a {
 
 .SumLesson{
     width:1140px;
-    margin: 20px auto 0 auto;
+    margin: 40px auto 0 auto;
     position: relative;
+    min-height: 150px;
 }
 .weekCount{position:relative; display: inline-block; height: 80px; width: 50%;}
 .SumLesson img {width:110px; height:110px; position: absolute; left: 20%;}
 .countBlock{width: 50%; position: absolute; top:8%; right:20%; text-align: right;}
 .countTitle{font-size: 13pt; font-weight: bold;}
-.countNumber{font-size: 36pt; line-height: 80px; color:#EF6D20; font-weight: bold;}
+.countNumber{font-size: 36pt; line-height: 80px; color:#25909A; font-weight: bold;}
 .lessonComa{color: #333333; font-size: 14px;}
 .totalCount{position:relative; display: inline-block; height: 80px; width: 50%;}
 
@@ -3480,14 +3438,7 @@ select::-ms-expand {
     letter-spacing: 0;
 }
 
-.teacherBG {
-    background-image: url("../images/teacher_bg.png");
-    background-size: 1920px;
-    background-repeat: no-repeat;
-    background-position: top center;
-    height: 542px;
-    position: relative;
-}
+
 
 .teacherTitle {
     background-image: url("../images/teacher_title.png");
@@ -5534,8 +5485,8 @@ footer {
 
 .footerLogo {width: 40%; margin-top: -16px; margin-left: 140px;}
 .footerLogo li:nth-child(1){margin: 10px;font-size: 20px;}
-.footerLogo li:nth-child(2){margin:10px 0 0 70px; font-size: 24px;}
-.footerLogo li:nth-child(3){margin:10px 0 0 70px; font-size: 18px;}
+.footerLogo li:nth-child(2){margin:10px 0 0 10px; font-size: 24px;}
+.footerLogo li:nth-child(3){margin:10px 0 0 10px; font-size: 18px;}
 
 
 .pc {
@@ -6758,6 +6709,7 @@ footer {
     display: none;
 }
 @media screen and (max-width: 520px) {
+    body {margin-top: 0;}
     .videoWord{
         padding: 0;
     }
@@ -7592,8 +7544,8 @@ footer {
     }
 
     .smmlogoImg {
-        width: 154px;
-        padding-top: 12px;
+        width: 156px;
+        padding-top: 14px;
         margin-left: 48px;
         position: absolute;
     }
@@ -7685,42 +7637,6 @@ footer {
         margin-top: 0;
     }
 
-    .tsuyomiul{
-        margin-top: 4%;
-        color: #424242;
-    }
-    .tsuyomiul li{
-        display: inline-block;
-        margin: 0% 3% 0 3%;
-        width: 38%;
-    }
-    .tsuyomiul li img{
-        width:100%;
-        height:auto;
-    }
-    .tsuyomiul li .tsuyomititle{
-        font-weight: bold;
-        font-size: 18px;
-        display: block;
-        margin-top: 14px;
-    }
-
-    .tsuyomiul li .tsuyomides{
-        font-size: 15px;
-        margin: 2% 0 16% 0;
-        display: block;
-
-    }
-
-    .teacherBG {
-        background-image: url("../images/teacher_bg_m.png");
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: top left;
-        text-align: right;
-        background-size: 80%;
-    }
-
     .teacherTitle {
         background-image: url("../images/teacher_title.png");
         background-size: 100px;
@@ -7787,12 +7703,12 @@ footer {
         box-shadow: 0 0 16px 5px rgba(255, 255, 255, 1);
     }
 
-    .SumLesson{width:100%;margin: 30% auto 8% auto;position: relative; height: 26vh;}
+    .SumLesson{width:100%;margin: 0 auto 8% auto;position: relative;}
     .weekCount{position:absolute; display:inline-block; height:24vh; width: 50%; text-align: center;}
     .SumLesson img {width:110px; height:110px; position:relative; display: block;}
     .countBlock{width: 80%; position: relative; top:8%; right:0; margin: auto; text-align: center;}
     .countTitle{font-size: 10pt; height: 2vh; font-weight: bold;}
-    .countNumber{font-size: 20pt; line-height: 60px; color:#EF6D20; font-weight: bold;}
+    .countNumber{font-size: 20pt; line-height: 60px; font-weight: bold;}
     .lessonComa{color: #333333; font-size: 14px;}
     .totalCount{position:absolute; display:inline-block; right: 0; height: 24vh; width:50%; text-align: center;}
 
