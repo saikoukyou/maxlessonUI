@@ -1,5 +1,5 @@
 <template>
-<div class="blogBg">
+<div class="blogBg topTemplate">
   <div class="blogContent">
     <span class="blogTime">{{ blogdate }}</span>
     <br>

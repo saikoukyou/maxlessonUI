@@ -32,7 +32,6 @@
         <li><NuxtLink to="/plan">料金プラン</NuxtLink></li>
         <li><NuxtLink to="/textbook">教材一覧</NuxtLink></li>
         <li><NuxtLink to="/timetable">講師一覧</NuxtLink></li>
-        <li>動画レッスン</li>
       </ul>
       <ul class="footerMenu">
         <li>よくある質問</li>

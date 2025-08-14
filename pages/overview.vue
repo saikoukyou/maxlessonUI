@@ -1,12 +1,12 @@
 <template>
-  <div class="overview">
+  <div class="overview topTemplate">
     <section class="PlanPrice">
       <div class="subPosition">
         <span class="subTitle">会社概要</span>
       </div>
     </section>
 
-    <div class="planTitleFront">オンライン中国語教室BizCHINAの運営会社について</div>
+    <div class="planTitleFront">オンライン韓国語教室NetKOREAの運営会社について</div>
 
     <div class="table-container">
       <table>
@@ -64,13 +64,15 @@
           <th scope="row">
             URL
             </th>
-          <td><a href="https://www.bizchina.jp/">https://www.bizchina.jp/</a></td>
+          <td><a href="https://www.bizchina.jp/">https://www.bizchina.jp/</a>
+            <br>
+            <a href="https://www.netkorea.jp/">https://www.netkorea.jp/</a></td>
         </tr>
         <tr>
           <th scope="row">
             事業内容
             </th>
-          <td>オンライン中国語研修サービス</td>
+          <td>オンライン中国語研修サービス<br>オンライン韓国語研修サービス</td>
         </tr>
         <tr>
           <th scope="row">
@@ -103,7 +105,7 @@
       </table>
     </div>
 
-    <div class="planDes">皆様に満足度の高い中国語レッスンを提供するために、スタッフ一同、全力を尽くしますので、よろしくお願いします。
+    <div class="planDes">皆様に満足度の高い韓国語レッスンを提供するために、スタッフ一同、全力を尽くしますので、よろしくお願いします。
     </div>
 
   </div>

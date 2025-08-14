@@ -82,7 +82,7 @@
               <a @click="goBlogInfo(tblog.id)" class="blogitem-link">
                 <div class="meta">
                   <span class="date">{{tblog.registered.substring(0,11)}}</span>
-                  <span class="category-tag" style="color: #da1111; border-color: #da1111;">
+                  <span class="category-tag">
                   {{tblog.name}}
                 </span>
                 </div>
@@ -301,10 +301,6 @@
               </div>
             </li>
           </ul>
-          <button class="top-cta--reverse">
-            <span>100円体験</span>
-            <img src="../assets/images/arrow_g.png" alt="">
-          </button>
         </div>
       </section>
 
@@ -318,6 +314,27 @@
           </div>
         </div>
       </div>
+
+      <section class="k-cta">
+        <div class="k-cta__inner">
+
+
+          <!-- 裝飾圖：手勢（桌機/手機切換） -->
+          <picture class="k-cta__deco k-cta__deco--hand">
+            <!-- 手機版 -->
+            <source srcset="../assets/images/kword_m.png" media="(max-width: 520px)">
+            <!-- 預設（桌機版） -->
+            <img class="kword" src="../assets/images/kword.png" alt="" aria-hidden="true">
+          </picture>
+
+          <button class="top-cta--reverse">
+            <span>100円体験</span>
+            <img src="../assets/images/arrow_g.png" alt="arrow">
+          </button>
+          <img class="kflag" src="../assets/images/kflag.png" alt="" aria-hidden="true">
+          <img class="khand" src="../assets/images/khand.png" alt="" aria-hidden="true">
+        </div>
+      </section>
 
 
       <GotoTop />
@@ -457,7 +474,8 @@ function goBlogInfo(bid) {
 
 /* ===== 3 steps block ===== */
 .step3-wrap,
-.point5-wrap{
+.point5-wrap,
+.k-cta{
   width:100%;
   background:#25909A;          /* 綠背景，可依品牌調整 */
   color:#fff;
@@ -471,6 +489,33 @@ function goBlogInfo(bid) {
   margin:0 auto;
   position:relative;
   text-align:center;
+}
+
+.k-cta__inner{
+  height: 110px;
+  width:100%;
+  max-width:1130px;             /* 中間資訊區 w1000px 置中 */
+  margin:0 auto;
+  position:relative;
+  text-align:center;
+}
+/* 裝飾圖位置 */
+.kword{
+  position: relative;
+  margin: auto;
+  width: 500px;
+}
+.kflag {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 190px;
+}
+.khand {
+  position: absolute;
+  right: 0;
+  top:18px;
+  width: 150px;
 }
 
 /* 左右裝飾線條 */
@@ -1038,5 +1083,26 @@ h2.topPage{
   .feature-card:nth-child(3){ background-image:url('../assets/images/p3_m.png'); margin-top: 0; }
   .feature-card:nth-child(4){ background-image:url('../assets/images/p4_m.png'); }
   .feature-card:nth-child(5){ background-image:url('../assets/images/p5_m.png'); margin-top: 0; }
+
+  /* 裝飾圖位置 */
+  .kword{
+    position: relative;
+    margin: auto;
+    width: 500px;
+  }
+  .kflag {
+    display: none;
+  }
+  .khand {
+    display: block;
+    right: auto;
+    margin: auto;
+    position: relative;
+    width: 40%;
+  }
+  .k-cta__inner{
+    height: auto;
+    margin-bottom: -22%;
+  }
 }
 </style>

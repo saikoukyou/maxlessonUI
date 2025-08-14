@@ -1,5 +1,5 @@
 <template>
-  <div class="overview">
+  <div class="overview topTemplate">
     <section class="PlanPrice">
       <div class="subPosition">
         <span class="subTitle">特定商取引法に基づく表記</span>

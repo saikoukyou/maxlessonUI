@@ -1,5 +1,5 @@
 <template>
-  <div class="loginBG">
+  <div class="loginBG topTemplate">
     <section class="contentsHeader">
       <div class="subPosition">
         <span class="subTitle">ログイン</span>

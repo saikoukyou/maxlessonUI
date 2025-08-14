@@ -1,4 +1,5 @@
 <template>
+  <div class="topTemplate">
   <section class="PlanPrice">
     <div class="subPosition">
       <span class="subTitle">記事一覧</span>
@@ -60,6 +61,7 @@
                     :on-update:page="handlePageChange" />
     </section>
 
+  </div>
   </div>
 </template>
 
