@@ -21,6 +21,7 @@
         </div>
         <div v-if="logged === true" class="loginBTNs">
           <NuxtLink to="/mypage/mypageReserved">
+            <img src="../assets/images/loginBtn.png">
             <p class="BtnLogin">マイページ</p>
           </NuxtLink>
         </div>

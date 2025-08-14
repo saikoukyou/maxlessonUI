@@ -1,5 +1,6 @@
 <template xmlns="http://www.w3.org/1999/html">
     <LoadingGroup :pending="allPending">
+      <div class="topTemplate">
       <div class="page-wrapper" :class="currentTab" style="position: relative;">
       <section class="PlanPrice">
         <div class="subPosition">
@@ -413,6 +414,7 @@
           <div class="snone">該当者なし</div>
         </div>
       </section>
+      </div>
       </div>
     </LoadingGroup>
 

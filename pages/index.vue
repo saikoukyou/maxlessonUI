@@ -74,6 +74,27 @@
       </section>
       </div>
 
+      <section class="blogBlock">
+        <div class="blogUp">
+          <p class="intro_title" style="margin-bottom: 6px;">最新記事</p>
+          <ul class="bloglist">
+            <li class="blogitem" v-for="(tblog) in topBlogs">
+              <a @click="goBlogInfo(tblog.id)" class="blogitem-link">
+                <div class="meta">
+                  <span class="date">{{tblog.registered.substring(0,11)}}</span>
+                  <span class="category-tag" style="color: #da1111; border-color: #da1111;">
+                  {{tblog.name}}
+                </span>
+                </div>
+                <div class="title">
+                  <h3>{{tblog.title}}</h3>
+                </div>
+                <div class="arrow">→</div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
       <section class="tutors">
         <div class="tutors__inner">
           <img class="eyebrow" src="../assets/images/eye_OurTutors.png">
@@ -399,9 +420,19 @@ function goBlogInfo(bid) {
 .reasons .top-cta{
   margin: 24px 0;
 }
+
+.blogBlock{
+  background-color: #F5F0E7;
+  padding: 64px;
+}
+.blogUp{
+  width: 950px;
+  margin: auto;
+}
+
 .tutors{
-  background: linear-gradient(#F5F0E7, #FAF7F3);
   padding: 64px 24px;
+  background: linear-gradient(175deg, #FAF6F1 10%, #F0FAF8 60%);
 }
 .tutors__inner{
   max-width: 1130px;         /* 你要的內容寬 */
@@ -432,12 +463,20 @@ function goBlogInfo(bid) {
   display: grid;
   grid-template-rows: auto 1fr;
   height: 300px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease; /* 加過渡 */
+  cursor: pointer;
 }
 .tutor-card:nth-child(1),
 .tutor-card:nth-child(3),
 .tutor-card:nth-child(5){
   margin-top: 24px;  /* 第 2、4 張卡片往下 */
 }
+
+.tutor-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
 /* 上半文字區 */
 .tutor-card__meta{
   text-align: left;
@@ -465,8 +504,9 @@ function goBlogInfo(bid) {
 /* 下半照片 */
 .tutor-card__photo{
   position: relative;
-  background: radial-gradient(240px 240px at 40% 100%, #eaf0f2 0, #eaf0f2 49%, transparent 50%);
+  background: radial-gradient(240px 240px at 40% 100%, #D6EBE8 0, #D6EBE8 49%, transparent 50%);
 }
+
 .tutor-card__photo img{
   width: 100%;
   height: auto;
@@ -546,7 +586,6 @@ h2.topPage{
 }
 
 .top-cta--reverse:hover {
-  background-color: #f2f9f9; /* hover 時淺淺變色 */
   transform: translateY(-1px);
 }
 
@@ -639,12 +678,12 @@ h2.topPage{
   0 0 10px rgba(255,150,140,.25);
 }
 
-
 .peach-cta:hover {
   transform: translateY(-2px);
-  background: linear-gradient(200deg, #ffa297 25%, #ff867e 75%);
+  background: linear-gradient(200deg, #ffb1a9 25%, #ff958d 75%); /* 原色加亮 */
   box-shadow: 0 12px 24px rgba(255,120,110,0.35);
 }
+
 
 .peach-cta span{
   display:grid;
@@ -684,6 +723,12 @@ h2.topPage{
 }
 
 @media screen and (max-width: 520px) {
+  .blogBlock{
+    padding: 32px;
+  }
+  .blogUp{
+    width: 100%;
+  }
   .mobile-btn{
     display: flex;
     margin: 0 auto !important;

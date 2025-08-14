@@ -7,10 +7,11 @@
     background-color: #f5f5f5 !important;
 }
 body {
-    margin-top: 54px;
     font-family: Arial, "Noto Sans JP";
 }
-
+.topTemplate{
+    margin-top: 54px;
+}
 p {
     margin-bottom: 12px;
     line-height: 32px;
@@ -5811,7 +5812,7 @@ footer {
 
 
 .blogitem:hover {
-    background-color: #f9f9f9;
+    background-color: #F8F4ED; /* 比 #F5F0E7 更亮一些 */
 }
 
 .blogitem .meta {
@@ -5902,9 +5903,6 @@ footer {
     color: #ED7E32;
 }
 
-.blogUp{
-    width: 940px; margin: 0 auto 40px auto;
-}
 
 .cv_container {
     margin: auto;
@@ -6709,7 +6707,9 @@ footer {
     display: none;
 }
 @media screen and (max-width: 520px) {
-    body {margin-top: 0;}
+    .topTemplate{
+        margin-top: 0;
+    }
     .videoWord{
         padding: 0;
     }
@@ -7082,11 +7082,6 @@ footer {
     }
     .blogitem a.blogitem-link {
         display: block;
-    }
-    .blogUp{
-        width: 100%;
-        padding: 0 24px;
-        margin-top: 30px;
     }
     .blogArticle {
         width: 100% !important;

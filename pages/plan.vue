@@ -1,5 +1,5 @@
 <template>
-  <div class="planbg">
+  <div class="planbg topTemplate">
     <section class="PlanPrice">
       <div class="subPosition">
       <span class="subTitle">料金プラン</span>

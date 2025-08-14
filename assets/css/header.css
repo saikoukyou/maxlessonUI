@@ -131,16 +131,25 @@
   margin: 8px 0 0 11px;
 }
 #top-head #global-nav .BtnLogin,
-#top-head #global-nav .BtnLogin2{
+#top-head #global-nav .BtnLogin2 {
   width: 110px;
   color: #25909A;
   border-radius: 20px;
   font-size: 14px;
   font-weight: bold;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: #fff;
-  text-align: center;
   cursor: pointer;
+  transition: color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* hover：加輕陰影 + 文字變亮 */
+#top-head #global-nav .BtnLogin:hover,
+#top-head #global-nav .BtnLogin2:hover {
+  color: #32aeb8; /* 比原本 #25909A 亮一階 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
 }
 
 /* sp_head_menu */
@@ -474,7 +483,7 @@ header .no_icon_logo {
     width: 48px;
     height: 48px;
     border: 0;
-    color: #EF6D20;
+    color: #FFFFFF;
     border-radius: 0px;
     font-size: 9px;
     font-weight:normal;
@@ -485,7 +494,6 @@ header .no_icon_logo {
     margin-bottom: 0;
     margin-top: 0;
     text-align: center;
-    background: #FFFFFF;
     background-image: url("../images/logo_my.png");
     background-size: cover;
     background-repeat: no-repeat;
