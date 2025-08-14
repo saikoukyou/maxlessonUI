@@ -226,7 +226,7 @@
         </div>
       </section>
 
-        <section class="topix">
+      <section class="topix">
                                 <div class="topixContents">
                                   <p></p>
                                   <div class="child">
@@ -252,7 +252,72 @@
                                 </div>
                               </section>
 
+      <section class="point5-wrap">
+        <div class="point5-wrap-inner">
+          <!-- 裝飾線條 -->
+          <img class="step3-eye step3-eye--left"  src="../assets/images/leftEye.png"  alt="" aria-hidden="true">
+          <img class="step3-eye step3-eye--right" src="../assets/images/rightEye.png" alt="" aria-hidden="true">
 
+          <!-- 標題：圖片3 + 文字 -->
+          <h2 class="step3-title">
+            安心して選べる<img class="step3-num" src="../assets/images/point5.png" alt="3">
+            <span>つのポイント</span>
+          </h2>
+
+          <!-- 短說明 -->
+          <p class="step3-lead">
+            日本語対応やネイティブ講師の指導など、初心者でも安心！柔軟なスケジュールで、自分のペースで学べます。
+          </p>
+
+          <ul class="feature-grid">
+            <li class="feature-card">
+              <div class="feature-card__text">
+                日本語でレッスン<br>
+                初心者に優しい
+              </div>
+            </li>
+            <li class="feature-card">
+              <div class="feature-card__text">
+                オリジナル<br>
+                韓国語教材
+              </div>
+            </li>
+            <li class="feature-card">
+              <div class="feature-card__text">
+                韓国語ネイティブ<br>
+                講師と1対1
+              </div>
+            </li>
+            <li class="feature-card">
+              <div class="feature-card__text">
+                日本人スタッフの<br>
+                サポート
+              </div>
+            </li>
+            <li class="feature-card">
+              <div class="feature-card__text">
+                朝6時〜深夜1時まで<br>
+                受講可能
+              </div>
+            </li>
+          </ul>
+          <button class="top-cta--reverse">
+            <span>100円体験</span>
+            <img src="../assets/images/arrow_g.png" alt="">
+          </button>
+        </div>
+      </section>
+
+      <div class="cvimg_container">
+        <div class="cvcontent">
+          <div class="intro_word">
+            <div class="intro_title">NetKOREAが考える
+              <br>オンライン韓国語学習の在り方</div>
+            私たちは、時間とお金をかけてオンラインで韓国語を学んでいる方々を最大限にサポートしたいと考えています。そのため、講師のあっせんだけにとどまらず、講師の採用、サイトの構築、教材の開発、日本人による学習サポートなど、多方面から総合的にサポートを行いたいと考えています。
+            韓国語学習においては、タイムパフォーマンスが非常に重要です。NetKOREAを選んで利用いただいている皆様の貴重な時間が、しっかりと成果に結びつくように、スタッフ一同、全力で努めてまいります。
+          </div>
+        </div>
+      </div>
 
 
       <GotoTop />
@@ -347,17 +412,62 @@ function goBlogInfo(bid) {
 
 
 <style scoped>
+/* 網格 */
+.feature-grid{
+  list-style:none;
+  margin:24px 0 40px;
+  padding:0;
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:20px;
+}
+
+/* 卡片（背景圖＋文字） */
+.feature-card{
+  position:relative;
+  height:300px;
+  border-radius:16px;
+  overflow:hidden;
+  background-size: 100%;
+  background-color: #ffffff;
+}
+/* 1/3/5 上邊距變化 */
+.feature-card:nth-child(1),
+.feature-card:nth-child(3),
+.feature-card:nth-child(5){
+  margin-top:24px;
+}
+
+/* 各卡的背景圖（已切好 p1~p5.png） */
+.feature-card:nth-child(1){ background-image:url('../assets/images/p1.png'); }
+.feature-card:nth-child(2){ background-image:url('../assets/images/p2.png'); }
+.feature-card:nth-child(3){ background-image:url('../assets/images/p3.png'); }
+.feature-card:nth-child(4){ background-image:url('../assets/images/p4.png'); }
+.feature-card:nth-child(5){ background-image:url('../assets/images/p5.png'); }
+
+/* 左上文字 */
+.feature-card__text{
+  position:absolute; top:24px; left:24px;
+  line-height:1.35;
+  z-index:1;
+  color: #373737;
+  text-align: left;
+}
+.feature-card__text{ display:block; font-size:16px; font-weight:600; }
+
 /* ===== 3 steps block ===== */
-.step3-wrap{
+.step3-wrap,
+.point5-wrap{
   width:100%;
   background:#25909A;          /* 綠背景，可依品牌調整 */
   color:#fff;
   padding: 64px 24px;
   overflow:hidden;              /* 防止裝飾超出 */
 }
-.step3-inner{
+.step3-inner,
+.point5-wrap-inner{
   width:100%;
-  max-width:1000px;             /* 中間資訊區 w1000px 置中 */
+  max-width:1130px;             /* 中間資訊區 w1000px 置中 */
   margin:0 auto;
   position:relative;
   text-align:center;
@@ -370,8 +480,8 @@ function goBlogInfo(bid) {
   user-select:none; -webkit-user-drag:none; pointer-events:none;
   opacity:.95;
 }
-.step3-eye--left{ left:180px;  width:70px; max-width:30vw; }
-.step3-eye--right{ right:200px; top: 0; width:50px; max-width:26vw; }
+.step3-eye--left{ left:160px;  width:70px; max-width:30vw; }
+.step3-eye--right{ right:180px; top: 0; width:50px; max-width:26vw; }
 
 /* 標題（圖片3 + 文字） */
 .step3-title{
@@ -895,5 +1005,38 @@ h2.topPage{
   .mobile-cta-btn img {
     height: 20px;
   }
+  .feature-grid{
+    grid-template-columns: 1fr; /* 單欄 */
+    gap: 12px;
+  }
+  .feature-card{
+    height: 120px;
+    border-radius: 12px;
+  }
+  .feature-card__text{
+    top: 24px;
+    left: 24px;
+    font-size: 17px;
+    font-weight: bold;
+  }
+  .feature-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.2) 0%,   /* 左上 白色透明度20% */
+        rgba(255, 255, 255, 0.05) 50%, /* 中間淡白 透明度5% */
+        rgba(255, 255, 255, 0) 100%    /* 右下 完全透明 */
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+  /* 手機版背景圖 */
+  .feature-card:nth-child(1){ background-image:url('../assets/images/p1_m.png'); margin-top: 0; }
+  .feature-card:nth-child(2){ background-image:url('../assets/images/p2_m.png'); }
+  .feature-card:nth-child(3){ background-image:url('../assets/images/p3_m.png'); margin-top: 0; }
+  .feature-card:nth-child(4){ background-image:url('../assets/images/p4_m.png'); }
+  .feature-card:nth-child(5){ background-image:url('../assets/images/p5_m.png'); margin-top: 0; }
 }
 </style>

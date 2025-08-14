@@ -5952,10 +5952,11 @@ footer {
     margin: 4px 0 10px 0;
 }
 .cvimg_container{
-    background-color: #e9f5fe;
+    background-image: url("../images/cvimg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .cvcontent{
-    background-image: url("../images/cvimg.png");
     background-size: 1440px;
     height: 420px;
     background-position: top right -80px;
@@ -5966,6 +5967,7 @@ footer {
     text-align: left;
     padding-top: 70px;
     padding-bottom: 20px;
+    color: #ffffff;
 }
 .cvimg_container .intro_word{
     margin-left: 110px;
@@ -5973,9 +5975,7 @@ footer {
     line-height: 23px;
     font-size: 14px;
     width: 500px;
-    background: linear-gradient(to right, #22345e, #2f4a7a); /* 深藍→略淺藍 */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #ffffff;
 }
 
 .category-button-list {
@@ -7155,11 +7155,11 @@ footer {
 
     .cvimg_container .cvcontent {
         height: auto;
-        background-position: center bottom -30px;
-        background-size: 120%;
+        background-position: calc(50% - 40px) bottom;
+        background-size: cover;
         width: 100%;
-        background-image: url("../images/cvimg_m.png");
-        padding-bottom: 220px;
+        background-image: url("../images/cvimg.png");
+        background-repeat: no-repeat;
     }
 
     .cvimg_container .intro_word {
