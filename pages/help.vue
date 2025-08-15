@@ -1,10 +1,13 @@
 <template>
-<div style="background-color: #F9F9F9; padding-bottom: 30px;">
+<div class="topTemplate" style="background-color: #F9F9F9; padding-bottom: 30px;">
   <section class="PlanPrice">
-    <div class="subPosition">
-      <span class="subTitle">よくある質問</span>
+    <div class="PlanPrice__inner">
+      <div class="subPosition">
+        <span class="subTitle">よくある質問</span>
+      </div>
     </div>
   </section>
+
 
   <section class="contentsWrap searchTeacher helpPc">
   <div class="help">
@@ -21,7 +24,7 @@
 <!--    <li>トラブル</li>-->
 <!--    <li>その他</li>-->
     <li style="border: 0; background: none; box-shadow: 0 0 0 rgba(0, 0, 0, 0);"></li>
-    <li @click="openContact" :class="selected_index == faq_list.length ? 'selected bold' : ''" style="border-bottom: 1px solid #f2b705;">お問い合わせ</li>
+    <li @click="openContact" :class="selected_index == faq_list.length ? 'selected bold' : ''">お問い合わせ</li>
   </ul>
 
   <div v-if="contactShow">

@@ -1,10 +1,14 @@
 <template>
   <div class="loginBG topTemplate">
-    <section class="contentsHeader">
-      <div class="subPosition">
-        <span class="subTitle">ログイン</span>
+
+    <section class="PlanPrice">
+      <div class="PlanPrice__inner">
+        <div class="subPosition">
+          <span class="subTitle">ログイン</span>
+        </div>
       </div>
     </section>
+
     <section class="contentsWrap LoginUI">
       <div class="contentsGrid Login">
         <div class="left">

@@ -1,9 +1,11 @@
 <template>
-  <div class="page-wrapper" :class="tabClass">
+  <div class="page-wrapper topTemplate">
   <div class="main-font-family textbookBG">
-    <section class="contentsHeader">
-      <div class="subPosition">
-        <span class="subTitle">{{courseName}}</span>
+    <section class="PlanPrice">
+      <div class="PlanPrice__inner">
+        <div class="subPosition">
+          <span class="subTitle">{{courseName}}</span>
+        </div>
       </div>
     </section>
 
@@ -158,14 +160,9 @@
       </div>
     </section>
 
-    <NuxtLink v-if="tabClass === 'conversation'" to="/textbook?learn_type=1">
-      <div class="textBack">会話コース教材一覧に戻る</div>
+    <NuxtLink to="/textbook">
+      <div class="textBack">教材一覧に戻る</div>
     </NuxtLink>
-
-    <NuxtLink v-else to="/textbook?learn_type=0">
-      <div class="textBack">総合コース教材一覧に戻る</div>
-    </NuxtLink>
-
 
   </div>
   </div>
@@ -195,14 +192,13 @@
 
 <script setup>
 import { useRoute, navigateTo } from "#app";
-import {createDiscreteApi, NModal} from "naive-ui";
+import {createDiscreteApi} from "naive-ui";
 import { useMainStore } from "~/composables/store";
 import { useTextbookListDataApi, useHomeCategoryListDataApi } from "~/apis/textbook";
 import { useStudentOpenTextbookApi } from "~/apis/student";
 
 const route = useRoute();
-const tabClass = ref('');
-const { dialog } = createDiscreteApi(["dialog"]);
+const { dialog, message } = createDiscreteApi(['dialog', 'message']);
 const useStore = useMainStore();
 
 let courseName = ref('');
@@ -258,10 +254,12 @@ const getTextbookList = async (categoryId) => {
   }
 };
 
+
+// ✅ 取全部課程（依你 API 調整：不帶參數 / 帶 0 或 null）
 const fetchCategoriesFromCourse = async (currentCategoryId) => {
-  const { data: res } = await useHomeCategoryListDataApi(7);
+  const { data: res } = await useHomeCategoryListDataApi(); // <= 不帶參數版
   if (res?.value?.courses?.length) {
-    for (let course of res.value.courses) {
+    for (const course of res.value.courses) {
       const match = course.categories?.find(cat => cat.id == currentCategoryId);
       if (match) {
         categories.value = course.categories ?? [];
@@ -304,48 +302,10 @@ watch(
     },
     { immediate: true }
 );
-onMounted(() => {
-  const tabParam = route.query.tab;
-  if (tabParam === 'conversation') {
-    tabClass.value = 'conversation';
-  } else {
-    tabClass.value = 'learning';
-  }
-});
 </script>
 
 
-
-
 <style scoped>
-  .page-wrapper.conversation .contentsHeader{
-    background-color: #30A186;
-  }
-  .page-wrapper.conversation  .textbook_container{
-    border-left: 11px solid #30A186;
-  }
-  .page-wrapper.conversation .category-button.active{
-    border-color: #30A186;
-    background-color: #EDF8ED;
-  }
-  .page-wrapper.conversation .tag-badge.active{
-    background-color:#30A186;
-  }
-  .page-wrapper.conversation .textBack{
-    background-color:#30A186;
-  }
-  .page-wrapper.conversation .category-button:hover .tag-badge:not(.active) {
-    background-color:#30A186;
-    color: white;
-  }
-  .page-wrapper.conversation .category-button:hover {
-    background-color: #EDF8ED;
-  }
-
-  .contentsHeader{
-    text-align: center;
-    min-height: 80px;
-  }
   .main-font-family {
     font-family: 'Microsoft YaHei', Arial, sans-serif;
   }
@@ -353,7 +313,7 @@ onMounted(() => {
     min-height: 80px;
     background-color: #FFFFFF;
     border-bottom: 1px solid #E7E7E7;
-    border-left: 11px solid #EF6D20;
+    border-left: 11px solid #14A6B3;
     padding: 20px 0;
     position: relative;
   }
@@ -391,13 +351,10 @@ onMounted(() => {
     padding: 8px;
     width: fit-content;
   }
-  .buttonArrowGreen>img {
-    height: 50px;
-    width: 50px;
-  }
+
 
   .textbookBG{
-    background-color: #F9F9F9; padding-bottom: 30px;
+    padding-bottom: 30px;
   }
 
 
@@ -439,10 +396,6 @@ onMounted(() => {
       position: absolute;
       right: 3%;
     }
-    .buttonArrowGreen{
-      right: 16px;
-    }
-
     .unopenSpan{
       width: fit-content;
       background-color: #ABABAB;
@@ -455,11 +408,8 @@ onMounted(() => {
       right: 0;
       left: 15px;
     }
-    .openword{
-      margin-left: 16px;
-    }
     .openBtn{
-      background-color: #EF6D20; color: #FFFFFF;
+      background-color: #14A6B3; color: #FFFFFF;
       font-size: 12px; padding: 6px 8px 3px 8px;
       font-weight: bold;
       position: absolute;

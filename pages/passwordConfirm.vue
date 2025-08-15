@@ -8,9 +8,11 @@
     </div>
   </div>
 
-  <section class="contentsHeader">
-    <div class="subPosition">
-      <span class="subTitle">パスワードの再設定</span>
+  <section class="PlanPrice">
+    <div class="PlanPrice__inner">
+      <div class="subPosition">
+        <span class="subTitle">パスワードの再設定</span>
+      </div>
     </div>
   </section>
 

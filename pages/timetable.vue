@@ -3,8 +3,10 @@
       <div class="topTemplate">
       <div class="page-wrapper" :class="currentTab" style="position: relative;">
       <section class="PlanPrice">
+        <div class="PlanPrice__inner">
         <div class="subPosition">
           <span class="subTitle">講師一覧</span>
+        </div>
         </div>
       </section>
 
@@ -771,9 +773,6 @@ onMounted(() => {
   display: none;
 }
 
-.page-wrapper {
-  background-color: #f9f9f9;
-}
 
 .teacherInfo ul{
   margin-left: 4px;

@@ -1,8 +1,10 @@
 <template>
   <div class="overview topTemplate">
     <section class="PlanPrice">
+      <div class="PlanPrice__inner">
       <div class="subPosition">
         <span class="subTitle">特定商取引法に基づく表記</span>
+      </div>
       </div>
     </section>
 

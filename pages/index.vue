@@ -8,7 +8,7 @@
       <div class="top-bg-wrap">
       <div class="top-section">
         <div class="content">
-          <button class="peach-cta">
+          <button class="peach-cta fade-up">
             <span>
               <b>今から</b>
               <b>始める</b>
@@ -167,7 +167,7 @@
         </div>
       </section>
 
-      <section class="count">
+      <section class="count" ref="countWrap">
         <div class="count--inner">
           <div class="SumLesson">
         <div class="weekCount">
@@ -260,7 +260,7 @@
 
           <!-- 標題：圖片3 + 文字 -->
           <h2 class="step3-title">
-            安心して選べる<img class="step3-num" src="../assets/images/point5.png" alt="3">
+            安心できる<img class="step3-num" src="../assets/images/point5.png" alt="3">
             <span>つのポイント</span>
           </h2>
 
@@ -348,8 +348,8 @@ import {
   useHomeLessonAndInfoListDataApi,
   useHomeTeacherListDataApi,
 } from "~/apis";
-import {onMounted, ref} from 'vue'
 import {useMainStore} from "~/composables/store";
+import { onMounted, ref, computed, watchEffect } from 'vue'
 
 useHead({
   title: "オンライン中国語のビズチャイナ【100円で7日間体験】",
@@ -374,6 +374,12 @@ useHead({
 
 let weekOpenNum = ref(0);
 let allLessonNum = ref(0);
+
+/* 新增：動畫中的顯示值（不改你原本的名稱） */
+const animatedLessonNum = ref(0);
+const animatedWeekOpenNum = ref(0);
+
+
 let evaluations = ref([]);
 let blogs = ref([]);
 let teachers = ref([]);
@@ -386,6 +392,35 @@ const useStore = useMainStore();
 const logged = useStore.studentLoggedIn;
 const bcolor = ['','',''];
 let topBlogs = ref([]);
+
+
+/* 進位動畫 */
+function animateNumber(target, outRef, duration = 1200) {
+  const start = 0;
+  const startTime = performance.now();
+  function tick(now) {
+    const p = Math.min((now - startTime) / duration, 1);
+    outRef.value = Math.floor(start + (target - start) * p);
+    if (p < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
+/* 滑到才啟動：IntersectionObserver */
+const countWrap = ref(null);
+const hasRun = ref(false);
+const inView = ref(false);
+
+function startCountersIfReady() {
+  if (hasRun.value) return;
+  const a = allLessonNum.value;
+  const w = weekOpenNum.value;
+  if (!inView.value) return;         // 還沒滑到
+  if (a <= 0 && w <= 0) return;      // 還沒拿到數字
+  hasRun.value = true;
+  animateNumber(a, animatedLessonNum, 1500);
+  animateNumber(w, animatedWeekOpenNum, 1500);
+}
 
 const getHomeTeachers = async () => {
   const {data: lists } = await useHomeTeacherListDataApi();
@@ -407,15 +442,26 @@ const getHomeTeachers = async () => {
 }
 
 // 格式化數字為帶逗號的形式
-const formattedLessonNum = computed(() => {
-  return allLessonNum.value.toLocaleString(); // 使用內建方法格式化
-});
-const formattedWeekOpenNum = computed(() => {
-  return weekOpenNum.value.toLocaleString();
-});
+/* 不改你的 computed 名稱，改成吃動畫值 */
+const formattedLessonNum = computed(() => animatedLessonNum.value.toLocaleString());
+const formattedWeekOpenNum = computed(() => animatedWeekOpenNum.value.toLocaleString());
 
 onMounted(() => {
   getHomeTeachers();
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        inView.value = true;
+        startCountersIfReady();
+      }
+    });
+  }, { threshold: 0.2 });
+  if (countWrap.value) io.observe(countWrap.value);
+
+  // 資料晚到也能啟動
+  watchEffect(() => {
+    startCountersIfReady();
+  });
 })
 
 function goBlogInfo(bid) {
@@ -429,6 +475,9 @@ function goBlogInfo(bid) {
 
 
 <style scoped>
+.count{
+  background-color: #F0FAF8;
+}
 /* 網格 */
 .feature-grid{
   list-style:none;
@@ -474,8 +523,7 @@ function goBlogInfo(bid) {
 
 /* ===== 3 steps block ===== */
 .step3-wrap,
-.point5-wrap,
-.k-cta{
+.point5-wrap{
   width:100%;
   background:#25909A;          /* 綠背景，可依品牌調整 */
   color:#fff;
@@ -491,32 +539,6 @@ function goBlogInfo(bid) {
   text-align:center;
 }
 
-.k-cta__inner{
-  height: 110px;
-  width:100%;
-  max-width:1130px;             /* 中間資訊區 w1000px 置中 */
-  margin:0 auto;
-  position:relative;
-  text-align:center;
-}
-/* 裝飾圖位置 */
-.kword{
-  position: relative;
-  margin: auto;
-  width: 500px;
-}
-.kflag {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 190px;
-}
-.khand {
-  position: absolute;
-  right: 0;
-  top:18px;
-  width: 150px;
-}
 
 /* 左右裝飾線條 */
 .step3-eye{
@@ -525,8 +547,8 @@ function goBlogInfo(bid) {
   user-select:none; -webkit-user-drag:none; pointer-events:none;
   opacity:.95;
 }
-.step3-eye--left{ left:160px;  width:70px; max-width:30vw; }
-.step3-eye--right{ right:180px; top: 0; width:50px; max-width:26vw; }
+.step3-eye--left{ left:240px;  width:70px; max-width:30vw; }
+.step3-eye--right{ right:260px; top: 0; width:50px; max-width:26vw; }
 
 /* 標題（圖片3 + 文字） */
 .step3-title{
@@ -558,6 +580,7 @@ function goBlogInfo(bid) {
 }
 .top-bg-wrap {
   background: linear-gradient(#F5F0E7, #FAF7F3);
+  margin-top: -12px;
 }
 .reasons{
   width: 100%;
@@ -706,44 +729,6 @@ h2.topPage{
   font-size: 16px;
   line-height: 26px;
 }
-.top-cta {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 24px;
-  margin: 12px auto;
-  background-color: #25909A; /* 按鈕背景色 */
-  color: #fff;
-  font-size: 18px;
-  font-weight: bold;
-  border: none;
-  border-radius: 999px; /* 膠囊形狀 */
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-  transition: background-color 0.25s ease, transform 0.2s ease;
-}
-
-.top-cta--reverse {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 24px;
-  margin: 12px auto; /* 左右 auto 就置中 */
-  background-color: #FFFFFF; /* 按鈕背景色 */
-  color: #25909A;
-  font-size: 18px;
-  font-weight: bold;
-  border: none;
-  border-radius: 999px; /* 膠囊形狀 */
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-  transition: background-color 0.25s ease, transform 0.2s ease;
-}
-
-.top-cta--reverse:hover {
-  transform: translateY(-1px);
-}
-
 .reasons__grid li {
   background: #fff;
   width: 250px;
@@ -781,15 +766,6 @@ h2.topPage{
 .reasons__grid .jp        { top: 450px; right:280px;}
 .reasons__grid .hours     { top: 580px; right:0; }
 
-.top-cta img,
-.top-cta--reverse img{
-  width: 18px;
-  height: 18px;
-}
-.top-cta:hover {
-  background-color: #149ca1;
-  transform: translateY(-1px);
-}
 .peach-cta{
   position: absolute;
   right: 240px;
@@ -878,6 +854,9 @@ h2.topPage{
 }
 
 @media screen and (max-width: 520px) {
+  .count{
+    padding: 0 0 32px 0;
+  }
   .blogBlock{
     padding: 32px;
   }
@@ -896,7 +875,7 @@ h2.topPage{
   .reasons,
   .tutors,
   .step3-wrap,
-  .count{
+  .point5-wrap{
     padding: 32px 0;
     position: relative;
   }
@@ -931,14 +910,7 @@ h2.topPage{
   .tutor-grid .tutor-card:last-child{
     display: none;
   }
-
-
   .reasons{ min-height: auto; }
-
-
-  .top-cta{
-    margin:auto;
-  }
   .reasons__in  .top-cta{
     display: none;
   }
@@ -946,7 +918,7 @@ h2.topPage{
   .reasons__in,
   .tutors__inner,
   .step3-inner,
-  .count-inner{
+  .point5-wrap-inner{
     padding: 0 16px;
     margin: 0 auto;
     display: block;                /* 左右改上下 */
@@ -1052,7 +1024,9 @@ h2.topPage{
   }
   .feature-grid{
     grid-template-columns: 1fr; /* 單欄 */
-    gap: 12px;
+    width: 96%;
+    gap: 16px;
+    margin: auto;
   }
   .feature-card{
     height: 120px;
@@ -1084,25 +1058,5 @@ h2.topPage{
   .feature-card:nth-child(4){ background-image:url('../assets/images/p4_m.png'); }
   .feature-card:nth-child(5){ background-image:url('../assets/images/p5_m.png'); margin-top: 0; }
 
-  /* 裝飾圖位置 */
-  .kword{
-    position: relative;
-    margin: auto;
-    width: 500px;
-  }
-  .kflag {
-    display: none;
-  }
-  .khand {
-    display: block;
-    right: auto;
-    margin: auto;
-    position: relative;
-    width: 40%;
-  }
-  .k-cta__inner{
-    height: auto;
-    margin-bottom: -22%;
-  }
 }
 </style>

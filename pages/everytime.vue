@@ -1,8 +1,10 @@
 <template>
   <LoadingGroup :pending="pending">
     <section class="PlanPrice">
+      <div class="PlanPrice__inner">
       <div class="subPosition">
         <span class="subTitle">講師一覧</span>
+      </div>
       </div>
     </section>
 

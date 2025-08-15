@@ -1,8 +1,10 @@
 <template>
   <div class="overview topTemplate">
     <section class="PlanPrice">
+      <div class="PlanPrice__inner">
       <div class="subPosition">
         <span class="subTitle">会社概要</span>
+      </div>
       </div>
     </section>
 

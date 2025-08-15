@@ -1,7 +1,9 @@
 <template>
   <section class="PlanPrice">
+    <div class="PlanPrice__inner">
     <div class="subPosition">
       <span class="subTitle">サイトマップ</span>
+    </div>
     </div>
   </section>
 

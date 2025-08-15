@@ -685,7 +685,7 @@ header .menu a {
 
 .SumLesson{
     width:1140px;
-    margin: 40px auto 0 auto;
+    margin: auto;
     position: relative;
     min-height: 150px;
 }
@@ -693,7 +693,7 @@ header .menu a {
 .SumLesson img {width:110px; height:110px; position: absolute; left: 20%;}
 .countBlock{width: 50%; position: absolute; top:8%; right:20%; text-align: right;}
 .countTitle{font-size: 13pt; font-weight: bold;}
-.countNumber{font-size: 36pt; line-height: 80px; color:#25909A; font-weight: bold;}
+.countNumber{font-size: 36pt; line-height: 80px; color:#25909A;}
 .lessonComa{color: #333333; font-size: 14px;}
 .totalCount{position:relative; display: inline-block; height: 80px; width: 50%;}
 
@@ -1469,34 +1469,25 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
 .n-form-item-feedback__line{
     font-size: 12px;
 }
-
 .Submit {
-    background: #FAC014;
+    background: #14A6B3; /* 主綠色 */
     width: 255px;
     height: 50px;
     line-height: 50px;
     text-align: center;
     font-size: 18px;
     font-weight: bold;
+    color: #fff; /* 白字 */
     transition: .3s ease;
     cursor: pointer;
     border-radius: 8px;
-    -moz-box-shadow: 2px 2px 10px 3px rgb(250 192 20 / 50%);
-    -webkit-box-shadow: 2px 2px 10px 3px rgb(250 192 20 / 50%);
-    -ms-box-shadow: 2px 2px 10px 3px rgb(250 192 20 / 50%);
-    box-shadow: 2px 2px 10px 3px rgb(250 192 20 / 50%);
+    box-shadow: 2px 2px 10px 3px rgba(20, 166, 179, 0.5);
 }
 
 .Submit:hover {
-    background: #F28705;
-    color: #fff;
-    cursor: pointer;
-    -moz-box-shadow: 4px 4px 16px 3px rgb(255 150 50 / 50%);
-    -webkit-box-shadow: 4px 4px 16px 3px rgb(255 150 50 / 50%);
-    -ms-box-shadow: 4px 4px 16px 3px rgb(255 150 50 / 50%);
-    box-shadow: 4px 4px 16px 3px rgb(255 150 50 / 50%);
+    background: #12919E; /* hover 深一點 */
+    box-shadow: 2px 4px 12px 4px rgba(20, 166, 179, 0.6);
 }
-
 
 /* Login & SignUp page */
 
@@ -1944,13 +1935,33 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
 .PlanPrice {
     width: 100%;
     height: 72px;
-    text-align: center;
-    background-color: #FFAA47;
     display: flex;
+    justify-content: center; /* 先讓內層容器水平置中 */
+    background-color: #14A6B3; /* 主色 */
+    background-image: url("../images/bubble.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
-.subPosition{text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); color: #ffffff; font-family: Murecho; font-weight: 600; margin: auto;}
-.subTitle{font-size: 26px;}
+.PlanPrice__inner {
+    width: 1130px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* 文字靠左 */
+    padding: 0 20px; /* 安全邊距 */
+}
+
+.subPosition {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    font-family: Murecho;
+    font-weight: 600;
+}
+
+.subTitle {
+    font-size: 26px;
+}
 
 
 
@@ -3851,7 +3862,7 @@ select::-ms-expand {
     margin: 30px auto; cursor: pointer;
     border-radius: 8px; font-size: 17px;
     padding: 0 20px;
-    background-color: #EF6D20; color: #FFFFFF; text-align: center;
+    background-color: #14A6B3; color: #FFFFFF; text-align: center;
     font-weight: bold;
 }
 .textBack_s{
@@ -3898,119 +3909,12 @@ h2 .titleBefore {
     border-bottom: 4px solid transparent; /* 預留空間，防止跳動 */
 }
 .select_Text li:hover {
-    background-color: #FFF9EC;
-    color: #EF6D20;
-    border-bottom: 4px solid #EF6D20;
+    background-color: #EDF8F8; /* 主色的超淡背景 */
+    color: #14A6B3;           /* 主色 */
+    border-bottom: 4px solid #14A6B3;
 }
-
-.select_Text li:hover .name_cn {
-    color: #EF6D20;
-}
-.select_Text li.selected {
-    background-color: #EF6D20;
-    color: #FFF;
-    /*background-image: url("../../assets/images/dropdown_w.png");*/
-    /*background-size: 20px;*/
-    /*background-position: center 46px;*/
-    /*background-repeat: no-repeat;*/
-}
-.select_Text li.selected .name_cn {
-    color: #FFFFFF;
-}
-.name_cn{
-    font-size: 12px;
-    display: block;
-    font-weight: normal;
-    color: dimgrey;
-    margin-top: 3px;
-}
-
-.conversation .active-tag {
-    background-color: #30A186;
-    color: white;
-}
-.conversation .textArray .textSubtitle {
-    background-color: #EDF8ED;
-}
-.conversation .textArray .textSubtitle > .total {
-    color: #30A186;
-}
-.conversation .textArray .textDetails::after {
-    background-image: url("../assets/SVG/buttonArrowGreen.svg");
-}
-
-/* 課程列表樣式 */
-.conversation .select_Text li {
-    color: #424242;
-    font-weight: bold;
-    font-size: 16px;
-    letter-spacing: 0.05em;
-    cursor: pointer;
-    height: 64px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.6);
-    background-color: #FFFFFF;
-    border-bottom: 4px solid transparent;
-}
-
-/* 一般 hover 效果（非 disabled） */
-.conversation .select_Text li:not(.disabled):hover {
-    background-color: #FFF9EC;
-    color: #30A186;
-    background-size: 24px;
-    background-position: center 40px;
-    background-repeat: no-repeat;
-    border-bottom: 4px solid #30A186;
-}
-
-
-
-/* 選中的項目樣式 */
-.conversation .select_Text li.selected {
-    background-color: #30A186;
-    color: #FFF;
-//background-image: url("../assets/images/dropdown_w.png");
-//background-size: 24px;
-//background-position: center 40px;
-//background-repeat: no-repeat;
-}
-.conversation .select_Text li:hover .name_cn {
-    color:#30A186;
-}
-.conversation .select_Text li.selected:hover .name_cn {
-    color: #FFFFFF;
-}
-/* 選中項目 hover 時不被覆蓋 */
-.conversation .select_Text li.selected:hover {
-    background-color: #30A186;
-    color: #FFF;
-//background-image: url("../assets/images/dropdown_w.png");
-    border-bottom: 4px solid #30A186;
-    cursor: default;
-}
-
-.select_Text li.disabled .name_cn{
-    color: grey !important;
-}
-.textArray {
-    width: 100%;
-    max-width: 1130px;
-    margin: 0 auto 0 auto;
-    display: grid;
-    grid-template-columns: 4fr 13.5fr;
-    border: 1px solid #f4f4f4;
-    background-color: #FFFFFF;
-}
-
-.textArray .textLink {
-    display: inline-grid;
-}
-
 .textArray .textSubtitle {
-    background-color: #FFE9C8;
+    background-color: #EDF8F8; /* 主色的超淡背景 */
     display: flex;
     flex-direction: column;
     font-size: 16px;
@@ -4021,8 +3925,37 @@ h2 .titleBefore {
     padding: 7% 8% 0 8%;
 }
 
+.select_Text li.selected {
+    background-color: #14A6B3;
+    color: #FFF;
+    cursor: pointer;
+}
+
+.textArray {
+    width: 100%;
+    max-width: 1130px;
+    margin: 0 auto 0 auto;
+    display: grid;
+    grid-template-columns: 4fr 13.5fr;
+    border: 1px solid #f4f4f4;
+    background-color: #FFFFFF;
+}
+
+
+/* 輕量 hover 效果 */
+.textArray:hover{
+    box-shadow: 0 1px 6px rgba(0,0,0,.06);
+    transform: translateY(-1px);
+    border-color: #eee;                 /* 不改粗細，避免跳動 */
+}
+
+.textArray .textLink {
+    display: inline-grid;
+}
+
+
 .textArray .textSubtitle>.total {
-    color: #EF6D20;
+    color: #14A6B3;
     font-weight: bold;
     padding: 0;
     font-size: 14px;
@@ -4111,12 +4044,13 @@ h2 .titleBefore {
     background-color: #aae300;
     border-radius: 20px;
 }
-
+.page-wrapper {
+    background:linear-gradient(#F5F0E7, #FAF7F3);
+}
 
 /* textbook > subject page */
 
 .textbookBG{
-    background-color: #F9F9F9;
     padding-bottom: 60px;
 }
 .subjectNumber {
@@ -4269,7 +4203,7 @@ h2 .titleBefore {
 }
 
 .select_help .selected{
-    border: solid #EF6D20;
+    border: solid #14A6B3;
     border-width: 0 0 0  10px;
 }
 
@@ -4298,7 +4232,7 @@ h2 .titleBefore {
 }
 
 .select_help li:hover {
-    background-color: #EF6D20;
+    background-color: #14A6B3;
     color: #fff;
 }
 
@@ -4327,7 +4261,7 @@ h2 .titleBefore {
 }
 
 .n-button{
-    background-color: #EF6D20;
+    background-color: #14A6B3;
     color: #FFFFFF;
     font-weight: bold;
     margin:0 0 20px 0;
@@ -4649,7 +4583,7 @@ h2 .titleBefore {
 .thirdList li a {
     padding: 6px 12px;             /* 增加內距讓按鈕更飽滿 */
     margin: 0 4px;
-    background-color: darkorange;
+    background-color: #FA8373;
     color: #FFFFFF;
     border: none;
     border-radius: 8px;
@@ -4657,6 +4591,10 @@ h2 .titleBefore {
     font-weight: bold;             /* 加粗字體讓更像按鈕 */
     box-shadow: 0 1px 2px rgba(0,0,0,0.2); /* 加陰影 */
     transition: background-color 0.3s, box-shadow 0.3s; /* 加動畫效果 */
+}
+.thirdList li a:hover {
+    background-color: #E96654;  /* 溫和好看的橘紅 */
+    box-shadow: 0 2px 3px rgba(0,0,0,0.3); /* 懸停時陰影更深 */
 }
 .openBtn{
     background: linear-gradient(to right, #66bb6a, #43a047); /* 蘋果綠 → 清新綠 */
@@ -4671,10 +4609,7 @@ h2 .titleBefore {
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
-.thirdList li a:hover {
-    background-color: #FF8C42;  /* 溫和好看的橘紅 */
-    box-shadow: 0 2px 3px rgba(0,0,0,0.3); /* 懸停時陰影更深 */
-}
+
 
 
 
@@ -5960,7 +5895,8 @@ footer {
     background-size: 1440px;
     height: 420px;
     background-position: top right -80px;
-    width: 1240px; margin: auto;
+    width: 1240px;
+    margin: auto;
     background-repeat: no-repeat;
 }
 .cvimg_container .intro_title{
@@ -6002,14 +5938,16 @@ footer {
 
 
 .category-button:hover {
-    background-color: #FFE9C8;
+    background-color: #E6F7F9; /* 超淡綠 */
     color: #424242;
+    border-color: #14A6B3;     /* 主綠 */
 }
 
 .category-button.active {
-    background-color: #FFE9C8;
+    background-color: #E6F7F9;
     color: #424242;
-    border-color: #e46722;
+    border-color: #14A6B3;
+    box-shadow: 0 2px 6px rgba(0,0,0,.08);
 }
 
 
@@ -6030,16 +5968,16 @@ footer {
 }
 
 .tag-badge.active {
-    background-color: #e46722;
+    background-color: #FA8373;
     color: #FFFFFF;
 }
 
 .category-button:hover .tag-badge:not(.active) {
-    background-color: #e46722;
-    color: white;
+    background-color: #FA8373;
+    color: #FFFFFF;
 }
 .class_len{font-size: 16px; font-weight: bold;}
-.class_ex{font-size: 12px; font-weight: normal; display: block;}
+.class_ex{font-size: 12px; font-weight: normal; line-height: normal; display: block;}
 
 .custom-secondary-button{
     background-color: #FFFFFF !important;
@@ -6706,9 +6644,130 @@ footer {
 .mobile_learn{
     display: none;
 }
+.k-cta{
+    width:100%;
+    background:#25909A;          /* 綠背景，可依品牌調整 */
+    color:#fff;
+    padding: 64px 24px;
+    overflow:hidden;              /* 防止裝飾超出 */
+}
+
+.k-cta__inner{
+    height: 110px;
+    width:100%;
+    max-width:1130px;             /* 中間資訊區 w1000px 置中 */
+    margin:0 auto;
+    position:relative;
+    text-align:center;
+}
+/* 裝飾圖位置 */
+.kword{
+    position: relative;
+    margin: auto;
+    width: 500px;
+}
+.kflag {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 190px;
+}
+.khand {
+    position: absolute;
+    right: 0;
+    top:18px;
+    width: 150px;
+}
+
+.top-cta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 24px;
+    margin: 12px auto;
+    background-color: #25909A; /* 按鈕背景色 */
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 999px; /* 膠囊形狀 */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.top-cta--reverse {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 24px;
+    margin: 12px auto; /* 左右 auto 就置中 */
+    background-color: #FFFFFF; /* 按鈕背景色 */
+    color: #25909A;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 999px; /* 膠囊形狀 */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.top-cta--reverse:hover {
+    transform: translateY(-1px);
+}
+
+.top-cta img,
+.top-cta--reverse img{
+    width: 18px;
+    height: 18px;
+}
+.top-cta:hover {
+    background-color: #14A6B3;
+    transform: translateY(-1px);
+}
+/* 通用進場動畫：由下往上淡入 */
+.fade-up {
+    opacity: 0;
+    animation: fadeUp .8s ease-out forwards;
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* 元素本身向下偏移 */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 @media screen and (max-width: 520px) {
+    .top-cta{
+        margin:auto;
+    }
+    /* 裝飾圖位置 */
+    .kword{
+        position: relative;
+        margin: auto;
+        width: 500px;
+    }
+    .kflag {
+        display: none;
+    }
+    .khand {
+        display: block;
+        right: auto;
+        margin: auto;
+        position: relative;
+        width: 40%;
+    }
+    .k-cta__inner{
+        height: auto;
+        margin-bottom: -22%;
+    }
     .topTemplate{
-        margin-top: 0;
+        margin-top: 48px;
     }
     .videoWord{
         padding: 0;
@@ -7152,7 +7211,6 @@ footer {
         font-size: 16px;
         padding: 0 10px;
     }
-
     .cvimg_container .cvcontent {
         height: auto;
         background-position: calc(50% - 40px) bottom;
@@ -7949,13 +8007,13 @@ footer {
 
     /* plan.html */
 
+    .PlanPrice__inner {
+        width: 100%;        /* 滿版 */
+        padding: 0 16px;    /* 左右安全邊距 */
+    }
 
-    .PlanPrice {
-        background-image: url("../images/sub_bg.png");
-        background-size: cover;
-        margin-top: 48px;
-        padding-left: 1%;
-        height: fit-content;
+    .subTitle {
+        font-size: 22px;    /* 手機字體稍微縮小 */
     }
 
     .Pricelist {

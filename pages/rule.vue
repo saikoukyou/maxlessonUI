@@ -1,8 +1,10 @@
 <template>
   <div class="overview">
     <section class="PlanPrice">
+      <div class="PlanPrice__inner">
       <div class="subPosition">
         <span class="subTitle">利用規約</span>
+      </div>
       </div>
     </section>
 

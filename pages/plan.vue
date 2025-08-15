@@ -1,8 +1,10 @@
 <template>
   <div class="planbg topTemplate">
     <section class="PlanPrice">
+      <div class="PlanPrice__inner">
       <div class="subPosition">
       <span class="subTitle">料金プラン</span>
+      </div>
       </div>
     </section>
 

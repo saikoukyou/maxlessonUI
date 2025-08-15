@@ -1,8 +1,10 @@
 <template>
   <div class="planbg">
     <section class="PlanPrice">
+      <div class="PlanPrice__inner">
       <div class="subPosition">
         <span class="subTitle">動画一覧</span>
+      </div>
       </div>
     </section>
   </div>

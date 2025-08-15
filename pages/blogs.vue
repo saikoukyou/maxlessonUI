@@ -1,8 +1,10 @@
 <template>
   <div class="topTemplate">
   <section class="PlanPrice">
+    <div class="PlanPrice__inner">
     <div class="subPosition">
       <span class="subTitle">記事一覧</span>
+    </div>
     </div>
   </section>
 

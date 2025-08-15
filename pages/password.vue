@@ -1,10 +1,12 @@
 <template>
-  <div class="pSend">
-  <section class="contentsHeader">
-    <div class="subPosition">
-      <span class="subTitle">パスワードの再設定</span>
-    </div>
-  </section>
+  <div class="pSend topTemplate">
+    <section class="PlanPrice">
+      <div class="PlanPrice__inner">
+        <div class="subPosition">
+          <span class="subTitle">パスワードの再設定</span>
+        </div>
+      </div>
+    </section>
 
 <section class="forgetPassWrap">
   <p>会員登録いただいたメールアドレスを入力してください<br>
