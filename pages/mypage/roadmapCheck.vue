@@ -55,7 +55,7 @@
     font-size: 13px;
   }
   .downBlock span.orangeW{
-    color: #EF6D20;
+    color: #FA8373;
     font-weight: bold;
     text-decoration: underline;
   }
@@ -89,7 +89,7 @@
   background-color: #BDBDBD;
 }
 .step:nth-child(3) {
-  background-color: #EF6D20;
+  background-color: #FA8373;
   font-weight: bold;
 }
 @media screen and (max-width: 520px) {

@@ -258,7 +258,7 @@ th, td {
 table{width: 100%;}
 
 .actionBtn{
-  color: #EF6D20;
+  color: #FA8373;
   text-decoration: underline;
   font-weight: bold;
 }

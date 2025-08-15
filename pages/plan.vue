@@ -1,5 +1,5 @@
 <template>
-  <div class="planbg topTemplate">
+  <div class="topTemplate page-wrapper">
     <section class="PlanPrice">
       <div class="PlanPrice__inner">
       <div class="subPosition">
@@ -8,32 +8,17 @@
       </div>
     </section>
 
-    <div class="planTitleFront mj">体験レッスンは、<span style="color: #E4670C;">100円で7日間!</span></div>
+    <div class="planTitleFront mj">体験レッスンは、<span style="color: #FA8373;">100円で5日間!</span></div>
     <div class="planDes100">
       決済後、即時にメールにてアカウント情報を送信します<br>
       25分のレッスンを7回受講できます。 最終日に自動的に月額プランヘ移行されます。<br>
       7日以内に停止すると、追加料金は一切かかりません。<a class="linkS" href="https://www.bizchina.jp/help?cindex=3&qindex=7">停止手続きについて</a>
     </div>
+
     <div class="planTitleFront">サブスクタイプ</div>
     <div class="planDes">・初回の課金後、毎月自動更新する支払いタイプ</div>
     <!-- 学习套餐 -->
-    <section class="lColorbg box-s">
-      <img src="../assets/images/mobile_learn.png" class="mobile_learn">
-      <div class="courseBanner learn" ref="learnSection">
-        <div class="courseContentWord">
-          <span class="courseContentTitle">総合コース
-          <span class="courseDesc">中国語学習を全面的にサポート</span>
-          </span>
-          <div class="feature-icons">
-            <img src="../assets/images/learn_s1.png" alt="マンツーマンレッスン">
-            <img src="../assets/images/learn_s2.png" alt="入門OK">
-            <img src="../assets/images/learn_s3.png" alt="文法/会話/HSK">
-            <img src="../assets/images/learn_s4.png" alt="WEB教材9ジャンル">
-            <img src="../assets/images/learn_s5.png" alt="動画・音声で自習もOK">
-          </div>
-        </div>
-      </div>
-
+    <section class="lColorbg">
       <div class="courseContainer">
         <div
             class="courseBlock"
@@ -174,107 +159,9 @@
         </div>
       </div>
     </section>
-    <!-- 会话套餐 -->
-    <section class="sColorbg box-s">
-      <img src="../assets/images/mobile_speak.png" class="mobile_learn">
-      <div class="courseBanner speak" ref="speakSection">
-        <div class="courseContentWord">
-          <span class="courseContentTitle">会話コース
-          <span class="courseDesc">和中国各地老師全程用中文交流</span>
-          </span>
-          <div class="feature-icons">
-            <img src="../assets/images/speak_s1.png" alt="マンツーマンレッスン">
-            <img src="../assets/images/speak_s2.png" alt="オール中国語">
-            <img src="../assets/images/speak_s3.png" alt="会話コース限定教材">
-            <img src="../assets/images/speak_s4.png" alt="WEB教材2ジャンル">
-          </div>
-        </div>
-      </div>
 
-      <div class="courseContainer sColorbg">
-        <div
-            class="courseBlock"
-            v-for="(tplan, pindex) in talk_pay_plans"
-            v-on="!logged ? { click: () => showRegisterModal(tplan) } : {}"
-            :class="{ clickable: !logged }"
-        >
-        <div v-if="tplan.every_month_off == 1 && tplan.every_month_off_rate != 0" >
-          <img src="../assets/images/saleStamp.png" class="saleStamp">
-        </div>
-        <div v-else-if="tplan.first_month_off == 1 && tplan.first_month_off_rate != 0" class="courseStamp">
-          <ul><li>初月</li><li>{{tplan.first_month_off_rate*100}}</li><li>%</li><li>OFF</li></ul>
-        </div>
-        <span class="courseTitle Colorbg">{{tplan.plan_name}}</span>
-        <ul class="courseContent">
-          <li v-if="tplan.every_month_off == 1 && tplan.every_month_off_rate != 0" class="saleWord">今なら、ず━━っと</li>
-          <li class="salePrice">月額
-            <span v-if="tplan.every_month_off == 1 && tplan.every_month_off_rate != 0">
-                {{tplan.paypal_amount_show}}
-              </span>
-            <span class="amount" v-else-if="tplan.first_month_off == 1 && tplan.first_month_off_rate != 0">
-              {{tplan.first_month_off_amount_show}}
-            </span>
-            <span class="amount" v-else>
-              {{tplan.paypal_amount_show}}
-            </span>
-            円<span class="littleTax">税込</span>
-          </li>
-<!--          <li v-if="tplan.first_month_off == 1 && tplan.first_month_off_rate != 0"><span class="orip">月額{{tplan.final_amount_show}}円</span><span class="oriptax"> 税込</span></li>-->
-<!--          <li v-else><span class="orip"></span><span class="oriptax"></span></li>-->
-          <li class="oneLesson">1レッスン {{tplan.lesson_price}}円</li>
-        </ul>
-        <div class="planBtn">
-          <span v-if="logged">
-            <span v-if="!studentInfo.is_corporate_member">
-                <span v-if="tplan.id == studentInfo.monthly_plan_id">
-                  <span v-if="studentInfo.subscription_id">
-                    <div class="pay-desc">カード現在利用中</div>
-                    <a @click="planConfirm(tplan.plan_code,'',tplan.learn_type)" class="btnRed">今すぐ更新</a>
-                  </span>
-                  <span v-else-if="studentInfo?.recurring_payment_id && studentInfo?.paypal_cancel == 0">
-                    <div class="pay-desc">Paypal現在利用中</div>
-                    <span v-if="studentInfo.payjp_customer_id">
-                      <a @click="planConfirm(tplan.plan_code,'',tplan.learn_type)" class="btnRed">プラン変更</a>
-                    </span>
-                    <span v-else>
-                      <a @click="changePayjpPlanPc(tplan.plan_code,'',tplan.learn_type)" class="btnRed">カード決済</a>
-                    </span>
-                  </span>
-                  <span v-else>
-                    <div class="pay-desc">現在利用中</div>
-                    <span v-if="studentInfo.payjp_customer_id">
-                      <a @click="planConfirm(tplan.plan_code,'',tplan.learn_type)" class="btnRed">プラン変更</a>
-                    </span>
-                    <span v-else>
-                      <a v-if="studentInfo.paypal_cancel == 0 && use_paypal === 1" @click="changePaypalMonthPc(tplan.plan_code,'',tplan.learn_type)" class="btnRed">Paypal決済</a>
-                      <a @click="changePayjpPlanPc(tplan.plan_code,'',tplan.learn_type)" class="btnRed">カード決済</a>
-                    </span>
-                  </span>
-                </span>
-                <span v-else>
-                <span v-if="studentInfo.payjp_customer_id">
-                  <a @click="planConfirm(tplan.plan_code,'',tplan.learn_type)" class="btnRed">プラン変更</a>
-                </span>
-                <span v-else>
-                  <a @click="changePayjpPlanPc(tplan.plan_code,'',tplan.learn_type)" class="btnRed">カード決済</a>
-                  <a v-if="studentInfo.paypal_cancel == 0 && use_paypal === 1" @click="changePaypalMonthPc(tplan.plan_code,'',tplan.learn_type)" class="btnRed">Paypal決済</a>
-                </span>
-              </span>
-                <div class="reservationplandes">
-                  1日{{tplan.reservation_limit_per_day}}回まで 予約保持{{tplan.reservation_limit_per_range}}回まで
-                </div>
-            </span>
-          </span>
-          <span v-else>
-            <a class="btnRed" @click.stop="showRegisterModal(tplan)">100円体験へ</a>
-
-          </span>
-      </div>
-      </div>
-      </div>
-    </section>
     <!-- 單發 -->
-    <section class="Pricelist singlePosition" >
+    <section class="singlePosition" >
 
       <div class="planTitleFront">チケットタイプ</div>
       <div class="planDes">・100円体験対象外ですが、直接購入することは可能です。</div>
@@ -282,7 +169,7 @@
       <div class="singlePlan box-s" v-for="(ticket_plan) in pay_plans_ticket">
 
         <ul class="SinglePlanContent">
-          <li class="lColorbg">総合コース</li>
+          <li>チケット</li>
           <li><span> {{ticket_plan.buy_issued_lesson_num}} </span>回</li>
           <li>有効期限<span> {{ticket_plan.validity_term}} </span>日</li>
           <li><img width="15" src="../assets/images/redarrow.png"></li>
@@ -318,169 +205,6 @@
             <a class="btnRed2" @click="showRegisterModal(ticket_plan)">購入へ</a>
           </span>
         </div>
-
-      </div>
-
-      <div class="singlePlan box-s" v-for="(t_ticket_plan) in talk_pay_plans_ticket">
-
-        <ul class="SinglePlanContent">
-          <li class="sColorbg">会話コース</li>
-          <li><span> {{t_ticket_plan.buy_issued_lesson_num}} </span>回</li>
-          <li>有効期限<span> {{t_ticket_plan.validity_term}} </span>日</li>
-          <li><img width="15" src="../assets/images/redarrow.png"></li>
-        </ul>
-
-        <ul class="SingleAmount">
-          <li>{{t_ticket_plan.paypal_amount_show}}</li>
-          <li>税込</li>
-          <li>円</li>
-          <li>1レッスン {{t_ticket_plan.lesson_price}}円</li>
-        </ul>
-
-        <div class="SingleBtn">
-          <span v-if="logged">
-            <span v-if="studentInfo.is_corporate_member"></span>
-            <span v-else>
-              <span v-if="studentInfo.payjp_customer_id">
-                <a style="display: inline-block;" @click="planConfirm(t_ticket_plan.plan_code,'ticket',t_ticket_plan.learn_type)" class="btnRed">今すぐ購入</a>
-              </span>
-              <span v-else>
-                <span v-if="studentInfo.paypal_cancel == 0 && use_paypal === 1">
-                  <a @click="changePaypalMonthPc(t_ticket_plan.plan_code,'ticket',t_ticket_plan.learn_type)" class="btnRed">Paypal決済</a>
-                </span>
-                <span v-if="t_ticket_plan.use_paypay === 1">
-                  <a @click="changePaypayPlanPc(ticket_plan)" class="btnRed">PayPay</a>
-                </span>
-                  <a @click="changePayjpPlanPc(t_ticket_plan.plan_code,'ticket',t_ticket_plan.learn_type)" class="btnRed">カード決済</a>
-              </span>
-            </span>
-          </span>
-          <span v-else>
-            <a class="btnRed2" @click="showRegisterModal(t_ticket_plan)">購入へ</a>
-          </span>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="priceCompare-section">
-      <h2 class="priceCompare-title"><img src="../assets/images/panda_hi.png">料金プランの詳細</h2>
-      <p class="scroll-hint">※ 表は左右にスクロールできます</p>
-      <div class="priceCompare-scroll-wrapper">
-      <table class="priceCompare-table">
-        <thead>
-        <tr>
-          <td class="blackBg">コース名</td>
-          <th class="priceCompare-planA">
-            <div class="plan-title">総合コース</div>
-            <div class="plan-sub">学習に必要なすべてのコンテンツを完備</div>
-          </th>
-          <th class="priceCompare-planB">
-            <div class="plan-title green">会話コース</div>
-            <div class="plan-sub green">会話力を強化したい方のために</div>
-          </th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <td class="blackBg">対象</td>
-          <td>入門〜上級</td>
-          <td>ある程度中国語を話せる方</td>
-        </tr>
-        <tr>
-          <td class="blackBg">講師</td>
-          <td>総合コース専属講師<br>日本語で説明ができます<br>（中国語のみの講師も在籍）</td>
-          <td>会話コース専属講師<br>中国語のみで会話します</td>
-        </tr>
-        <tr>
-          <td class="blackBg">内容</td>
-          <td>
-            <div class="priceCompare-item">
-              <img src="../assets/images/learn_l1.png" alt="マンツーマン">
-              <div class="item-text">
-                <div class="item-title">マンツーマンレッスン</div>
-                <div class="item-desc">講師から正しい発音、正しい文法を教えてもらい着実にレベルアップ</div>
-              </div>
-            </div>
-            <div class="priceCompare-item">
-              <img src="../assets/images/learn_l2.png" alt="入門OK">
-              <div class="item-text">
-                <div class="item-title">入門OK！9割の講師が日本語対応可</div>
-                <div class="item-desc">初心者でも安心。上級者は中国語のみも可</div>
-              </div>
-            </div>
-            <div class="priceCompare-item">
-              <img src="../assets/images/learn_l3.png" alt="文法/会話/HSK">
-              <div class="item-text">
-                <div class="item-title">文法／会話／ビジネス／HSK</div>
-                <div class="item-desc">幅広い目的に対応</div>
-              </div>
-            </div>
-            <div class="priceCompare-item">
-              <img src="../assets/images/learn_l4.png" alt="WEB教材">
-              <div class="item-text">
-                <div class="item-title">WEB教材 9ジャンル</div>
-                <div class="item-desc">オリジナルWEB教材は分野が豊富、自己学習し放題</div>
-              </div>
-            </div>
-            <div class="priceCompare-item">
-              <img src="../assets/images/learn_l5.png" alt="動画">
-              <div class="item-text">
-                <div class="item-title">動画・音声で自習もOK</div>
-                <div class="item-desc">中国語学習は音声必須！いつでもどこでもスキマ時間にできます</div>
-              </div>
-            </div>
-          </td>
-          <td>
-            <div class="priceCompare-item green">
-              <img src="../assets/images/speak_l1.png" alt="マンツーマン">
-              <div class="item-text">
-                <div class="item-title green">マンツーマンレッスン</div>
-                <div class="item-desc">ネイティブとのトークで発話能力、スピードをレベルアップ</div>
-              </div>
-            </div>
-            <div class="priceCompare-item green">
-              <img src="../assets/images/speak_l2.png" alt="オール中国語">
-              <div class="item-text">
-                <div class="item-title green">オール中国語</div>
-                <div class="item-desc">中国語で聴いて中国語で伝える、日本語に頼らない会話能力</div>
-              </div>
-            </div>
-            <div class="priceCompare-item green">
-              <img src="../assets/images/speak_l3.png" alt="会話限定">
-              <div class="item-text">
-                <div class="item-title green">会話コース教材限定</div>
-                <div class="item-desc">テーマに基づいて講師とトークを展開する教材<br>（総合コースの教材は使用できません）</div>
-              </div>
-            </div>
-            <div class="priceCompare-item green">
-              <img src="../assets/images/speak_l4.png" alt="WEB教材2">
-              <div class="item-text">
-                <div class="item-title green">WEB教材 2ジャンル</div>
-                <div class="item-desc">「トピック会話」と「ニュース教材」講師とお互いの考え意見を話しましょう</div>
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="blackBg">1日の受講数</td>
-          <td>3レッスンまで</td>
-          <td>1レッスンのみ</td>
-        </tr>
-        <tr>
-          <td class="blackBg">予約保持数</td>
-          <td>9レッスンまで</td>
-          <td>1レッスンのみ</td>
-        </tr>
-        <tr>
-          <td class="blackBg">料金</td>
-          <td><a href="javascript:void(0);" @click="scrollTo('learn')" class="priceCompare-btn">総合コース料金一覧へ</a>
-          </td>
-          <td><a href="javascript:void(0);" @click="scrollTo('speak')" class="priceCompare-btn">会話コース料金一覧へ</a>
-          </td>
-        </tr>
-        </tbody>
-      </table>
       </div>
     </section>
   </div>
@@ -1378,32 +1102,13 @@ function getDes(type='',learnType) {
 
 
 <style scoped>
+
 .pay-desc{
   top: 48px;
 }
-.lColorbg{
-  padding-bottom: 20px;
-}
 
-.trial-btn {
-  background-color: #c0392b;
-  color: white;
-  padding: 8px 16px;
-  font-size: 14px;
-  border-radius: 20px;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-
-.trial-btn:hover {
-  background-color: #e74c3c;
-}
-
-#top-head {
-  z-index: 999 !important;
-}
 .planbg{
-  background-color: #f9f9f9; padding-bottom: 30px;
+  padding-bottom: 30px;
 }
 .fakeClose{
   position: absolute;
@@ -1592,7 +1297,7 @@ function getDes(type='',learnType) {
   font-size: 22px;
   font-weight: bold;
   margin-bottom: 4px;
-  color: #ef6d20; /* 學習預設橘色 */
+  color: #FA8373; /* 學習預設橘色 */
 }
 
 .speak-bg .signup-text h2 {
@@ -1637,8 +1342,8 @@ function getDes(type='',learnType) {
   display: inline-block;
   background-color: #ffffff;
   border-radius: 12px;
-  border:3px solid #424242; /* 學習用橘色 */
   box-sizing: border-box;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 .sColorbg .courseBlock {
   position: relative;
@@ -1667,6 +1372,10 @@ function getDes(type='',learnType) {
 }
 
 @media screen and (max-width: 520px) {
+  .singlePosition{
+    width: 90%;
+    margin: auto;
+  }
   .rp-price{
     white-space: nowrap;
   }
@@ -1692,12 +1401,11 @@ function getDes(type='',learnType) {
   }
 
   .tabCourse li:nth-child(2) {
-    background-color: #EF6D20;
+    background-color: #FA8373;
   }
   .courseContainer {
     flex-direction: column;
     padding: 20px;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
     border-radius: 0 0 8px 8px;
     width: 100%;
   }
@@ -1786,7 +1494,7 @@ function getDes(type='',learnType) {
 
 .dg-underline {
   text-decoration: underline;
-  text-decoration-color: #EF6D20;
+  text-decoration-color: #FA8373;
   text-decoration-thickness: 2px;
   text-decoration-style: solid;
   display: block;
@@ -1805,7 +1513,7 @@ function getDes(type='',learnType) {
   margin: 0 6px;
 }
 .dg-button {
-  background-color: #EF6D20;
+  background-color: #FA8373;
   color: #FFF;
   padding: 10px 20px;
   height: 40px;
@@ -1876,12 +1584,12 @@ function getDes(type='',learnType) {
   display: block;
   --n-border: 0 !important;
   --n-border-hover: 0 !important;
-  --n-color:#EF6D20 !important;
-  --n-color-hover:#EF6D20 !important;
-  --n-color-pressed:#EF6D20 !important;
-  --n-color-focus:#EF6D20 !important;
-  --n-color-disabled:#EF6D20 !important;
-  --n-ripple-color:#EF6D20 !important;
+  --n-color:#FA8373 !important;
+  --n-color-hover:#FA8373 !important;
+  --n-color-pressed:#FA8373 !important;
+  --n-color-focus:#FA8373 !important;
+  --n-color-disabled:#FA8373 !important;
+  --n-ripple-color:#FA8373 !important;
 }
 .n-dialog .n-dialog__action > *:not(:last-child){
   background-color: #EEEEEE;

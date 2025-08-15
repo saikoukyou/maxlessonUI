@@ -153,6 +153,6 @@ const finish = async () => {
   font-size: 12px;
 }
 .cancelBtn{background-color: #E4E4E4; padding: 10px 20px; border-radius: 8px; cursor: pointer;}
-.saveBtn{margin-left: 10px; background-color: #EF6D20; color: #FFFFFF; padding: 10px 20px; border-radius: 8px;cursor: pointer;}
+.saveBtn{margin-left: 10px; background-color: #FA8373; color: #FFFFFF; padding: 10px 20px; border-radius: 8px;cursor: pointer;}
 
 </style>

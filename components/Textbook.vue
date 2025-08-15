@@ -166,7 +166,7 @@ export default {
 }
 
 .image-list li:hover {
-  color: #EF6D20;
+  color: #FA8373;
 }
 
 .content h3 {

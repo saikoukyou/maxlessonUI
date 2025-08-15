@@ -224,7 +224,7 @@ swiper-container::part(button-prev) {
 .fs18{
   color: #FFED4E !important;
 }
-.learnbg{background-color: #EF6D20;}
+.learnbg{background-color: #FA8373;}
 .speakbg{background-color: #30A186;}
 
 .netchina_contents .head_navi li{

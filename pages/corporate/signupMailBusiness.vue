@@ -146,7 +146,7 @@ definePageMeta({
   line-height: 30px;
 }
 .orangeWord {
-  color: #EF6D20;
+  color: #FA8373;
   font-weight: bold;
 }
 .list li {

@@ -534,7 +534,7 @@ function changeAccount() {
 
 .form-group input::placeholder {color: #ccc;}
 .titlePos{margin-top: 16px;}
-.orangeColor{color: #EF6D20;}
+.orangeColor{color: #FA8373;}
 
 .editBtn{
   position: absolute;

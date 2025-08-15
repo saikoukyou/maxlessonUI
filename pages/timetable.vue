@@ -1,7 +1,6 @@
 <template xmlns="http://www.w3.org/1999/html">
     <LoadingGroup :pending="allPending">
-      <div class="topTemplate">
-      <div class="page-wrapper" :class="currentTab" style="position: relative;">
+      <div class="topTemplate page-wrapper">
       <section class="PlanPrice">
         <div class="PlanPrice__inner">
         <div class="subPosition">
@@ -9,72 +8,25 @@
         </div>
         </div>
       </section>
+        <!-- Page header: title + switch -->
+        <div class="searchHeader">
+          <div class="searchHeader__inner">
+            <h2 class="searchHeader__title">予約・講師検索</h2>
 
-        <!-- 整個 tab 區塊 -->
-        <div class="course-tab">
-        <div class="course-tab-inner">
-            <!-- 學習 tab -->
-            <div
-                class="tab-btn left"
-                :class="{ active: currentTab === 'learning' }"
-                @click="changeTab('learning')"
-            >
-              <img src="../assets/images/class_learn.png" alt="総合コース" />
-              <span>総合コース</span>
-            </div>
-
-            <!-- divider -->
-            <div class="divider"></div>
-
-            <!-- 會話 tab -->
-            <div
-                class="tab-btn right"
-                :class="{ active: currentTab === 'conversation' }"
-                @click="changeTab('conversation')"
-            >
-              <img src="../assets/images/class_speak.png" alt="会話コース" />
-              <span>会話コース</span>
-            </div>
-
-            <!-- active line -->
-            <div class="active-line" :class="currentTab"></div>
-
-          </div>
-        </div>
-
-
-
-        <!-- 背景圖區塊 -->
-        <div class="course-image-wrapper" style="position: relative;">
-          <div class="course-image learning" :class="{ active: currentTab === 'learning' }">
-            <div class="course-image-content">
-              <h2>総合コース講師一覧</h2>
-              <p>日本語対応可、文法・会話・ビジネス・HSK対策などを担当</p>
-              <NuxtLink
-                  v-if="useStore?.studentLoggedIn"
-                  :to="{ path: '/everytime', query: { learn_type: 0 } }"
-              >
-                <img :src="IconSelectT" class="select-img" />
+            <div class="seg-switch">
+              <!-- 左：老師（本頁亮） -->
+              <NuxtLink to="/timetable" class="seg-switch__btn seg-switch__btn--teacher teacher_active">
+                先生で検索
               </NuxtLink>
-            </div>
-          </div>
-          <div class="course-image conversation" :class="{ active: currentTab === 'conversation' }">
-            <div class="course-image-content">
-              <h2>会話コース講師一覧</h2>
-              <p>中国各地のネイティブ講師と「中国語のみ」でリアルな会話</p>
-              <NuxtLink
-                  v-if="useStore?.studentLoggedIn"
-                  :to="{ path: '/everytime', query: { learn_type: 1 } }"
-              >
-                <img :src="IconSelectT" class="select-img" />
+
+              <!-- 右：時間 -->
+              <NuxtLink to="/everytime" class="seg-switch__btn seg-switch__btn--time">
+                時間で検索
               </NuxtLink>
             </div>
           </div>
         </div>
-
-
-
-      <section class="contentsWrap searchTeacher">
+        <section class="contentsWrap searchTeacher">
         <div class="reservedList mobiletimetable">
           <swiper-container navigation="true">
             <swiper-slide>
@@ -272,15 +224,6 @@
         <div class="zoneDivInner">
           <div class="leftDiv">検索結果：<span>{{allTotal}}</span>名の講師</div>
           <div class="rightDiv">
-            <div v-if="useStore?.studentLoggedIn">
-              <label>タイムゾーン設定</label>
-              <select id="zone_select" v-model="timezone" @change="changeStudentTimezone">
-                <option value="jp" data-number="0">日本時間</option>
-                <option value="cn" data-number="1">中国時間</option>
-              </select>
-            </div>
-          </div>
-          <div class="rightDiv">
             <div>
               <label>表示順</label>
               <select id="order_select" v-model="orderFlag" @change="changeOrderFlag" style="text-align: center;">
@@ -299,9 +242,6 @@
             <div class="teacherInfo">
               <nuxt-link :to="'/teachers/'+item.id">
                 <div class="teacherPhoto">
-<!--                  <div class="cnRibbon"></div>-->
-                  <span v-if="item.learn_type == 0" class="tagL">総合</span>
-                  <span v-else class="tagS">会話</span>
                   <img :src="item.face_img5" alt="" class="tphoto">
                 </div>
               </nuxt-link>
@@ -309,24 +249,14 @@
                 <li class="pinyin">{{item.name_pinyin}}</li>
                 <li class="name">{{ item.name_cn }}<span class="teacherID">ID:{{item.id}}</span></li>
                 <li class="cityT">{{item.province_addr}}{{item.current_address}}</li>
-
-                <li v-if="item.learn_type == 0">
+                <li>
                   <span class="sptitle">日本語</span>
                   <span class="spdes">{{item.japanese_level}}{{maps['japanese_level'][item.japanese_level]}}</span>
                 </li>
-                <li v-else>
+                <li>
                   <span class="sptitle">業界の得意分野</span>
                   <span class="spdes">{{ item.topic_str }}</span>
                 </li>
-                <li v-if="item.learn_type == 0">
-                  <span class="sptitle">英語</span>
-                  <span class="spdes">{{item.english_level}}{{maps['english_level'][item.english_level]}}</span>
-                </li>
-                <li v-else>
-                  <span class="sptitle">対応可能な方言</span>
-                  <span class="spdes">{{ item.dialect }}</span>
-                </li>
-
                 <li><n-rate readonly :value="item.avg_score" :allow-half="true" type="number" /></li>
 
 <!--                <ul class="teacherLabels">-->
@@ -350,10 +280,7 @@
                    v-if="Object.values(item.times.timesArr1 || {}).some(t => t.status === 1 && t.is_reserved === 0)">
               <div class="time-block">
                   <img src="../assets/images/icon_day.png" class="icon" />
-                  <span class="time-text">
-                  <span v-if="useStore?.studentInfo?.timezone === 'cn'">05:00–10:30</span>
-                  <span v-else>06:00–11:30</span>
-                </span>
+                <span class="time-text">06:00–11:30</span>
                 </div>
                 <ul
                     class="timeGrid"
@@ -371,10 +298,7 @@
 
               <div class="time-block">
                   <img src="../assets/images/icon_afternoon.png" class="icon" />
-                  <span class="time-text">
-                    <span v-if="useStore?.studentInfo?.timezone === 'cn'">11:00-16:30</span>
-                    <span v-else>12:00-17:30</span>
-                  </span>
+                  <span class="time-text">12:00-17:30</span>
                 </div>
                 <ul
                     class="timeGrid"
@@ -392,10 +316,7 @@
 
               <div class="time-block">
                   <img src="../assets/images/icon_night.png"  class="icon" />
-                  <span class="time-text">
-                    <span v-if="useStore?.studentInfo?.timezone === 'cn'">17:00-23:30</span>
-                    <span v-else>18:00-24:30</span>
-                  </span>
+                  <span class="time-text">18:00-24:30</span>
                 </div>
                 <ul
                     class="timeGrid"
@@ -417,26 +338,20 @@
         </div>
       </section>
       </div>
-      </div>
     </LoadingGroup>
 
 <div class="page-num">
     <n-pagination style="width:fit-content; margin: auto;" size="large" :item-count="allTotal" :page="page" :page-size="limit" :on-update:page="handlePageChange" />
 </div>
-  <use-plan v-if="usePlanshow" :parameters="parameters" :learnType="learnType" @changeEvent="changeShow"></use-plan>
+  <use-plan v-if="usePlanshow" :parameters="parameters" :learnType="2" @changeEvent="changeShow" />
 </template>
 
 <script setup>
 
 //设置首页标题,举个例子，这里的title就是首页的标题
-import {addBookmark, formatDate, changeTimezone} from "~/composables/useUtil";
-import IconSelectT from "../assets/images/searchbyteacher.png";
+import {addBookmark, formatDate} from "~/composables/useUtil";
 import IconHeart from "../assets/SVG/icon_heart.svg";
 import IconHeartNone from "../assets/SVG/icon_heart_none.svg";
-import LabelTeacher1 from "../assets/images/icon_trophy.png";
-import LabelTeacher3 from "../assets/images/icon_camera.png";
-import LabelTeacher5 from "../assets/images/icon_hsk.png";
-import LabelTeacher8 from "../assets/SVG/label_teacher8.svg";
 import {useIndexListDataApi} from "~/apis";
 import {useIndexDataApi} from "~/apis";
 import { NPagination,NRate } from "naive-ui";
@@ -445,23 +360,8 @@ import { register } from "swiper/element/bundle";
 import {onMounted, ref, computed} from "vue";
 import {useMainStore} from "~/composables/store";
 import { useRoute } from 'vue-router';
+
 const route = useRoute();
-
-const currentTab = ref('learning'); // 預設學習 tab
-function changeTab(tab) {
-  currentTab.value = tab;
-
-  // 同步修改 learnType
-  if (tab === 'learning') {
-    learnType.value = 0;
-  } else if (tab === 'conversation') {
-    learnType.value = 1;
-  }
-
-  // 重新查資料
-  submitForm();
-}
-
 
 // 使用 import 方式來引入圖片
 import searchMore from '@/assets/images/searchMore.png';
@@ -489,21 +389,9 @@ let integral_rands = ref([]);
 let sexs = ref([]);
 let ages = ref([]);
 let tagArr = ref([]);
-let learnTypeShow = ref(false);
 const maps = ref([]);
 const useStore = useMainStore();
-const learnType = ref(2);
-let timezone = ref('jp');
 let orderFlag = ref(1);
-
-if (useStore?.studentLoggedIn) {
-  learnType.value = useStore?.learn_type;
-  if (useStore?.learn_type === 2) {
-    learnTypeShow.value = true;
-  } else {
-    learnTypeShow.value = false;
-  }
-}
 
 const getSeachInfo = async () => {
   let {
@@ -518,7 +406,6 @@ const getSeachInfo = async () => {
       page: page?.value || 1,
       get_count: true,
       search_day: searchDay.value,
-      search_learn_type : learnType.value == 2 ? '' : learnType.value,
       order_flag : orderFlag.value
     })
   })
@@ -646,9 +533,6 @@ async function submitForm(nowpage=0) {
   if (tags?.value?.length) {
     query['tags'] = tags.value.join(',');
   }
-  if (learnType?.value !== 2) {
-    query['search_learn_type'] = learnType?.value;
-  }
   query['per_page'] = limit.value;
   query['get_count'] = true;
   query['order_flag'] = orderFlag.value;
@@ -698,37 +582,12 @@ function changeShow() {
 function toggleAccordion() {
   opened.value = !opened.value;
 }
-
-function changeStudentTimezone() {
-  changeTimezone(timezone.value);
-}
-
 async function changeOrderFlag() {
   await submitForm();
 }
 
 
 onMounted(() => {
-  const queryLearnType = Number(route.query.learn_type);
-  if (queryLearnType === 0 || queryLearnType === 1) {
-    learnType.value = queryLearnType;
-    currentTab.value = queryLearnType === 0 ? 'learning' : 'conversation';
-  } else if (useStore?.studentLoggedIn) {
-    if (useStore?.studentInfo?.learn_type === 0) {
-      currentTab.value = 'learning';
-      learnType.value = 0;
-    } else if (useStore?.studentInfo?.learn_type === 1) {
-      currentTab.value = 'conversation';
-      learnType.value = 1;
-    } else {
-      currentTab.value = 'learning';
-      learnType.value = 0;
-    }
-  } else {
-    currentTab.value = 'learning';
-    learnType.value = 0;
-  }
-
   const now = new Date();
   const tomorrowDate = new Date(now);
   tomorrowDate.setDate(now.getDate() + 1);
@@ -743,10 +602,6 @@ onMounted(() => {
     searchDayIndexPc.value = 1;
     searchDay.value = formatDate(tomorrowDate);
   }
-
-  if (useStore?.studentInfo?.timezone) {
-    timezone.value = useStore?.studentInfo?.timezone;
-  }
   getSeachInfo();
 });
 
@@ -759,12 +614,7 @@ onMounted(() => {
   filter: brightness(96%); /* 或 opacity、grayscale */
   border: 0;
 }
-.conversation .zoneDivInner .leftDiv span{
-  color: #30A186;
-}
-.conversation .select_teachers .timeGrid li{
-  color: #30A186;
-}
+
 .page-num{
   padding: 0 0 40px 0;
   background-color: #f9f9f9;
@@ -831,9 +681,6 @@ swiper-container::part(button-prev) {
 .Point{
   height: 40px;
 }
-.contentsWrap{
-  margin-top: -144px;
-}
 
 @media screen and (max-width: 520px) {
   .course-image h2{
@@ -882,11 +729,8 @@ swiper-container::part(button-prev) {
     width: auto;
   }
   .contentsWrap{
-    margin-top: 3%;
-    padding: 6% 8% 0 8%;
-  }
-  .icon_selectL{
-    width: auto;
+    margin-top: 1%;
+    padding: 2% 8% 0 8%;
   }
 
   .addOption li:nth-child(1){background-image: none;}
@@ -949,7 +793,7 @@ swiper-container::part(button-prev) {
     text-align: center;
     line-height: 44px;
     font-weight: bold;
-    color: #EF6D20;
+    color: #14A6B3;
     border: 1px solid #eee;
     box-sizing: border-box;
   }

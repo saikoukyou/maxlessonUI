@@ -124,7 +124,7 @@ onMounted(async () => {
   padding: 20px 40px;
 }
 .netchina_contents .userInfoMenu .selected{
-  background-color: #EF6D20;
+  background-color: #FA8373;
   color: #FFFFFF;
 }
 @media screen and (max-width: 520px) {

@@ -164,7 +164,7 @@ const cancelLesson = async (id) => {
 .btnGroup .backBtn{
   width: 120px;
   height: 54px;
-  background-color: #EF6D20;
+  background-color: #FA8373;
   border-radius: 8px;
   font-size: 16px;
   font-weight: bold;
@@ -177,7 +177,7 @@ const cancelLesson = async (id) => {
 .btnGroup .confirmBtn{
   width: 170px;
   height: 54px;
-  background-color: #EF6D20;
+  background-color: #FA8373;
   border-radius: 8px;
   font-size: 16px;
   font-weight: bold;

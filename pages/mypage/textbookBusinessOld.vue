@@ -78,7 +78,7 @@ onMounted(() => {
 
 <style scoped>
 .link1{
-  text-decoration: underline; color: #EF6D20;
+  text-decoration: underline; color: #FA8373;
   cursor: pointer;
   margin-top: 4px;
   display: block;

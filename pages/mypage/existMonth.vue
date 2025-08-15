@@ -113,10 +113,10 @@ async function exitMonth() {
 }
 .eventBlock li:nth-child(1){font-size: 16px; font-weight: bold;}
 .eventBlock li:nth-child(2){font-weight: bold;}
-.eventBlock li:nth-child(2) span{color: #EF6D20; font-weight: bold;}
+.eventBlock li:nth-child(2) span{color: #FA8373; font-weight: bold;}
 .eventBlock li:nth-child(3){font-size: 11px;}
 .eventBlock li:nth-child(4){font-size: 13px; margin-top: 10px; padding: 30px; background-color: #FFFFFF; line-height: 20px;}
-.eventBlock li:nth-child(4) span{color: #EF6D20;}
+.eventBlock li:nth-child(4) span{color: #FA8373;}
 
 
 .btnGroup{width: 400px; margin: auto; text-align: center;}

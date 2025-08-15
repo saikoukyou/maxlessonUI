@@ -188,7 +188,7 @@ function goBack() {
 
 
 
-.actionBtn{color: #EF6D20; text-decoration: underline; font-weight: bold;}
+.actionBtn{color: #FA8373; text-decoration: underline; font-weight: bold;}
 
 .actionBtn a{cursor: pointer;}
 

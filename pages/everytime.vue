@@ -1,4 +1,5 @@
 <template>
+  <div class="topTemplate page-wrapper">
   <LoadingGroup :pending="pending">
     <section class="PlanPrice">
       <div class="PlanPrice__inner">
@@ -8,35 +9,24 @@
       </div>
     </section>
 
-    <div class="course-image-wrapper">
-    <!-- 背景圖區塊 -->
-    <div class="bg_learn" v-if="learnType === 0">
-      <div class="course-book learning">
-        <h2>総合コース講師一覧</h2>
-        <p>日本語対応可、文法・会話・ビジネス・HSK対策などを担当</p>
-        <NuxtLink
-            v-if="useStore?.studentLoggedIn"
-            :to="{ path: '/timetable', query: { learn_type: 0 } }"
-        >
-          <img :src="IconSelectT" class="select-img" />
-        </NuxtLink>
+    <!-- Page header: title + switch -->
+    <div class="searchHeader">
+      <div class="searchHeader__inner">
+        <h2 class="searchHeader__title">予約・講師検索</h2>
+
+        <div class="seg-switch">
+          <!-- 左：老師 -->
+          <NuxtLink to="/timetable" class="seg-switch__btn seg-switch__btn--teacher">
+            先生で検索
+          </NuxtLink>
+
+          <!-- 右：時間（本頁亮） -->
+          <NuxtLink to="/everytime" class="seg-switch__btn seg-switch__btn--time time_active">
+            時間で検索
+          </NuxtLink>
+        </div>
       </div>
     </div>
-
-    <div class="bg_con" v-else-if="learnType === 1">
-      <div class="course-book conversation">
-        <h2>会話コース講師一覧</h2>
-        <p>中国各地のネイティブ講師と「中国語のみ」でリアルな会話</p>
-        <NuxtLink
-            v-if="useStore?.studentLoggedIn"
-            :to="{ path: '/timetable', query: { learn_type: 1 } }"
-        >
-          <img :src="IconSelectT" class="select-img" />
-        </NuxtLink>
-      </div>
-    </div>
-    </div>
-
 
     <section class="contentsWrap searchTeacher">
 <!--      <div class="titlePosition">-->
@@ -44,44 +34,6 @@
 <!--        <NuxtLink to="/timetable">-->
 <!--        <img src="~/assets/images/searchbytime.png" alt="" class="icon_selectL"></NuxtLink>-->
 <!--      </div>-->
-
-
-    <div class="everytime">
-
-<!--      <div class="Point selectdiv PointEverytime">-->
-<!--        <span>必要ポイント数</span>-->
-<!--        <div class="PointSpGrid">-->
-<!--          <div>-->
-<!--            <input type="radio" name="point" value="0" v-model="integralRank" id="allpoint" :checked="integralRank == 0">-->
-<!--            <label for="allpoint" class="label">すべて</label></div>-->
-<!--            <div v-for="(itemi, indexi) in integral_rands">-->
-<!--              <input type="radio" name="point" :value="itemi" v-model="integralRank" :checked="integralRank == itemi" :id="itemi+'point'">-->
-<!--              <label :for="itemi+'point'" class="label">{{itemi}}ポイント</label>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--      </div>-->
-
-<!--      <div class="SwitchRadio1" style="text-align: left;">-->
-<!--        <input class="visually-hidden" id="bookmark" type="checkbox" name="bookmark" v-model="bookmark" />-->
-<!--        <label for="bookmark">お気に入り講師のみ指定</label>-->
-<!--      </div>-->
-      <div v-if="learnTypeShow" class="learn-type-div">
-        <span>講師の種類</span>
-        <span>
-                <input type="radio" id="learn_type1" name="learn_type" value="2" v-model="learnType" :checked="learnType === 2" placeholder="全部" />
-                <label for="learn_type1">全て</label>
-                <input type="radio" id="learn_type2" name="learn_type" value="0" v-model="learnType" :checked="learnType === 0" placeholder="学习" />
-                <label for="learn_type1">学習講師</label>
-                <input type="radio" id="learn_type3" name="learn_type" value="1" v-model="learnType" :checked="learnType === 1" placeholder="会话"/>
-                <label for="learn_type1">会話講師</label>
-              </span>
-      </div>
-    </div>
-    <div v-if="learnTypeShow" class="submitLayout">
-      <button type="submit" @click="submitForm" class="Submit_search">この条件で検索</button>
-      <span class="clearSelect" @click="clearForm">検索条件クリア</span>
-    </div>
-
 
       <div class="reservedList mobiletimetable">
         <swiper-container navigation="true">
@@ -142,80 +94,74 @@
         </swiper-container>
       </div>
 
-      <div class="zoneDivInner">
-        <div class="leftDiv"></div>
-        <div class="rightDiv">
-          <div v-if="useStore?.studentLoggedIn">
-            <label>タイムゾーン設定</label>
-            <select id="zone_select" v-model="timezone" @change="changeStudentTimezone">
-              <option value="jp" data-number="0">日本時間</option>
-              <option value="cn" data-number="1">中国時間</option>
-            </select>
-          </div>
-        </div>
-      </div>
     <div class="select_everytime">
-      <div class="timeTitle"><span v-if="useStore?.studentInfo?.timezone === 'cn'">朝（5:00-10:30）</span><span v-else>朝（6:00-11:30）</span></div>
+      <div class="timeTitle">朝（6:00-11:30）</div>
       <ul class="everytimeWrap">
-        <li v-for="(time,ikey) in times.slice(0, 12)" :class="list[searchDay+' '+time+':00'] ? '' : 'none'" @click="selectedTimeTeachers(time,timesCn[ikey])">
-          <span>
-            <span v-if="useStore?.studentInfo?.timezone === 'cn'">
-              <span class="fs18 bkf">{{timesCn[ikey]}}-</span>{{timesCn[ikey].toString().substring(0,3)}}{{timesCn[ikey].toString().substring(3) == '30' ? '55' : '25'}}
-            </span>
-            <span v-else>
-              <span class="fs18 bkf">{{time}}-</span>{{time.toString().substring(0,3)}}{{time.toString().substring(3) == '30' ? '55' : '25'}}
-            </span>
-          </span>
+        <li
+            v-for="(time, ikey) in times.slice(0, 12)"
+            :key="'m-'+ikey"
+            :class="list[searchDay+' '+time+':00'] ? '' : 'none'"
+            @click="selectedTimeTeachers(time)"
+        >
+    <span>
+      <span class="fs18 bkf">{{ time }}-</span>
+      {{ time.toString().substring(0,3) }}{{ time.toString().substring(3) == '30' ? '55' : '25' }}
+    </span>
+
           <span v-if="list[searchDay+' '+time+':00']">
-            <span v-if="list[searchDay+' '+time+':00'].reserve_status == 1" class="reserve few">予約受付中</span>
-            <span v-else-if="list[searchDay+' '+time+':00'].reserve_status == 2" class="reserve normal">予約受付中</span>
-            <span v-else-if="list[searchDay+' '+time+':00'].reserve_status == 3" class="reserve many">予約受付中</span>
-          </span>
+      <span v-if="list[searchDay+' '+time+':00'].reserve_status == 1" class="reserve few">予約受付中</span>
+      <span v-else-if="list[searchDay+' '+time+':00'].reserve_status == 2" class="reserve normal">予約受付中</span>
+      <span v-else-if="list[searchDay+' '+time+':00'].reserve_status == 3" class="reserve many">予約受付中</span>
+    </span>
           <span v-else>
-            <span class="reserve none">予約不可</span>
-          </span>
+      <span class="reserve none">予約不可</span>
+    </span>
         </li>
       </ul>
-      <div class="timeTitle"><span v-if="useStore?.studentInfo?.timezone === 'cn'">昼（11:00-16:30）</span><span v-else>昼（12:00-17:30）</span></div>
+      <div class="timeTitle">昼（12:00-17:30）</div>
       <ul class="everytimeWrap list2">
-        <li v-for="(time,fkey) in times.slice(12, 24)" :class="list[searchDay+' '+time+':00'] ? '' : 'none'" @click="selectedTimeTeachers(time,timesCn[fkey+12])">
-          <span>
-            <span v-if="useStore?.studentInfo?.timezone === 'cn'">
-              <span class="fs18 bkf">{{timesCn[fkey+12]}}-</span>{{timesCn[fkey+12].toString().substring(0,3)}}{{timesCn[fkey+12].toString().substring(3) == '30' ? '55' : '25'}}
-            </span>
-            <span v-else>
-              <span class="fs18 bkf">{{time}}-</span>{{time.toString().substring(0,3)}}{{time.toString().substring(3) == '30' ? '55' : '25'}}
-            </span>
-          </span>
+        <li
+            v-for="(time, fkey) in times.slice(12, 24)"
+            :key="'n-'+fkey"
+            :class="list[searchDay+' '+time+':00'] ? '' : 'none'"
+            @click="selectedTimeTeachers(time)"
+        >
+    <span>
+      <span class="fs18 bkf">{{ time }}-</span>
+      {{ time.toString().substring(0,3) }}{{ time.toString().substring(3) == '30' ? '55' : '25' }}
+    </span>
+
           <span v-if="list[searchDay+' '+time+':00']">
-            <span v-if="list[searchDay+' '+time+':00'].reserve_status == 1" class="reserve few">予約受付中</span>
-            <span v-else-if="list[searchDay+' '+time+':00'].reserve_status == 2" class="reserve normal">予約受付中</span>
-            <span v-else-if="list[searchDay+' '+time+':00'].reserve_status == 3" class="reserve many">予約受付中</span>
-          </span>
+      <span v-if="list[searchDay+' '+time+':00'].reserve_status == 1" class="reserve few">予約受付中</span>
+      <span v-else-if="list[searchDay+' '+time+':00'].reserve_status == 2" class="reserve normal">予約受付中</span>
+      <span v-else-if="list[searchDay+' '+time+':00'].reserve_status == 3" class="reserve many">予約受付中</span>
+    </span>
           <span v-else>
-            <span class="reserve none">予約不可</span>
-          </span>
+      <span class="reserve none">予約不可</span>
+    </span>
         </li>
       </ul>
-      <div class="timeTitle"><span v-if="useStore?.studentInfo?.timezone === 'cn'">夜（17:00-23:30）</span><span v-else>夜（18:00-24:30）</span></div>
+      <div class="timeTitle">夜（18:00-24:30）</div>
       <ul class="everytimeWrap list3">
-        <li v-for="(time,skey) in times.slice(24, 38)" :class="list[searchDay+' '+time+':00'] ? '' : 'none'" @click="selectedTimeTeachers(time,timesCn[skey+24])">
-          <span>
-            <span v-if="useStore?.studentInfo?.timezone === 'cn'">
-              <span class="fs18 bkf">{{timesCn[skey+24]}}-</span>{{timesCn[skey+24].toString().substring(0,3)}}{{timesCn[skey+24].toString().substring(3) == '30' ? '55' : '25'}}
-            </span>
-            <span v-else>
-              <span class="fs18 bkf">{{time}}-</span>{{time.toString().substring(0,3)}}{{time.toString().substring(3) == '30' ? '55' : '25'}}
-            </span>
-          </span>
+        <li
+            v-for="(time, skey) in times.slice(24, 38)"
+            :key="'e-'+skey"
+            :class="list[searchDay+' '+time+':00'] ? '' : 'none'"
+            @click="selectedTimeTeachers(time)"
+        >
+    <span>
+      <span class="fs18 bkf">{{ time }}-</span>
+      {{ time.toString().substring(0,3) }}{{ time.toString().substring(3) == '30' ? '55' : '25' }}
+    </span>
+
           <span v-if="list[searchDay+' '+time+':00']">
-            <span v-if="list[searchDay+' '+time+':00'].reserve_status == 1" class="reserve few">予約受付中</span>
-            <span v-else-if="list[searchDay+' '+time+':00'].reserve_status == 2" class="reserve normal">予約受付中</span>
-            <span v-else-if="list[searchDay+' '+time+':00'].reserve_status == 3" class="reserve many">予約受付中</span>
-          </span>
+      <span v-if="list[searchDay+' '+time+':00'].reserve_status == 1" class="reserve few">予約受付中</span>
+      <span v-else-if="list[searchDay+' '+time+':00'].reserve_status == 2" class="reserve normal">予約受付中</span>
+      <span v-else-if="list[searchDay+' '+time+':00'].reserve_status == 3" class="reserve many">予約受付中</span>
+    </span>
           <span v-else>
-            <span class="reserve none">予約不可</span>
-          </span>
+      <span class="reserve none">予約不可</span>
+    </span>
         </li>
       </ul>
     </div>
@@ -245,28 +191,35 @@
               closeshowTeachers();"
             class="trial_close_btn"><img src="~/assets/SVG/icon_batu.svg" alt="" class="icon_batu" /></span>
         <div style="width: 100%;">
-          <EveryTimeTeachers v-if="showTeachers" :day="selectDay" :week="selectWeek" :time="selectTime" :timeCn="selectTimeCn"
-                             :timezone="useStore?.studentInfo?.timezone" :searchDay="searchDay" :learnType="learnType" :integralRank="integralRank"
-                             :bookmark="bookmark"></EveryTimeTeachers>
+          <EveryTimeTeachers
+              v-if="showTeachers"
+              :day="selectDay"
+              :week="selectWeek"
+              :time="selectTime"
+              :searchDay="searchDay"
+              :integralRank="integralRank"
+              :bookmark="bookmark"
+          />
         </div>
         <!--  trial_contents_wrap FlexCenter -->
       </div>
       <!--  trial_contents_wrap -->
     </div>
   </div>
-
+  </div>
 </template>
 
 <script setup>
 
 //设置首页标题,举个例子，这里的title就是首页的标题
-import {changeTimezone, formatDate} from "~/composables/useUtil";
+import {formatDate} from "~/composables/useUtil";
 import {useTimeTeacherListDataApi} from "~/apis";
 import { register } from "swiper/element/bundle";
 import {onMounted, ref} from "vue";
 import {useMainStore} from "~/composables/store";
 import { useRoute } from 'vue-router';
-import IconSelectT from "../assets/images/searchbytime.png";
+
+
 const route = useRoute();
 
 useHead({
@@ -293,61 +246,20 @@ let showTeachers = ref();
 let selectDay = ref('');
 let selectWeek = ref('');
 let selectTime = ref('');
-let selectTimeCn = ref('');
-let learnTypeShow = ref(false);
-// let learnType = ref(2);
-const useStore = useMainStore();
-const learnType = ref(2);
-let timezone = ref('jp');
-// learnType.value = useStore.learn_type;
-
-// if (learn_type && learn_type.value) {
-//   learnType.value = learn_type.value;
-// }
-
-if (useStore?.studentLoggedIn) {
-  learnType.value = useStore?.learn_type;
-  if (useStore.learn_type === 2) {
-    learnTypeShow.value = true;
-  } else {
-    learnTypeShow.value = false;
-  }
-}
 
 const getTimeTeachers = async () => {
-  let { data: info } = await useTimeTeacherListDataApi({
-    search_day: formatDate(new Date()),
-    search_learn_type : learnType.value == 2 ? '' : learnType.value
-  })
-// console.log('timelist:'+JSON.stringify(info));
+  const { data: info } = await useTimeTeacherListDataApi({
+    search_day: formatDate(new Date())
+  });
   if (info?.value) {
-    days.value = info?.value.days ?? [];
-    times.value = info?.value.times ?? [];
-    timesCn.value = info?.value.timescn ?? [];
-    list.value = info?.value.list ?? [];
-    integral_rands.value = info?.value.integral_rands ?? [];
+    days.value = info.value.days ?? [];
+    times.value = info.value.times ?? [];
+    list.value = info.value.list ?? [];
+    integral_rands.value = info.value.integral_rands ?? [];
   }
-}
+};
 
 onMounted(() => {
-  timezone.value = useStore?.studentInfo?.timezone ?? 'jp';
-
-  // 如果 URL 有帶 learn_type，優先使用它
-  const queryLearnType = route.query.learn_type;
-  if (queryLearnType === '0' || queryLearnType === '1') {
-    learnType.value = Number(queryLearnType);
-    learnTypeShow.value = false;
-  } else {
-    // 沒有 query 時，使用 store 預設值
-    if (useStore?.studentLoggedIn) {
-      learnType.value = useStore?.learn_type ?? 2;
-      learnTypeShow.value = useStore?.learn_type === 2;
-    } else {
-      learnType.value = 2;
-      learnTypeShow.value = true;
-    }
-  }
-
   // ✅ 只呼叫一次 getTimeTeachers()
   getTimeTeachers();
 });
@@ -374,9 +286,6 @@ async function submitForm() {
   if (bookmark.value) {
     query['bookmark'] = 1;
   }
-  if (learnType.value !== 2) {
-    query['search_learn_type'] = learnType.value;
-  }
   let res2 = await useTimeTeacherListDataApi(query)
   // console.log('res2:'+JSON.stringify(res2));
   // console.log('res2:'+JSON.stringify(res2?.data.value.list));
@@ -390,7 +299,7 @@ function clearForm() {
   // learnType.value = learn_type.value;
 }
 
-function selectedTimeTeachers(time,timecn) {
+function selectedTimeTeachers(time) {
   if (!list.value[searchDay.value+' '+time+':00']) {
     return;
   }
@@ -398,17 +307,12 @@ function selectedTimeTeachers(time,timecn) {
   selectDay.value = days.value[searchDayIndex.value].md;
   selectWeek.value = days.value[searchDayIndex.value].week;
   selectTime.value = time;
-  selectTimeCn.value = timecn;
-
 }
 
 function closeshowTeachers() {
   showTeachers.value = false;
 }
 
-function changeStudentTimezone() {
-  changeTimezone(timezone.value);
-}
 
 </script>
 
@@ -437,44 +341,24 @@ swiper-container::part(button-prev) {
   background-repeat: no-repeat;
   background-position: 9px 10px;
 }
-.course-image-wrapper{
-  height: 168px;
-}
-.bg_learn{
-  width: 100%;
-  height: 300px;
-  background-image: url("../assets/images/bg_learn.png");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  padding-top: 50px;
-}
-.bg_con{
-  width: 100%;
-  height: 300px;
-  background-image: url("../assets/images/bg_speak.png");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  padding-top: 50px;
-}
 .course-book h2{
   margin-top: 0;
 }
 
 @media screen and (max-width: 520px) {
+  .contentsWrap{
+    margin-top: 1%;
+    padding: 2% 8% 0 8%;
+  }
   swiper-container::part(button-next){
     background-size: 46%;
     background-position: 6px 12px;
     margin-right: -12px;
-    background-color: #FFAA47;
   }
   swiper-container::part(button-prev) {
     background-size: 46%;
     background-position:3px 12px;
     margin-left: -6px;
-    background-color: #FFAA47;
-  }
-  .contentsWrap{
-    padding: 2% 4% 0 4%;
   }
   .course-book h2{
     font-size: 24px;
@@ -522,22 +406,12 @@ swiper-container::part(button-prev) {
       text-shadow: 0 2px 3px rgba(255, 255, 255, 1);
   }
 
-  .course-book {
-    position: relative;
-    z-index: 1;
-    color: #fff;
-    padding: 0 8%;
-    text-align: left;
-  }
   .course-book p{
     width: 60%;
     line-height: normal;
     font-size: 11px;
     font-weight: bold;
     text-shadow: 0 2px 3px rgba(255, 255, 255, 1);
-  }
-  .course-image-wrapper{
-    height: 150px !important;
   }
 }
 </style>

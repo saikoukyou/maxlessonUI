@@ -59,7 +59,7 @@
   <ul v-else>
     <li>
       講師が生徒の
-      <span style="font-weight: bold; color: #EF6D20">
+      <span style="font-weight: bold; color: #FA8373">
         {{lesson.software}}
         <span>（ID： {{lesson.software === 'wechat' ? lesson.student_wechat : lesson.student_teams_id}} ）</span>
       </span>
@@ -68,7 +68,7 @@
     <li>
       レッスン開始5分前になっても講師から友人追加申請が来ない場合、または安心のため早めに講師と繋がりたい場合、生徒から講師に友人追加申請をしてください。<br>
       講師の
-      <span style="font-weight: bold; color: #EF6D20">
+      <span style="font-weight: bold; color: #FA8373">
         {{lesson.software}}
         <span>（ID： {{lesson.software === 'wechat' ? lesson.teacher_wechat : lesson.teacher_teams_id}} ）</span>
       </span>

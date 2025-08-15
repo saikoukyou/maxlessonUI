@@ -683,12 +683,12 @@ function getDes(type='',learnType) {
   display: block;
   --n-border: 0 !important;
   --n-border-hover: 0 !important;
-  --n-color:#EF6D20 !important;
-  --n-color-hover:#EF6D20 !important;
-  --n-color-pressed:#EF6D20 !important;
-  --n-color-focus:#EF6D20 !important;
-  --n-color-disabled:#EF6D20 !important;
-  --n-ripple-color:#EF6D20 !important;
+  --n-color:#FA8373 !important;
+  --n-color-hover:#FA8373 !important;
+  --n-color-pressed:#FA8373 !important;
+  --n-color-focus:#FA8373 !important;
+  --n-color-disabled:#FA8373 !important;
+  --n-ripple-color:#FA8373 !important;
 }
 .n-dialog .n-dialog__action > *:not(:last-child){
   background-color: #EEEEEE;

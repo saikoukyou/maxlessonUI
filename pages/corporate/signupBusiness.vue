@@ -546,7 +546,7 @@ definePageMeta({
   height: 0;
   border-style: solid;
   border-width: 40px 60px 0 0; /* 控制三角形大小 */
-  border-color: #EF6D20 transparent transparent transparent; /* 半透明三角形顏色 */
+  border-color: #FA8373 transparent transparent transparent; /* 半透明三角形顏色 */
   left: 0;
   top: 0;
 }

@@ -292,7 +292,7 @@ onMounted(async () => {
     line-height: 48px;
     color: #FFFFFF;
     border-radius: 30px;
-    background-color: #EF6D20;
+    background-color: #FA8373;
     text-align: center;
     margin: 60px auto 40px auto;
     cursor: pointer;
@@ -370,7 +370,7 @@ onMounted(async () => {
       color: inherit; // 確保 "お問い合わせ" 保持原來的顏色，即使被選中
     }
     .select_help li:first-child.selected {
-      background-color: #EF6D20;
+      background-color: #FA8373;
     }
     .faqName{
       background-color: #FFFFFF;
@@ -419,8 +419,8 @@ onMounted(async () => {
       border-right: 1px solid #EEEEEE;
     }
     .with-border {
-      border-left: 5px solid #EF6D20;
-      color: #EF6D20;
+      border-left: 5px solid #FA8373;
+      color: #FA8373;
     }
     .arrow-up {
       color: green; /* 選中時的箭頭顏色 */

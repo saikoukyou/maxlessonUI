@@ -122,7 +122,7 @@ onMounted(() => {
   font-size: 0.9em;
 }
 .des .orangeW{
-  color: #EF6D20;
+  color: #FA8373;
   font-weight: bold;
 }
 .pSend{

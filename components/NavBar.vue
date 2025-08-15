@@ -294,7 +294,7 @@ export default {
   margin: auto;
   color: #ffffff;
   font-size: 16px;
-  background-color: #EF6D20;
+  background-color: #FA8373;
   padding-left: 0;
 }
 .menu-content li.menumy a{
@@ -314,14 +314,14 @@ export default {
 }
 
 .activeLogin {
-  background-color: #EF6D20 !important; /* 橙色背景 */
+  background-color: #FA8373 !important; /* 橙色背景 */
   color: #fff !important; /* 白色字体 */
   background-image: url("../assets/images/logo_login_w.png") !important;
 }
 
 .highlighted {
   background-image: url("../assets/images/logo_signup.png") !important;
-  background-color: #EF6D20 !important; /* 橙色背景 */
+  background-color: #FA8373 !important; /* 橙色背景 */
   color: #FFFFFF !important;
 }
 

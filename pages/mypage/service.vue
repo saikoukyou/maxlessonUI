@@ -351,7 +351,7 @@ swiper-container::part(button-prev) {
   margin: auto;
 }
 .actionBtn{
-  color: #EF6D20;
+  color: #FA8373;
   text-decoration: underline;
   font-weight: bold;
 }

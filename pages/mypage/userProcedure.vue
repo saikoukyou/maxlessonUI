@@ -180,7 +180,7 @@ function goBlogInfo(bid) {
 
 .userRec{ width: 200px;  display: inline-block; font-weight: bold;font-size: 14px; }
 .inforBlock{padding: 0 40px;}
-.actionBtn{display: inline-block;font-size: 14px;  color: #EF6D20; font-weight: bold; text-decoration: underline;}
+.actionBtn{display: inline-block;font-size: 14px;  color: #FA8373; font-weight: bold; text-decoration: underline;}
 
 .cardInfor{
   border-radius: 8px;

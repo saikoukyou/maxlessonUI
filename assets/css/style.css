@@ -200,7 +200,7 @@ svg {
     left: 3px;
     width: 16px;
     height: 16px;
-    background-color: #EF6D20;
+    background-color: #FA8373;
     border-radius: 2px;
 }
 
@@ -848,7 +848,7 @@ header .menu a {
 .bookSection{text-align: center; margin-bottom: 24px;}
 .bookTitle{
     font-size: 24px; text-align: center; font-weight: bold;
-    color: #EF6D20;
+    color: #FA8373;
     display: inline-block;
     position: relative;
     z-index: 1; /* 確保文字在上面 */
@@ -869,7 +869,7 @@ header .menu a {
 }
 .jp-text {
     font-size: 15px;
-    color: #EF6D20;
+    color: #FA8373;
     font-weight: bold;
     line-height: normal;
     margin: 8px auto;
@@ -879,10 +879,6 @@ header .menu a {
     color: #444;
     line-height: normal;
 }
-
-.conversation .bookTitle{color:#30A186;}
-.conversation .bookTitle::after {background-color: #EDF8ED;}
-.conversation .jp-text {color:#30A186;}
 
 .textbookTitle {
     width: 60%;
@@ -1278,14 +1274,14 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
 }
 
 /* contentsHeader */
-
 .loginBG{
-    background-image: url("../images/loginbg.png");
-    background-size: 1300px;
-    background-color: #f4f4f4;
-    background-position: bottom center;
-    background-repeat: no-repeat;
+    background-image: url("../images/loginbg.png"), linear-gradient(#F5F0E7, #FAF7F3);
+    background-size: 1300px, cover;           /* 對應到上面兩層：圖片、漸層 */
+    background-position: bottom center, center;
+    background-repeat: no-repeat, no-repeat;
+    background-color: #f4f4f4;                /* 老舊瀏覽器備援 */
 }
+
 
 .signupBG{
     background-image: url("../images/loginbg.png");
@@ -1566,7 +1562,7 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
     width: 80%;
     text-align: center;
     margin-top: 20px;
-    color: #EF6D20;
+    color: #FA8373;
     margin-bottom: 4px !important;
     text-decoration: underline;
 }
@@ -1856,7 +1852,7 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
 
 .loginArea ul li:nth-child(odd) {width: 240px;}
 .loginArea ul li:nth-child(odd) img{ margin: auto; width: 178px;}
-.loginArea ul li:nth-child(odd) .title{ text-align:center; display: block; font-size: 24px; font-weight: bold; color: #EF6D20; margin-top: 20px;}
+.loginArea ul li:nth-child(odd) .title{ text-align:center; display: block; font-size: 24px; font-weight: bold; color: #FA8373; margin-top: 20px;}
 .loginArea ul li:nth-child(odd) .des{ text-align:center; color: #424242; display: block; font-size: 13px; margin-top: 10px; line-height: 20px;}
 
 .loginArea ul li:nth-child(even) {width: 80px; height: 200px; position: relative;}
@@ -1864,7 +1860,7 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
 
 .happyM{background-color: #FFF2DF; height: 40px; width: 85%; margin: auto; padding-left: 56px; vertical-align: center; border-radius: 24px; position: relative;}
 .happyM img{position: absolute; top: -30px; left: 94px;}
-.happyM .happyT {font-size:17px; font-weight: bold; color: #EF6D20; line-height: 40px; margin-right: 10px;}
+.happyM .happyT {font-size:17px; font-weight: bold; color: #FA8373; line-height: 40px; margin-right: 10px;}
 .happyM .happyD {font-size: 14px; color: #424242;}
 
 .teacherArea{width: 1130px; padding-bottom: 30px; position: relative; margin: auto; color: #424242; border-radius: 24px; text-align: left;}
@@ -2004,7 +2000,7 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
     background-color: #FFF9EC;
 }
 .sColor{color: #30A186; margin-top: 30px;}
-.lColor{color: #EF6D20; margin-top: 30px;}
+.lColor{color: #FA8373; margin-top: 30px;}
 
 .learnTitle{font-size: 24px; font-family: Murecho; font-weight: bold; display: inline-block; margin: auto; margin-top: 20px;}
 .learnDes{font-size: 15px; line-height: 20px; font-weight: bold; display: inline-block; margin-bottom: 2%;}
@@ -2017,12 +2013,11 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
 .planTitleFront{font-family: Murecho; margin: 40px auto 10px auto; font-size: 26px; font-weight: bold; text-align: center;}
 .planDes{margin: 0 auto; font-size: 15px; font-weight: bold; text-align: center;}
 
-.linkS{text-decoration: underline; color: #EF6D20;}
+.linkS{text-decoration: underline; color: #FA8373;}
 
 .courseTitle{color:#ffffff; line-height: 48px; height: 48px; text-align: center; font-size:20px; width: 100%; display: block; font-weight: bold;  border-radius:8px 8px 0 0;}
 .sColorbg{background-color: #30A186;}
-.lColorbg{background-color: #FF8127;}
-.Colorbg{background-color: #424242;}
+.Colorbg{background-color: #14A6B3;}
 
 .sColorbg_light{background-color: #F3FFFC;}
 .lColorbg_light{background-color: #FFF7F1;}
@@ -2047,7 +2042,7 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
 .courseList{color: #333333; margin:20px 0 20px 24px; font-size: 12px; line-height: 22px; list-style-type: disc;}
 
 .actionCon{color: #30A186; font-weight: bold; text-decoration: underline;}
-.actionLearn{color: #EF6D20; font-weight: bold; text-decoration: underline;}
+.actionLearn{color: #FA8373; font-weight: bold; text-decoration: underline;}
 
 .freeBtn{
     text-align: center; color: white; line-height: 69px; font-size: 27px;
@@ -2087,6 +2082,7 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
     font-size: 22px;
     border-radius: 8px;
     padding: 6px 12px;
+    background-color: #FA8373;
 }
 
 .SinglePlanContent li span {
@@ -2720,7 +2716,7 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
     align-content: center;
     width: 100%;
     height: 64px;
-    background-color: #FFAA47;
+    background-color: #14A6B3;
     padding-top: 6px;
     padding-left: 60px;
     padding-right: 60px;
@@ -2728,7 +2724,7 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
 }
 
 .select_date>li {
-    color: #424242;
+    color: #FFFFFF;
     font-weight: bold;
     font-size: 16px;
     letter-spacing: 0.05em;
@@ -2737,21 +2733,23 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
     display: flex;
     justify-content: center;
     align-items: center;
-    border-right: 1px solid #FFCB8F;
+    border-right: 1px solid #eee;
     padding: 0 20px 0 20px;
 }
 
 .select_date> :first-child {
-    border-left: 1px solid #FFCB8F;
+    border-left: 1px solid #eee;
 }
 
 .select_date>li:hover {
-    background-color: #ff7f00;
+    background-color: #EDF8F8;
+    border-radius: 8px 8px 0 0;
+    color:#14A6B3;
 }
 
 .select_date>li.selected {
-    background-color: #FFF9EC;
-    color: #EF6D20;
+    background-color: #EDF8F8;
+    color: #14A6B3;
     border-radius: 10px 10px 0 0;
     padding: 0 20px 0 20px;
 }
@@ -2759,7 +2757,7 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
 .select_menu {
     height: auto;
     width: 100%;
-    background-color:#FFF9EC;
+    background-color:#EDF8F8;
     padding: 16px 32px 16px 32px;
 }
 
@@ -2846,7 +2844,7 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
     font-size: 12px;
     line-height: 28px;
     border-radius: 4px;
-    background-color: #FFF9EC;
+    background-color: #FFF0EE;
     border: 1px solid #EEEEEE;
     color: #666666;
     cursor: pointer;
@@ -2906,13 +2904,13 @@ teacherInfo .favorite:hover {
     align-items: center;
     font-weight: bold;
     cursor: pointer;
-    color: #EF6D20;
-    font-size: 15px;
+    color: #333333;
+    font-size: 14px;
 }
 
 .select_teachers .timeGrid li:hover {
-    background-color:#FFF9EC;
-    color: #EF6D20;
+    background-color:#EDF8F8;
+    color: #12919E;
     /*-moz-box-shadow: 2px 2px 8px 3px rgb(255 150 50 / 50%);*/
     /*-webkit-box-shadow: 2px 2px 8px 3px rgb(255 150 50 / 50%);*/
     /*-ms-box-shadow: 2px 2px 8px 3px rgb(255 150 50 / 50%);*/
@@ -3080,7 +3078,7 @@ teacherInfo .favorite:hover {
 /*.addOption li:focus {*/
 /*    background-color: #FFF9F1; !* 修改为点击或者鼠标悬停时的背景色 *!*/
 /*    border-color: #FF8F3E; !* 修改为点击或者鼠标悬停时的边框颜色 *!*/
-/*    color: #EF6D20; !* 修改为点击或者鼠标悬停时的文字颜色 *!*/
+/*    color: #FA8373; !* 修改为点击或者鼠标悬停时的文字颜色 *!*/
 /*}*/
 
 
@@ -3135,7 +3133,7 @@ teacherInfo .favorite:hover {
 .addOption input[type="checkbox"]:checked + label {
 //background-color: #FFF9F1;
     border: 2px solid #FF8F3E;
-    color: #EF6D20;
+    color: #FA8373;
     border-radius: 2px;
     font-weight: bold;
 }
@@ -3186,7 +3184,7 @@ teacherInfo .favorite:hover {
     border: 1px solid #f4f4f4;
 }
 .tagL{
-    background-color: #EF6D20;
+    background-color: #FA8373;
     border-radius: 4px;
     color: #FFFFFF;
     padding: 3px 6px;
@@ -3326,7 +3324,7 @@ select::-ms-expand {
 }
 .zoneDivInner .leftDiv span{
     text-align: left; /* 保持靠左對齊 */
-    color: #EF6D20;
+    color: #FA8373;
     font-size: 21px;
     font-weight: bold;
 }
@@ -3382,7 +3380,7 @@ select::-ms-expand {
 
 .submitLayout{
     position: relative;
-    background-color: #FFF9EC;
+    background-color: #EDF8F8;
     padding-bottom: 30px;
 }
 
@@ -3392,7 +3390,7 @@ select::-ms-expand {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #EF6D20;
+    background-color: #14A6B3;
     border-radius: 24px;
     color: #fff;
     font-weight: bold;
@@ -3411,7 +3409,7 @@ select::-ms-expand {
     position: absolute;
     right: 60px;
     top: 26px;
-    color: #EF6D20;
+    color: #FA8373;
     text-decoration: underline;
 }
 
@@ -3476,7 +3474,7 @@ select::-ms-expand {
     display: inline-block;
 }
 
-.teacherPossible{position: absolute; font-family: Murecho; font-size: 20px; font-weight: bold; color: #EF6D20; right: 158px; top: 80px;}
+.teacherPossible{position: absolute; font-family: Murecho; font-size: 20px; font-weight: bold; color: #FA8373; right: 158px; top: 80px;}
 .teacherPossible img{width:20px; position: relative; margin-right: 4px; line-height: 20px; display: inline-block;}
 
                                                                                                                                                                   /* EveryTime everytime.html */
@@ -3495,7 +3493,7 @@ select::-ms-expand {
 }
 
 .select_everytime {
-    background-color: #F9F9F9;
+    background-color: #EDF8F8;
     width: 100%;
     min-height: 232px;
     height: auto;
@@ -3762,7 +3760,7 @@ select::-ms-expand {
 .cancelratio ul .ctitle{ font-size: 12px; color: #848484;}
 .cancelratio ul .cnumber{ font-size: 28px; margin-right: 4px;}
 .cancelratio ul .cnumber span{ font-size: 12px;}
-.cancelratio ul .clink{ font-size: 12px; color: #EF6D20;}
+.cancelratio ul .clink{ font-size: 12px; color: #FA8373;}
 
 .cancelratio ul li{margin: 10px 0;}
 
@@ -4370,7 +4368,7 @@ h2 .titleBefore {
 .firstRes li{font-size: 14px;line-height: 20px;}
 
 .linkStyle{
-    color: #EF6D20;
+    color: #FA8373;
     text-decoration: underline;
     font-weight: bold;
 }
@@ -4390,7 +4388,7 @@ h2 .titleBefore {
 
 .netchina_contents .lessonTrial_head_navi li.selected {
     background-color: #fff9ec;  /* 背景顏色變為淺色 */
-    color: #EF6D20;  /* Change the text color to match the selected state */
+    color: #FA8373;  /* Change the text color to match the selected state */
     font-weight: bold;  /* Make the font bold to highlight the selection */
     border-radius: 8px 8px 0 0;  /* Apply rounded corners only on the top */
     border-top: 4px solid #FFAA47;  /* Add a border on the top to make it stand out */
@@ -4398,7 +4396,7 @@ h2 .titleBefore {
 }
 
 .netchina_contents .lessonTrial_head_navi li.selected .Bit {
-    color: #EF6D20;  /* Ensure that the text within the selected element also changes color */
+    color: #FA8373;  /* Ensure that the text within the selected element also changes color */
 }
 
 /* Contact */
@@ -4500,7 +4498,7 @@ h2 .titleBefore {
     font-size: 13px;
     border-radius: 24px;
     font-weight: bold;
-    border: 1px solid #EF6D20;
+    border: 1px solid #FA8373;
     margin: 4px;
     height: 32px;
     line-height: 32px;
@@ -4549,7 +4547,7 @@ h2 .titleBefore {
 
 .roadmap_container {
     /*min-height: 112px;*/
-    /*border: solid #EF6D20;*/
+    /*border: solid #FA8373;*/
     /*border-width: 0 0 0  10px;*/
     /*background-color: #fff;*/
     /*width: 100%;*/
@@ -4661,7 +4659,7 @@ h2 .titleBefore {
     right: 30px;
     position: absolute;
     top:20px;
-    color: #EF6D20;
+    color: #FA8373;
     text-decoration: underline;
 }
 
@@ -4815,7 +4813,7 @@ h2 .titleBefore {
     width: 236px;
     height: 60px;
     margin: 20px auto;
-    background-color: #EF6D20;
+    background-color: #FA8373;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -5485,7 +5483,7 @@ footer {
     line-height: 48px;
     color: #FFFFFF;
     border-radius: 30px;
-    background-color: #EF6D20;
+    background-color: #FA8373;
     text-align: center;
     margin: 40px auto;
     cursor: pointer;
@@ -5679,7 +5677,7 @@ footer {
 }
 
 .my-curriculum input[type="checkbox"]:checked {
-    background-color: #EF6D20; /* 選中後的背景顏色 */
+    background-color: #FA8373; /* 選中後的背景顏色 */
     background-image: url("../../assets/images/white_check.png");
     background-repeat: no-repeat;
     background-size: 14px;
@@ -6023,7 +6021,7 @@ footer {
     border-bottom: 5px solid #EEEEEE;
 }
 
-.tab-btn .left span { color: #EF6D20; }
+.tab-btn .left span { color: #FA8373; }
 .tab-btn .right span { color: #30A186; }
 
 .tab-btn:hover {
@@ -6049,7 +6047,7 @@ footer {
     height: 5px;
     width: 565px;
     transform: translateX(0);
-    background-color: #EF6D20;
+    background-color: #FA8373;
     /*transition: transform 0.4s ease, background-color 0.4s ease;*/
 }
 
@@ -6057,56 +6055,6 @@ footer {
     transform: translateX(calc(565px)); /* 567 + divider 1px */
     background-color: #30A186;
 }
-
-
-/* 背景圖區塊 */
-.course-image-wrapper {
-    position: relative;
-    width: 100%;
-    height: 330px;
-}
-
-.course-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-    opacity: 0;
-    transition: opacity 0.8s ease;
-}
-
-.course-image.learning {
-    background-image: url('../../assets/images/bg_learn.png');
-    background-size: 100%;
-}
-
-.course-image.conversation {
-    background-image: url('../../assets/images/bg_speak.png');
-    background-size: 100%;
-}
-
-.course-image.active {
-    opacity: 1;
-}
-
-.course-image-content {
-    position: relative;
-    z-index: 1;
-    color: #fff; /* 視情況調整 */
-}
-
-
-.course-image h2{font-size: 27px; margin-top: 50px; font-weight: bold; text-shadow: 0 2px 3px rgba(255, 255, 255, 1);}
-.course-image p{font-size: 15px; margin-top: 2px; font-weight: bold; text-shadow: 0 2px 3px rgba(255, 255, 255, 1);}
-
-
-.course-image.learning h2,.course-image.learning p{color: #EF6D20; }
-.course-image.conversation h2,.course-image.conversation p{color: #30A186; }
 
 .reservationplandes{
     text-align: center;
@@ -6131,7 +6079,7 @@ footer {
 .course-book h2{font-size: 27px; font-weight: bold; margin-top: 50px; text-shadow: 0 2px 3px rgba(255, 255, 255, 1);}
 .course-book p{font-size: 15px; margin-top: 2px; font-weight: bold; text-shadow: 0 2px 3px rgba(255, 255, 255, 1);}
 
-.course-book.learning h2,.course-book.learning p{color: #EF6D20; }
+.course-book.learning h2,.course-book.learning p{color: #FA8373; }
 .course-book.conversation h2,.course-book.conversation p{color: #30A186; }
 
 
@@ -6732,6 +6680,71 @@ footer {
     animation: fadeUp .8s ease-out forwards;
 }
 
+/* ===== Header block ===== */
+.searchHeader {}
+.searchHeader__inner {
+    width: 1130px;
+    max-width: 100%;
+    margin: 30px auto;
+    padding: 12px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+.searchHeader__title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #333;
+    position: relative;
+    padding-left: 18px;
+    line-height: 1.2;
+}
+.searchHeader__title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 7px;
+    height: 22px;
+    border-radius: 16px;
+    background: #14A6B3; /* 主綠 */
+}
+
+/* 共用 switch 樣式（你已經有就不用重複） */
+.seg-switch { display:flex; gap:6px; padding:3px; border-radius:999px;}
+.seg-switch__btn {
+    display:inline-flex; align-items:center; gap:8px;
+    padding:8px 14px; border-radius:999px; text-decoration:none;
+    font-size:14px; font-weight:700;
+    border:1px solid #14A6B3; color:#14A6B3; background:#fff;
+    transition:all .2s ease;
+}
+
+/* 寫死 active：三種 class 任何一個都視為亮 */
+.seg-switch__btn.is-active,
+.seg-switch__btn.teacher_active,
+.seg-switch__btn.time_active {
+    background:#14A6B3; color:#fff;
+}
+
+/* --- 想要圖示（選配）--- */
+/* 左鍵=老師、右鍵=時間：預設灰圖；active 換成彩圖 */
+.seg-switch__btn--teacher::before,
+.seg-switch__btn--time::before {
+    content:""; display:inline-block; width:18px; height:18px;
+    background-size:contain; background-repeat:no-repeat;
+}
+/* 未啟用圖示 */
+.seg-switch__btn--teacher::before { background-image:url('~/assets/images/teacher.png'); }
+.seg-switch__btn--time::before    { background-image:url('~/assets/images/time.png'); }
+/* 啟用圖示（與寫死的 active 對應） */
+.seg-switch__btn--teacher.teacher_active::before,
+.seg-switch__btn--teacher.is-active::before { background-image:url('~/assets/images/teacher_active.png'); }
+.seg-switch__btn--time.time_active::before,
+.seg-switch__btn--time.is-active::before    { background-image:url('~/assets/images/time_active.png'); }
+
+
 @keyframes fadeUp {
     0% {
         opacity: 0;
@@ -6743,6 +6756,36 @@ footer {
     }
 }
 @media screen and (max-width: 520px) {
+
+    /* 既有的 */
+    .searchHeader__title { display: none; }
+    .searchHeader__inner { padding: 0 32px; margin: 20px auto; }
+
+    /* 讓容器撐滿並水平排版 */
+    .seg-switch {
+        display: flex;
+        width: 100%;
+        gap: 8px;            /* 兩顆按鈕之間留點空 */
+    }
+
+    /* 兩顆按鈕各 1/2 */
+    .seg-switch__btn {
+        display: inline-flex;            /* 置中對齊 */
+        align-items: center;
+        justify-content: center;
+        flex: 1 1 50%;
+        min-width: 0;
+        height: 48px;
+    }
+
+    /* 有圖示的話，讓圖示和文字間隔固定 */
+    .seg-ico {
+        width: 16px;
+        height: 16px;
+        margin-right: 6px;
+        flex: 0 0 auto;
+    }
+
     .top-cta{
         margin:auto;
     }
@@ -7005,85 +7048,9 @@ footer {
         text-align: center;
         line-height: 44px;
         font-weight: bold;
-        color: #EF6D20;
+        color: #FA8373;
         border: 1px solid #eee;
         box-sizing: border-box;
-    }
-    /* 桌機版 */
-    .course-image-wrapper {
-        position: relative;
-        width: 100%;
-        height: auto; /* 改成自動高度 */
-        aspect-ratio: 4 / 1; /* 桌機維持寬高比例 */
-    }
-
-    .course-image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: center top;
-        background-repeat: no-repeat;
-        opacity: 0;
-        transition: opacity 0.8s ease;
-    }
-
-    .course-image.learning {
-        background-image: url('../../assets/images/signup_learn.png');
-    }
-
-    .course-image.conversation {
-        background-image: url('../../assets/images/signup_speak.png');
-    }
-
-    .course-image.active {
-        opacity: 1;
-    }
-
-    .course-image-content {
-        position: relative;
-        z-index: 1;
-        color: #fff;
-        padding: 8%;
-        text-align: left;
-    }
-
-    .course-image h2 {
-        font-size: 20px;
-        font-weight: bold;
-        margin-bottom: 8px;
-        text-shadow: 0 2px 3px rgba(255, 255, 255, 1);
-    }
-
-    .course-image p {
-        width: 60%;
-        line-height: normal;
-        font-size: 11px;
-        font-weight: bold;
-        text-shadow: 0 2px 3px rgba(255, 255, 255, 1);
-    }
-
-    .course-image.learning h2,
-    .course-image.learning p {
-        color: #EF6D20;
-        margin-top: auto;
-    }
-    .course-image.conversation h2,
-    .course-image.conversation p {
-        color: #30A186;
-    }
-
-
-    .course-tab {
-        height: 60px;
-        padding: 0 10px;
-    }
-
-    .course-tab-inner {
-        width: 100%;
-        max-width: 100%;
     }
 
     .tab-btn {
@@ -7102,7 +7069,7 @@ footer {
         left: 0;
         width: 50%;
         height: 4px;
-        background-color: #EF6D20;
+        background-color: #FA8373;
         transition: transform 0.4s ease;
     }
 
@@ -7499,7 +7466,7 @@ footer {
         margin-top: 48px;
     }
 
-    .subTitle{font-size: 32px;}
+    .subTitle{font-size: 24px; font-weight: bold;}
     .subDes{margin-top: 12px; line-height: 26px;}
 
     .Pricelist {
@@ -7748,7 +7715,7 @@ footer {
         margin: auto;
         text-align: center;
         width: 50%;
-        background-color: #EF6D20;
+        background-color: #FA8373;
         height: 40px;
         border-radius: 100px;
         line-height: 40px;
@@ -8012,9 +7979,7 @@ footer {
         padding: 0 16px;    /* 左右安全邊距 */
     }
 
-    .subTitle {
-        font-size: 22px;    /* 手機字體稍微縮小 */
-    }
+
 
     .Pricelist {
         padding: 8% 8% 0 8%;
@@ -8066,7 +8031,7 @@ footer {
 
     .loginArea ul li:nth-child(odd) {width: 100%;}
     .loginArea ul li:nth-child(odd) img{ margin: auto; width: 50%;}
-    .loginArea ul li:nth-child(odd) .title{ text-align:center; display: block; font-size: 24px; font-weight: bold; color: #EF6D20; margin-top: 20px;}
+    .loginArea ul li:nth-child(odd) .title{ text-align:center; display: block; font-size: 24px; font-weight: bold; color: #FA8373; margin-top: 20px;}
     .loginArea ul li:nth-child(odd) .des{ text-align:center; color: #424242; width: 70%; margin: auto; display: block; font-size: 14px; margin-top: 10px; line-height: 20px;}
 
     .loginArea ul li:nth-child(even) {width: 100%; height: 50px; position: relative;}
@@ -8074,7 +8039,7 @@ footer {
 
     .happyM{background-color: #FFF2DF; height: auto; width: 85%; margin: 40px auto 10px auto; padding:20px; vertical-align: center; border-radius: 24px; position: relative;}
     .happyM img{position: absolute; top: -10px; left: 30px;}
-    .happyM .happyT {font-size:17px; font-weight: bold; color: #EF6D20; display: block; line-height: 40px; margin-right: 10px;}
+    .happyM .happyT {font-size:17px; font-weight: bold; color: #FA8373; display: block; line-height: 40px; margin-right: 10px;}
     .happyM .happyD {font-size: 14px; color: #424242;}
 
     .teacherArea{width: 100%; padding-bottom: 30px;
@@ -8736,7 +8701,7 @@ footer {
     }
 
     .select_help .selected{
-        border: solid #EF6D20;
+        border: solid #FA8373;
         border-width: 10px 0 0 0;
     }
 

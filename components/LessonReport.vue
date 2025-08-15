@@ -1581,7 +1581,7 @@ label{
   font-weight: bold;
 }
 .ltag{
-  background-color: #EF6D20;
+  background-color: #FA8373;
   color: #FFFFFF;
   padding: 2px 4px;
   border-radius: 4px;

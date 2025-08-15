@@ -69,7 +69,7 @@
 
 </template>
 <script setup>
-import LogoNetchina from "../assets/images/logo_w.png";
+import LogoNetchina from "../assets/images/footer_logo.png";
 import LogoNetchinaBiz from "../assets/images/houjin_logo.png";
 
 import {useMainStore} from "~/composables/store";

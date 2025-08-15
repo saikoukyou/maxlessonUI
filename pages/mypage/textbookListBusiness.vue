@@ -246,7 +246,7 @@ const openTextBook = async (textbook_id,sort) => {
   border-top: 1px solid #E7E7E7;
   border-right: 1px solid #E7E7E7;
   border-bottom: 0;
-  border-left: 11px solid #EF6D20;
+  border-left: 11px solid #FA8373;
   padding: 20px 0;
   position: relative;
 }
@@ -342,7 +342,7 @@ const openTextBook = async (textbook_id,sort) => {
   left: 32px;
 }
 .openBtn{
-  background-color: #EF6D20; color: #FFFFFF; font-size: 12px; padding: 6px 8px 3px 8px; font-weight: bold;
+  background-color: #FA8373; color: #FFFFFF; font-size: 12px; padding: 6px 8px 3px 8px; font-weight: bold;
   position: absolute;
   top: 32px;
   right: 24px;
@@ -411,7 +411,7 @@ const openTextBook = async (textbook_id,sort) => {
     margin-left: 15px;
   }
   .openBtn{
-    background-color: #EF6D20; color: #FFFFFF;
+    background-color: #FA8373; color: #FFFFFF;
     font-size: 12px; padding: 6px 8px 3px 8px;
     font-weight: bold;
     position: absolute;
