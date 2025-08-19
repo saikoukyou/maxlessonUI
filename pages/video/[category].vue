@@ -79,7 +79,7 @@ const getThumbnail = (url) => {
 
 <style scoped>
 .desc a {
-  color: #FA8373; /* 基本藍色 */
+  color: var(--pink-dark); /* 基本藍色 */
   text-decoration: underline;
   transition: color 0.3s;
   margin-top: 8px;
@@ -88,7 +88,7 @@ const getThumbnail = (url) => {
 }
 
 .desc a:hover {
-  color: #FA8373;
+  color: var(--pink-dark);
 }
 
 
@@ -174,7 +174,7 @@ p{
 .backBtn {
   width: 200px;
   height: 54px;
-  background-color: #FA8373;
+  background-color: var(--pink-dark);
   border-radius: 8px;
   font-size: 16px;
   font-weight: bold;

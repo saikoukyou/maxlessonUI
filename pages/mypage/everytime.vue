@@ -7,43 +7,6 @@
       </NuxtLink>
 
 
-
-    <div class="everytime">
-
-<!--      <div class="Point selectdiv">-->
-<!--        <span>必要ポイント数</span>-->
-<!--        <div class="PointSpGrid">-->
-<!--          <input type="radio" name="point" value="0" v-model="integralRank" id="allpoint" :checked="integralRank == 0">-->
-<!--          <label for="allpoint" class="label">すべて</label>-->
-<!--          <div v-for="(itemi, indexi) in integral_rands">-->
-<!--            <input type="radio" name="point" :value="itemi" v-model="integralRank" :checked="integralRank == itemi" :id="itemi+'point'">-->
-<!--            <label :for="itemi+'point'" class="label">{{itemi}}ポイント</label>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="SwitchRadio1" style="text-align: left;">-->
-<!--        <input class="visually-hidden" id="bookmark" type="checkbox" name="bookmark" v-model="bookmark" />-->
-<!--        <label for="bookmark">お気に入り講師のみ指定</label>-->
-<!--      </div>-->
-
-      <div v-if="learnTypeShow" class="learn-type-div">
-        <span>講師の種類</span>
-        <span>
-            <input type="radio" id="learn_type1" name="learn_type" value="2" v-model="learnType" :checked="learnType === 2" placeholder="全部" />
-            <label for="learn_type1">全て</label>
-            <input type="radio" id="learn_type2" name="learn_type" value="0" v-model="learnType" :checked="learnType === 0" placeholder="学习" />
-            <label for="learn_type1">総合</label>
-            <input type="radio" id="learn_type3" name="learn_type" value="1" v-model="learnType" :checked="learnType === 1" placeholder="会话"/>
-            <label for="learn_type1">会話</label>
-          </span>
-      </div>
-      <div v-if="learnTypeShow" style="position: relative;">
-        <button type="submit" @click="submitForm" class="Submit_search">検索</button>
-        <span class="clearSelect" @click="clearForm">検索条件クリア</span>
-      </div>
-    </div>
-
-
     <div class="reservedList mobiletimetable">
       <swiper-container navigation="true">
         <swiper-slide>
@@ -102,19 +65,6 @@
           </ul>
         </swiper-slide>
       </swiper-container>
-    </div>
-
-    <div class="zoneDivInner">
-      <div class="leftDiv"></div>
-      <div class="rightDiv">
-        <div v-if="useStore?.studentLoggedIn">
-          <label>タイムゾーン設定</label>
-          <select id="zone_select" v-model="timezone" @change="changeStudentTimezone">
-            <option value="jp" data-number="0">日本時間</option>
-            <option value="cn" data-number="1">中国時間</option>
-          </select>
-        </div>
-      </div>
     </div>
     <div class="select_everytime">
       <div class="timeTitle"><span v-if="useStore?.studentInfo?.timezone === 'cn'">朝（5:00-10:30）</span><span v-else>朝（6:00-11:30）</span></div>

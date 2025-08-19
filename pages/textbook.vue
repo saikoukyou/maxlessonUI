@@ -141,7 +141,7 @@ swiper-container::part(button-next), swiper-container::part(button-prev) {
   margin-top: 16px;
 }
 .active-tag{
-  background-color: #FA8373;
+  background-color: var(--pink-dark);
   color: #FFFFFF;
 }
 </style>

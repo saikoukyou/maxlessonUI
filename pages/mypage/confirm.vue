@@ -21,8 +21,6 @@
         <nuxt-link :to="'/teachers/'+item.info.id">
           <div class="teacherPhoto">
 <!--            <div class="cnRibbon"></div>-->
-            <span v-if="item.info.learn_type == 0" class="tagL">総合</span>
-            <span v-else class="tagS">会話</span>
           <img :src="item.info.face_img5" alt="" class="tphoto">
           </div>
         </nuxt-link>
@@ -30,21 +28,13 @@
           <li class="pinyin">{{item.info.name_pinyin}}</li>
           <li class="name">{{ item.info.name_cn }}<span class="teacherID">ID:{{item.info.id}}</span></li>
           <li class="cityT">{{item.info.province_addr}}{{item.info.current_address}}</li>
-          <li v-if="item.info.learn_type == 0">
+          <li>
             <span class="sptitle">日本語</span>
             <span class="spdes">{{item.info.japanese_level}}{{teacher_japanese_level[item.info.japanese_level]}}</span>
           </li>
-          <li v-else>
+          <li>
             <span class="sptitle">業界の得意分野</span>
             <span class="spdes">{{ item.info.topic_str }}</span></li>
-          <li v-if="item.info.learn_type == 0">
-            <span class="sptitle">英語</span>
-            <span class="spdes">{{item.info.english_level}}{{teacher_english_level[item.info.english_level]}}</span>
-          </li>
-          <li v-else>
-            <span class="sptitle">対応可能な方言</span>
-            <span class="spdes">{{ item.info.dialect }}</span></li>
-
         </ul>
         <p class="favorite" @click="addBookmark(item.info.id,index)">
           <span>
@@ -365,7 +355,8 @@ function changeAccount() {
   padding-bottom: 20px;
   padding-top: 20px;
   background-color:#F8F8F8;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); /* X, Y, 模糊程度, 顏色透明度 */
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 .linkskype{
   text-decoration: underline;
@@ -401,13 +392,14 @@ function changeAccount() {
 }
 
 .radio-003 label:has(:checked) {
-  background-color: #fff7e6;
-  color: #000;
+  background-color: var(--green-light);
+  color: var(--green-darker);
+  font-weight: bold;
   background-image: url('../assets/images/checkmark.png') ;
   background-repeat: no-repeat;
   background-size: 40px;
   background-position: right bottom;
-  border: 1px solid #FF8F3E;
+  border: 1px solid var(--green-dark);
 }
 
 .radio-003 label:has(:checked)::after {
@@ -457,6 +449,7 @@ function changeAccount() {
   display: flex;
   flex-wrap: wrap;
   padding-bottom: 24px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .ChineseLevel_wrap{
@@ -534,7 +527,7 @@ function changeAccount() {
 
 .form-group input::placeholder {color: #ccc;}
 .titlePos{margin-top: 16px;}
-.orangeColor{color: #FA8373;}
+.orangeColor{color: var(--green-dark);}
 
 .editBtn{
   position: absolute;

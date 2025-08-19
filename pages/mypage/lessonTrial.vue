@@ -79,21 +79,13 @@
 
                 <li class="cityT">{{ teacher.province_addr }}{{ teacher.current_address }}</li>
 
-                <li v-if="teacher.learn_type == 0">
+                <li>
                   <span class="sptitle">日本語</span>
                   <span class="spdes">{{ teacher.japanese_level }}{{maps['japanese_level'][teacher.japanese_level]}}</span>
                 </li>
-                <li v-else>
+                <li>
                   <span class="sptitle">業界の得意分野</span>
                   <span class="spdes">{{ teacher.topic_str }}</span>
-                </li>
-                <li v-if="teacher.learn_type == 0">
-                  <span class="sptitle">英語</span>
-                  <span class="spdes">{{teacher.english_level }}{{maps['english_level'][teacher.english_level]}}</span>
-                </li>
-                <li v-else>
-                  <span class="sptitle">対応可能な方言</span>
-                  <span class="spdes">{{ teacher.dialect }}</span>
                 </li>
                 <li class="tagT"><span><n-rate readonly allow-half :value="teacher.avg_score" /></span></li>
               </ul>
@@ -351,12 +343,12 @@ swiper-container::part(button-prev) {
   display: block;
   --n-border: 0 !important;
   --n-border-hover: 0 !important;
-  --n-color:#FA8373 !important;
-  --n-color-hover:#FA8373 !important;
-  --n-color-pressed:#FA8373 !important;
-  --n-color-focus:#FA8373 !important;
-  --n-color-disabled:#FA8373 !important;
-  --n-ripple-color:#FA8373 !important;
+  --n-color:var(--pink-dark) !important;
+  --n-color-hover:var(--pink-dark) !important;
+  --n-color-pressed:var(--pink-dark) !important;
+  --n-color-focus:var(--pink-dark) !important;
+  --n-color-disabled:var(--pink-dark) !important;
+  --n-ripple-color:var(--pink-dark) !important;
 }
 .n-dialog .n-dialog__action > *:not(:last-child){
   background-color: #EEEEEE;

@@ -24,9 +24,6 @@
               @load="imageStatus = 'loaded'"
               @error="imageStatus = 'loading'"
           />
-          <!-- 標籤 -->
-          <span v-if="info.learn_type == 0" class="tagL courseTag">総合</span>
-          <span v-else-if="info.learn_type == 1" class="tagS courseTag">会話</span>
         </div>
 
         <!-- 縮圖列 -->

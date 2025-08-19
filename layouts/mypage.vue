@@ -219,12 +219,12 @@ swiper-container::part(button-prev) {
   background-position: 9px 10px;
 }
 .body{
-  background-color: #F1F1F1;
+  background-color: var(--bg--light);
 }
 .fs18{
-  color: #FFED4E !important;
+  color: navajowhite !important;
 }
-.learnbg{background-color: #FA8373;}
+.learnbg{background-color: var(--green-dark);}
 .speakbg{background-color: #30A186;}
 
 .netchina_contents .head_navi li{

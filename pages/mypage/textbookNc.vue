@@ -372,7 +372,7 @@ function isUnavailable(itemId) {
   text-decoration: underline;
 }
 .studentonly{
-  background-color: #FA8373;
+  background-color: var(--pink-dark);
   color: #FFFFFF;
   font-weight: bold;
   padding: 4px;

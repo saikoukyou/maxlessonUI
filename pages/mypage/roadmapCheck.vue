@@ -55,7 +55,7 @@
     font-size: 13px;
   }
   .downBlock span.orangeW{
-    color: #FA8373;
+    color: var(--pink-dark);
     font-weight: bold;
     text-decoration: underline;
   }
@@ -89,7 +89,7 @@
   background-color: #BDBDBD;
 }
 .step:nth-child(3) {
-  background-color: #FA8373;
+  background-color: var(--pink-dark);
   font-weight: bold;
 }
 @media screen and (max-width: 520px) {

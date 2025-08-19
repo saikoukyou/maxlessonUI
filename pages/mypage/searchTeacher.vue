@@ -194,15 +194,6 @@
       <div class="zoneDivInner">
         <div class="leftDiv">検索結果：<span>{{atotal}}</span>名の講師</div>
         <div class="rightDiv">
-          <div v-if="useStore?.studentLoggedIn">
-            <label>タイムゾーン設定</label>
-            <select id="zone_select" v-model="timezone" @change="changeStudentTimezone">
-              <option value="jp" data-number="0">日本時間</option>
-              <option value="cn" data-number="1">中国時間</option>
-            </select>
-          </div>
-        </div>
-        <div class="rightDiv">
           <div>
             <label>表示順</label>
             <select id="order_select" v-model="orderFlag" @change="changeOrderFlag" style="text-align: center;">
@@ -219,9 +210,6 @@
           <div class="teacherInfo">
             <NuxtLink :to="'/teachers/'+item.id">
               <div class="teacherPhoto">
-<!--                <div class="cnRibbon"></div>-->
-                <span v-if="item.learn_type == 0" class="tagL">総合</span>
-                <span v-else class="tagS">会話</span>
                 <img :src="item.face_img5" alt="" class="tphoto">
               </div>
             </NuxtLink>
@@ -230,21 +218,13 @@
               <li class="name">{{ item.name_cn }}<span class="teacherID">ID:{{item.id}}</span></li>
               <li class="cityT">{{item.province_addr}}{{ item.current_address }}</li>
 
-            <li v-if="item.learn_type == 0">
+            <li>
               <span class="sptitle">日本語</span>
               <span class="spdes">{{item.japanese_level}}{{maps['japanese_level'][item.japanese_level]}}</span>
             </li>
-            <li v-else>
+            <li>
               <span class="sptitle">業界の得意分野</span>
               <span class="spdes">{{ item.topic_str }}</span>
-            </li>
-            <li v-if="item.learn_type == 0">
-              <span class="sptitle">英語</span>
-              <span class="spdes">{{item.english_level}}{{maps['english_level'][item.english_level]}}</span>
-            </li>
-            <li v-else>
-              <span class="sptitle">対応可能な方言</span>
-              <span class="spdes">{{ item.dialect }}</span>
             </li>
               <li class="tagStar"><n-rate readonly allow-half :value="item.avg_score" /></li>
 <!--            <ul class="teacherLabels">-->
@@ -663,13 +643,11 @@ label{
 .timeGrid li:hover.lesson_disabled {
   background-color: #C5C5C5;
   color:black;
-  /*-moz-box-shadow: none;*/
-  /*-webkit-box-shadow: none;*/
-//-ms-box-shadow: none;
-//box-shadow: none;
 }
+
 .seaT{
-  position: relative; background-color:#FFF9EC; margin-bottom: 20px; padding-bottom: 20px;
+  position: relative; background-color:var(--green-light);
+  margin-bottom: 20px; padding-bottom: 20px;
 }
 .accordionDetail {
   padding: 6.8px 12px;

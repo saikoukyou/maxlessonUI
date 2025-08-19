@@ -5,7 +5,6 @@
       <ul class="select_Text">
         <a @click="changeCourse(index)" v-for="(course,index) in course_list">
           <li :class="selected_index == index ? 'selected' : ''" v-if="course.course">{{course.course.name}}
-            <span class="name_cn">{{course.course.name_cn}}</span>
           </li>
         </a>
       </ul>
@@ -15,8 +14,6 @@
       <div v-if="course_list[selected_index]" class="textArray" v-for="(category,cindex) in course_list[selected_index].categories">
         <a @click="changeCategory(category.id)" class="textLink">
           <div class="textSubtitle">
-            <span class="tagL" v-if="category.learn_type === 0">総合</span>
-            <span class="tagS" v-else>会話</span>
             <h3>{{category.name}}</h3>
             <p class="total">{{category.tnum}}課</p>
           </div>
@@ -253,9 +250,12 @@ const openTextBook = async (textbook_id,sort) => {
   }
 }
 
-const emit = defineEmits(['shareLink']);
+// const emit = defineEmits(['shareLink']);
+
+const emit = defineEmits(['shareLink','openLinkStudent']);
 const shareLink = (url1,url2,type,text) => {
   emit('shareLink',url1,url2,text);
+  emit('openLinkStudent', url1);
   // emit('shareLink','<a href="#" style="color:blue;" onclick="clickLink(\''+url+'\',\''+type+'\')">'+title+'</a>');
 }
 
@@ -317,7 +317,7 @@ const openLink = (url) => {
   min-height: 80px;
   background-color: #FFFFFF;
   border-bottom: 1px solid #E7E7E7;
-  border-left: 11px solid #FA8373;
+  border-left: 11px solid var(--pink-dark);
   padding: 20px 0;
   position: relative;
 }
@@ -393,7 +393,7 @@ const openLink = (url) => {
   right: 150px;
 }
 .openBtn{
-  background-color: #FA8373; color: #FFFFFF; font-size: 12px; padding: 6px 8px; font-weight: bold;
+  background-color: var(--pink-dark); color: #FFFFFF; font-size: 12px; padding: 6px 8px; font-weight: bold;
   position: absolute;
   top: 32px;
   right: 100px;
@@ -413,7 +413,7 @@ const openLink = (url) => {
     right: 24px !important;
   }
   .openBtn{
-    background-color: #FA8373; color: #FFFFFF;
+    background-color: var(--pink-dark); color: #FFFFFF;
     font-size: 12px; padding: 6px 8px 3px 8px;
     font-weight: bold;
     position: absolute;

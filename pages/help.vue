@@ -1,5 +1,5 @@
 <template>
-<div class="topTemplate" style="background-color: #F9F9F9; padding-bottom: 30px;">
+<div class="topTemplate page-wrapper">
   <section class="PlanPrice">
     <div class="PlanPrice__inner">
       <div class="subPosition">
@@ -292,7 +292,7 @@ onMounted(async () => {
     line-height: 48px;
     color: #FFFFFF;
     border-radius: 30px;
-    background-color: #FA8373;
+    background-color: var(--pink-dark);
     text-align: center;
     margin: 60px auto 40px auto;
     cursor: pointer;
@@ -370,7 +370,7 @@ onMounted(async () => {
       color: inherit; // 確保 "お問い合わせ" 保持原來的顏色，即使被選中
     }
     .select_help li:first-child.selected {
-      background-color: #FA8373;
+      background-color: var(--pink-dark);
     }
     .faqName{
       background-color: #FFFFFF;
@@ -419,8 +419,8 @@ onMounted(async () => {
       border-right: 1px solid #EEEEEE;
     }
     .with-border {
-      border-left: 5px solid #FA8373;
-      color: #FA8373;
+      border-left: 5px solid var(--pink-dark);
+      color: var(--pink-dark);
     }
     .arrow-up {
       color: green; /* 選中時的箭頭顏色 */

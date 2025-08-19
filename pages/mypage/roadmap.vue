@@ -97,7 +97,7 @@ onMounted(() => {
 <style scoped>
   .des{margin: 10px 0;}
   .desdes{font-size: 12px; line-height: 16px;}
-  .desdes a {color: #FA8373; text-decoration: underline;}
+  .desdes a {color: var(--pink-dark); text-decoration: underline;}
 
   table {
     width: 100%;
@@ -134,7 +134,7 @@ onMounted(() => {
   }
 
   .link {
-    color: #FA8373;
+    color: var(--pink-dark);
     text-decoration: underline;
   }
 

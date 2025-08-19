@@ -1675,11 +1675,11 @@ useEnterEvent(() => buttonClick());
 /* 橘色主題 */
 .toggle-btn.orange {
   background-color: #fff;
-  color: #FA8373;
-  border-color: #FA8373;
+  color: var(--pink-dark);
+  border-color: var(--pink-dark);
 }
 .toggle-btn.orange:hover {
-  background-color: #FA8373;
+  background-color: var(--pink-dark);
   color: #fff;
 }
 
@@ -1754,13 +1754,13 @@ useEnterEvent(() => buttonClick());
 }
 
 #audio-set-enabled:disabled {
-  color: #FA8373;
+  color: var(--pink-dark);
   background-image: url("../../../assets/images/audio_on.svg");
   background-size: 11px
 }
 
 #audio-set-disable:disabled {
-  color: #FA8373;
+  color: var(--pink-dark);
   background-image: url("../../../assets/images/audio_off.svg");
   background-size: 23px;
   background-position: center left;
@@ -1802,13 +1802,13 @@ useEnterEvent(() => buttonClick());
   cursor: pointer;
   flex: 1;
   text-align: center;
-  border-bottom: 1px solid #FA8373;
+  border-bottom: 1px solid var(--pink-dark);
 }
 
 .button-group button.active {
-  background-color: #FA8373;
+  background-color: var(--pink-dark);
   color: white;
-  border-color: #FA8373;
+  border-color: var(--pink-dark);
 }
 
 /* ===== Header ===== */
@@ -1925,11 +1925,11 @@ useEnterEvent(() => buttonClick());
 }
 
 #video-set-enabled:disabled{
-  color: #FA8373;
+  color: var(--pink-dark);
   background-image: url("../../../assets/images/video_on.svg");
 }
 #video-set-disable:disabled{
-  color: #FA8373;
+  color: var(--pink-dark);
   background-image: url("../../../assets/images/video_off.svg");
 }
 
@@ -1994,7 +1994,7 @@ useEnterEvent(() => buttonClick());
   height: 38px;
   margin-left: 8px;
   padding: 0 16px;
-  background-color: #FA8373;
+  background-color: var(--pink-dark);
   color: #fff;
   border: none;
   border-radius: 6px;

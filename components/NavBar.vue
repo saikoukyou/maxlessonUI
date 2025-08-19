@@ -208,7 +208,7 @@ export default {
   background-size: cover;
   position: relative;
   z-index: 2; /* 確保按鈕在最上層 */
-  background-color: #25909A;
+  background-color: var(--green-darker);
 }
 
 /* 切換到關閉圖標 */
@@ -259,7 +259,7 @@ export default {
   line-height: 1.4;
   margin: 32px 16px 0 16px;
   font-size: 16px;
-  background-color: #25909A;
+  background-color: var(--green-darker);
   color: #FFFFFF;
   padding: 16px 0;
   border-radius: 8px;
@@ -294,7 +294,7 @@ export default {
   margin: auto;
   color: #ffffff;
   font-size: 16px;
-  background-color: #FA8373;
+  background-color: var(--pink-dark);
   padding-left: 0;
 }
 .menu-content li.menumy a{
@@ -314,14 +314,14 @@ export default {
 }
 
 .activeLogin {
-  background-color: #FA8373 !important; /* 橙色背景 */
+  background-color: var(--pink-dark) !important; /* 橙色背景 */
   color: #fff !important; /* 白色字体 */
   background-image: url("../assets/images/logo_login_w.png") !important;
 }
 
 .highlighted {
   background-image: url("../assets/images/logo_signup.png") !important;
-  background-color: #FA8373 !important; /* 橙色背景 */
+  background-color: var(--pink-dark) !important; /* 橙色背景 */
   color: #FFFFFF !important;
 }
 

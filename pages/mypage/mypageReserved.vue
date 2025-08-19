@@ -131,8 +131,6 @@
                       <a :href="'/teachers/'+lesson.teacher_id">
                         <div class="teacherPhoto">
 <!--                          <div class="cnRibbon"></div>-->
-                        <span v-if="lesson.learn_type == 0" class="tagL">総合</span>
-                        <span v-else class="tagS">会話</span>
                         <img :src="lesson.face_img5" alt="" class="tphoto">
                         </div>
                       </a>
@@ -141,22 +139,13 @@
                       <li class="name">{{ lesson.teacher_name_cn }}
                         <span class="teacherID">ID:{{lesson.teacher_id}}</span></li>
                       <li class="cityT">{{lesson.province_addr}}{{lesson.current_address}}</li>
-
-                      <li v-if="lesson.learn_type == 0">
+                      <li>
                         <span class="sptitle">日本語</span>
                         <span class="spdes">{{lesson.japanese_level}}{{maps['japanese_level'][lesson.japanese_level]}}</span>
                       </li>
-                      <li v-else>
+                      <li>
                         <span class="sptitle">業界の得意分野</span>
                         <span class="spdes">{{ lesson.topic_str }}</span>
-                      </li>
-                      <li v-if="lesson.learn_type == 0">
-                        <span class="sptitle">英語</span>
-                        <span class="spdes">{{lesson.english_level}}{{maps['english_level'][lesson.english_level]}}</span>
-                      </li>
-                      <li v-else>
-                        <span class="sptitle">対応可能な方言</span>
-                        <span class="spdes">{{ lesson.dialect }}</span>
                       </li>
                     </ul>
                     <p class="favorite" @click="addBookmark(lesson.teacher_id)">
@@ -206,8 +195,6 @@
             <a :href="'/teachers/'+clesson.teacher_id">
               <div class="teacherPhoto">
 <!--                <div class="cnRibbon"></div>-->
-                <span v-if="clesson.learn_type == 0" class="tagL">総合</span>
-                <span v-else class="tagS">会話</span>
                 <img :src="clesson.face_img5" alt="" class="tphoto">
               </div>
             </a>
@@ -216,23 +203,14 @@
               <li class="name">{{ clesson.teacher_name_cn }}
               <span class="teacherID">ID:{{clesson.teacher_id}}</span></li>
               <li class="cityT">{{clesson.province_addr}}{{clesson.current_address}}</li>
-              <li v-if="clesson.learn_type == 0">
+              <li>
                 <span class="sptitle">日本語</span>
                 <span class="spdes">{{clesson.japanese_level}}{{maps['japanese_level'][clesson.japanese_level]}}</span>
               </li>
-              <li v-else>
+              <li>
                 <span class="sptitle">業界の得意分野</span>
                 <span class="spdes">{{ clesson.topic_str }}</span>
               </li>
-              <li v-if="clesson.learn_type == 0">
-                <span class="sptitle">英語</span>
-                <span class="spdes">{{clesson.english_level}}{{maps['english_level'][clesson.english_level]}}</span>
-              </li>
-              <li v-else>
-                <span class="sptitle">対応可能な方言</span>
-                <span class="spdes">{{ clesson.dialect }}</span>
-              </li>
-
             </ul>
           </div>
             <span class="arrowContent">評価を書く</span>
@@ -257,8 +235,6 @@
             <a :href="'/teachers/'+clesson.teacher_id">
               <div class="teacherPhoto">
 <!--                <div class="cnRibbon"></div>-->
-                <span v-if="clesson.learn_type == 0" class="tagL">総合</span>
-                <span v-else class="tagS">会話</span>
                 <img :src="clesson.face_img5" alt="" class="tphoto">
               </div>
             </a>
@@ -267,23 +243,14 @@
               <li class="name">{{ clesson.teacher_name_cn }}
                 <span class="teacherID">ID:{{clesson.teacher_id}}</span></li>
               <li class="cityT">{{clesson.province_addr}}{{clesson.current_address}}</li>
-              <li v-if="clesson.learn_type == 0">
+              <li>
                 <span class="sptitle">日本語</span>
                 <span class="spdes">{{clesson.japanese_level}}{{maps['japanese_level'][clesson.japanese_level]}}</span>
               </li>
-              <li v-else>
+              <li>
                 <span class="sptitle">業界の得意分野</span>
                 <span class="spdes">{{ clesson.topic_str }}</span>
               </li>
-              <li v-if="clesson.learn_type == 0">
-                <span class="sptitle">英語</span>
-                <span class="spdes">{{clesson.english_level}}{{maps['english_level'][clesson.english_level]}}</span>
-              </li>
-              <li v-else>
-                <span class="sptitle">対応可能な方言</span>
-                <span class="spdes">{{ clesson.dialect }}</span>
-              </li>
-
             </ul>
           </div>
         </div>
@@ -427,7 +394,7 @@ swiper-container::part(button-prev) {
   display: none;
 }
 .commentBG{
-  background-color: #FFF9EC;
+  background-color: var(--green-light);
   border-bottom: 1px solid #EEEEEE;
   position: relative;
 }
@@ -447,7 +414,7 @@ swiper-container::part(button-prev) {
   display: block;
   position: absolute;
   right: 50px;
-  color: #FF8F3E;
+  color: var(--green-dark);
   font-size: 10px;
   text-align: center;
   background-position: center top;

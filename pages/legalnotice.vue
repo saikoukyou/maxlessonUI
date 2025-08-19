@@ -1,5 +1,5 @@
 <template>
-  <div class="overview topTemplate">
+  <div class="overview topTemplate page-wrapper">
     <section class="PlanPrice">
       <div class="PlanPrice__inner">
       <div class="subPosition">
@@ -70,7 +70,8 @@
   font-family: Arial, sans-serif;
   color: #333;
   width: 1000px;
-  margin: 30px auto;
+  margin: auto;
+  padding: 40px 0;
 }
 
 /* Table header styling */
@@ -95,9 +96,6 @@
   background-color: #f9f9f9;
 }
 
-.overview{
-  margin-bottom: 50px;
-}
 
 /* Responsive styling for screens 520px or narrower */
 @media (max-width: 520px) {

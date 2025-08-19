@@ -435,7 +435,7 @@ function logout() {
   }
 
   .menuBiz li.bizNormal div{
-    background: linear-gradient(135deg, #FFB273, #FA8373);
+    background: linear-gradient(135deg, #FFB273, var(--pink-dark));
     width: 70%;
     height: 40px;
     margin: auto;

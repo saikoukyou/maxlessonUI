@@ -313,7 +313,7 @@ watch(
     min-height: 80px;
     background-color: #FFFFFF;
     border-bottom: 1px solid #E7E7E7;
-    border-left: 11px solid #14A6B3;
+    border-left: 11px solid var(--green-dark);
     padding: 20px 0;
     position: relative;
   }
@@ -409,7 +409,7 @@ watch(
       left: 15px;
     }
     .openBtn{
-      background-color: #14A6B3; color: #FFFFFF;
+      background-color: var(--green-dark); color: #FFFFFF;
       font-size: 12px; padding: 6px 8px 3px 8px;
       font-weight: bold;
       position: absolute;

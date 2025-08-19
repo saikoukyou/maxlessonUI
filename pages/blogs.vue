@@ -100,7 +100,7 @@ if (route && route?.query?.id) {
 const hoverMenu = ref(null);
 
 const categoryColorMap = {
-  18: '#da1111', // 更新情報
+  18: '#FA8373', // 更新情報
   17: '#7c344d', // その他
   12: '#ED7E32', // 生徒向けニュース
   11: '#499849', // 豆知識

@@ -1,3 +1,15 @@
+:root {
+    --green-darker:#25909A;
+    --green-dark: #14A6B3;
+    --greeb-medium:#1FB5C1;
+    --green-light: #EDF8F8;
+    --pink-dark: #FA8373;
+    --pink-darker: #F84D36;
+    --pink-light: #FDF1EF;
+    --bg--dark:#F5F0E7;
+    --bg--light:#FAF7F3;
+    --mintcream:#f5fffa;
+}
 :deep(.fix-disabled.n-button--disabled) {
     --n-text-color-disabled: #aaa !important;
     --n-border-disabled: 1px solid #ccc !important;
@@ -200,7 +212,7 @@ svg {
     left: 3px;
     width: 16px;
     height: 16px;
-    background-color: #FA8373;
+    background-color: var(--pink-dark);
     border-radius: 2px;
 }
 
@@ -693,7 +705,7 @@ header .menu a {
 .SumLesson img {width:110px; height:110px; position: absolute; left: 20%;}
 .countBlock{width: 50%; position: absolute; top:8%; right:20%; text-align: right;}
 .countTitle{font-size: 13pt; font-weight: bold;}
-.countNumber{font-size: 36pt; line-height: 80px; color:#25909A;}
+.countNumber{font-size: 36pt; line-height: 80px; color:var(--green-darker);}
 .lessonComa{color: #333333; font-size: 14px;}
 .totalCount{position:relative; display: inline-block; height: 80px; width: 50%;}
 
@@ -848,7 +860,7 @@ header .menu a {
 .bookSection{text-align: center; margin-bottom: 24px;}
 .bookTitle{
     font-size: 24px; text-align: center; font-weight: bold;
-    color: #FA8373;
+    color: var(--pink-dark);
     display: inline-block;
     position: relative;
     z-index: 1; /* 確保文字在上面 */
@@ -869,7 +881,7 @@ header .menu a {
 }
 .jp-text {
     font-size: 15px;
-    color: #FA8373;
+    color: var(--pink-dark);
     font-weight: bold;
     line-height: normal;
     margin: 8px auto;
@@ -1466,7 +1478,7 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
     font-size: 12px;
 }
 .Submit {
-    background: #14A6B3; /* 主綠色 */
+    background: var(--green-dark); /* 主綠色 */
     width: 255px;
     height: 50px;
     line-height: 50px;
@@ -1562,7 +1574,7 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
     width: 80%;
     text-align: center;
     margin-top: 20px;
-    color: #FA8373;
+    color: var(--pink-dark);
     margin-bottom: 4px !important;
     text-decoration: underline;
 }
@@ -1852,7 +1864,7 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
 
 .loginArea ul li:nth-child(odd) {width: 240px;}
 .loginArea ul li:nth-child(odd) img{ margin: auto; width: 178px;}
-.loginArea ul li:nth-child(odd) .title{ text-align:center; display: block; font-size: 24px; font-weight: bold; color: #FA8373; margin-top: 20px;}
+.loginArea ul li:nth-child(odd) .title{ text-align:center; display: block; font-size: 24px; font-weight: bold; color: var(--pink-dark); margin-top: 20px;}
 .loginArea ul li:nth-child(odd) .des{ text-align:center; color: #424242; display: block; font-size: 13px; margin-top: 10px; line-height: 20px;}
 
 .loginArea ul li:nth-child(even) {width: 80px; height: 200px; position: relative;}
@@ -1860,7 +1872,7 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
 
 .happyM{background-color: #FFF2DF; height: 40px; width: 85%; margin: auto; padding-left: 56px; vertical-align: center; border-radius: 24px; position: relative;}
 .happyM img{position: absolute; top: -30px; left: 94px;}
-.happyM .happyT {font-size:17px; font-weight: bold; color: #FA8373; line-height: 40px; margin-right: 10px;}
+.happyM .happyT {font-size:17px; font-weight: bold; color: var(--pink-dark); line-height: 40px; margin-right: 10px;}
 .happyM .happyD {font-size: 14px; color: #424242;}
 
 .teacherArea{width: 1130px; padding-bottom: 30px; position: relative; margin: auto; color: #424242; border-radius: 24px; text-align: left;}
@@ -1933,7 +1945,7 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
     height: 72px;
     display: flex;
     justify-content: center; /* 先讓內層容器水平置中 */
-    background-color: #14A6B3; /* 主色 */
+    background-color: var(--green-dark); /* 主色 */
     background-image: url("../images/bubble.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -2000,7 +2012,7 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
     background-color: #FFF9EC;
 }
 .sColor{color: #30A186; margin-top: 30px;}
-.lColor{color: #FA8373; margin-top: 30px;}
+.lColor{color: var(--pink-dark); margin-top: 30px;}
 
 .learnTitle{font-size: 24px; font-family: Murecho; font-weight: bold; display: inline-block; margin: auto; margin-top: 20px;}
 .learnDes{font-size: 15px; line-height: 20px; font-weight: bold; display: inline-block; margin-bottom: 2%;}
@@ -2013,11 +2025,11 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
 .planTitleFront{font-family: Murecho; margin: 40px auto 10px auto; font-size: 26px; font-weight: bold; text-align: center;}
 .planDes{margin: 0 auto; font-size: 15px; font-weight: bold; text-align: center;}
 
-.linkS{text-decoration: underline; color: #FA8373;}
+.linkS{text-decoration: underline; color: var(--pink-dark);}
 
 .courseTitle{color:#ffffff; line-height: 48px; height: 48px; text-align: center; font-size:20px; width: 100%; display: block; font-weight: bold;  border-radius:8px 8px 0 0;}
 .sColorbg{background-color: #30A186;}
-.Colorbg{background-color: #14A6B3;}
+.Colorbg{background-color: var(--green-dark);}
 
 .sColorbg_light{background-color: #F3FFFC;}
 .lColorbg_light{background-color: #FFF7F1;}
@@ -2042,7 +2054,7 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
 .courseList{color: #333333; margin:20px 0 20px 24px; font-size: 12px; line-height: 22px; list-style-type: disc;}
 
 .actionCon{color: #30A186; font-weight: bold; text-decoration: underline;}
-.actionLearn{color: #FA8373; font-weight: bold; text-decoration: underline;}
+.actionLearn{color: var(--pink-dark); font-weight: bold; text-decoration: underline;}
 
 .freeBtn{
     text-align: center; color: white; line-height: 69px; font-size: 27px;
@@ -2050,13 +2062,12 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
     border-radius: 150px; height: 71px; position: relative; margin: auto;
     cursor: pointer;
 }
-
-.singlePosition{margin-top: 80px; }
+.singlePosition{padding: 40px 0 80px 0; }
 .singlePlan {
     background-color: #ffffff;
     width: 930px;
     min-height: 90px;
-    margin: 30px auto;
+    margin: 30px auto 0 auto;
     position: relative;
     display: flex;
     align-items: center;
@@ -2064,6 +2075,7 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
     padding: 0 24px;
     box-sizing: border-box;
     gap: 8px;
+    border-radius: 8px;
 }
 
 .SinglePlanContent {
@@ -2082,7 +2094,7 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
     font-size: 22px;
     border-radius: 8px;
     padding: 6px 12px;
-    background-color: #FA8373;
+    background-color: var(--pink-dark);
 }
 
 .SinglePlanContent li span {
@@ -2198,6 +2210,7 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
     line-height: 40px;
     color: #FFFFFF;
     border-radius: 8px 8px 0 0;
+    background-color: var(--green-dark);
 }
 
 /*.PricelistChild h4::after {*/
@@ -2240,7 +2253,7 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
 .PricelistChild .buttonCVtrial,
 .PricelistChild_add .buttonCVtrial,
 .study-plan-box .buttonCVtrial{
-    background-color: #F2762E;
+    background-color: var(--pink-dark);
     font-size: 13px;
     width: fit-content;
     padding: 0 12px;
@@ -2254,21 +2267,21 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
     align-items: center;
     color: #ffffff;
     font-weight: bold;
-    filter: drop-shadow(0 3px 0 rgba(228, 103, 12, 1));
+    filter: drop-shadow(0 3px 0 #F97462);
     cursor: pointer;
     transition: .3s ease;
 }
 
 .PricelistChild .buttonCVtrial:hover {
-    background-color: #D92332;
+    background-color: var(--pink-darker);
 }
 
 .PricelistChild_add .buttonCVtrial:hover {
-    background-color: #D92332;
+    background-color: var(--pink-darker);
 }
 
 .study-plan-box .buttonCVtrial:hover {
-    background-color: #D92332;
+    background-color: var(--pink-darker);
 }
 
 .Pricelist .description {
@@ -2319,7 +2332,6 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
     min-width: 210px;
     width: 16%;
     height: auto;
-    background-color: #F1F1F1;
     margin-right: 40px;
 }
 
@@ -2335,7 +2347,6 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
 }
 
 .netchina_main {
-    background-color: #F1F1F1;
     width: 84%;
     height: auto;
     margin-top: 32px;
@@ -2495,13 +2506,13 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
 /* mypage > mypageReserved */
 
 .OneWeekList {
-    background-color: #FFAA47;
+    background-color: var(--green-dark);
     height: 54px;
     border-radius: 6px 6px 0 0;
     display: flex;
     justify-content: center;
     padding: 0;
-    color: #424242;
+    color: #FFFFFF;
     font-weight: bold;
     font-size: 14px;
 }
@@ -2513,8 +2524,8 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
 }
 
 .OneWeekList li.selected {
-    background-color: #FFF9EC;
-    color: #F28705;
+    background-color: var(--green-light);
+    color: var(--green-dark);
 }
 
 .OneWeekList li>span {
@@ -2539,8 +2550,8 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
 }
 
 .OneWeekList> :nth-child(n+2):nth-child(-n+9):hover {
-    background-color: #FFF9EC;
-    color: #F28705;
+    background-color: var(--green-light);
+    color: var(--green-dark);
 }
 
 .OneWeekList> :first-child {
@@ -2553,7 +2564,7 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
 }
 
 .reserved_Teacher_Wrap {
-    background-color: #FFF9EC;
+    background-color: var(--green-light);
     display: flex;
     width: 100%;
     align-items: center;
@@ -2716,7 +2727,7 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
     align-content: center;
     width: 100%;
     height: 64px;
-    background-color: #14A6B3;
+    background-color: var(--green-dark);
     padding-top: 6px;
     padding-left: 60px;
     padding-right: 60px;
@@ -2744,12 +2755,12 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
 .select_date>li:hover {
     background-color: #EDF8F8;
     border-radius: 8px 8px 0 0;
-    color:#14A6B3;
+    color:var(--green-dark);
 }
 
 .select_date>li.selected {
     background-color: #EDF8F8;
-    color: #14A6B3;
+    color: var(--green-dark);
     border-radius: 10px 10px 0 0;
     padding: 0 20px 0 20px;
 }
@@ -2844,8 +2855,7 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
     font-size: 12px;
     line-height: 28px;
     border-radius: 4px;
-    background-color: #FFF0EE;
-    border: 1px solid #EEEEEE;
+    background-color: #FFFFFF;
     color: #666666;
     cursor: pointer;
     position: absolute;
@@ -2893,7 +2903,6 @@ teacherInfo .favorite:hover {
 }
 
 .select_teachers .timeGrid li {
-    background-color: #FFFFFF;
     width: 130px;
     height: 44px;
     border-radius: 6px;
@@ -2904,13 +2913,14 @@ teacherInfo .favorite:hover {
     align-items: center;
     font-weight: bold;
     cursor: pointer;
-    color: #333333;
+    color: var(--green-dark);
     font-size: 14px;
+    background-color: #FFFFFF;
 }
 
 .select_teachers .timeGrid li:hover {
-    background-color:#EDF8F8;
-    color: #12919E;
+    background-color: #EDF8F8;
+    color: var(--green-dark);
     /*-moz-box-shadow: 2px 2px 8px 3px rgb(255 150 50 / 50%);*/
     /*-webkit-box-shadow: 2px 2px 8px 3px rgb(255 150 50 / 50%);*/
     /*-ms-box-shadow: 2px 2px 8px 3px rgb(255 150 50 / 50%);*/
@@ -3078,7 +3088,7 @@ teacherInfo .favorite:hover {
 /*.addOption li:focus {*/
 /*    background-color: #FFF9F1; !* 修改为点击或者鼠标悬停时的背景色 *!*/
 /*    border-color: #FF8F3E; !* 修改为点击或者鼠标悬停时的边框颜色 *!*/
-/*    color: #FA8373; !* 修改为点击或者鼠标悬停时的文字颜色 *!*/
+/*    color: var(--pink-dark); !* 修改为点击或者鼠标悬停时的文字颜色 *!*/
 /*}*/
 
 
@@ -3133,7 +3143,7 @@ teacherInfo .favorite:hover {
 .addOption input[type="checkbox"]:checked + label {
 //background-color: #FFF9F1;
     border: 2px solid #FF8F3E;
-    color: #FA8373;
+    color: var(--pink-dark);
     border-radius: 2px;
     font-weight: bold;
 }
@@ -3184,7 +3194,7 @@ teacherInfo .favorite:hover {
     border: 1px solid #f4f4f4;
 }
 .tagL{
-    background-color: #FA8373;
+    background-color: var(--pink-dark);
     border-radius: 4px;
     color: #FFFFFF;
     padding: 3px 6px;
@@ -3324,7 +3334,7 @@ select::-ms-expand {
 }
 .zoneDivInner .leftDiv span{
     text-align: left; /* 保持靠左對齊 */
-    color: #FA8373;
+    color: var(--green-dark);
     font-size: 21px;
     font-weight: bold;
 }
@@ -3390,7 +3400,7 @@ select::-ms-expand {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #14A6B3;
+    background-color: var(--green-dark);
     border-radius: 24px;
     color: #fff;
     font-weight: bold;
@@ -3399,7 +3409,7 @@ select::-ms-expand {
 }
 
 .Submit_search:hover {
-    background-color: #ff7f00;
+    background-color: var(--greeb-medium);
     cursor: pointer;
 }
 
@@ -3409,7 +3419,7 @@ select::-ms-expand {
     position: absolute;
     right: 60px;
     top: 26px;
-    color: #FA8373;
+    color: var(--green-dark);
     text-decoration: underline;
 }
 
@@ -3474,7 +3484,7 @@ select::-ms-expand {
     display: inline-block;
 }
 
-.teacherPossible{position: absolute; font-family: Murecho; font-size: 20px; font-weight: bold; color: #FA8373; right: 158px; top: 80px;}
+.teacherPossible{position: absolute; font-family: Murecho; font-size: 20px; font-weight: bold; color: var(--pink-dark); right: 158px; top: 80px;}
 .teacherPossible img{width:20px; position: relative; margin-right: 4px; line-height: 20px; display: inline-block;}
 
                                                                                                                                                                   /* EveryTime everytime.html */
@@ -3760,7 +3770,7 @@ select::-ms-expand {
 .cancelratio ul .ctitle{ font-size: 12px; color: #848484;}
 .cancelratio ul .cnumber{ font-size: 28px; margin-right: 4px;}
 .cancelratio ul .cnumber span{ font-size: 12px;}
-.cancelratio ul .clink{ font-size: 12px; color: #FA8373;}
+.cancelratio ul .clink{ font-size: 12px; color: var(--pink-dark);}
 
 .cancelratio ul li{margin: 10px 0;}
 
@@ -3860,7 +3870,7 @@ select::-ms-expand {
     margin: 30px auto; cursor: pointer;
     border-radius: 8px; font-size: 17px;
     padding: 0 20px;
-    background-color: #14A6B3; color: #FFFFFF; text-align: center;
+    background-color: var(--green-dark); color: #FFFFFF; text-align: center;
     font-weight: bold;
 }
 .textBack_s{
@@ -3908,8 +3918,8 @@ h2 .titleBefore {
 }
 .select_Text li:hover {
     background-color: #EDF8F8; /* 主色的超淡背景 */
-    color: #14A6B3;           /* 主色 */
-    border-bottom: 4px solid #14A6B3;
+    color: var(--green-dark);           /* 主色 */
+    border-bottom: 4px solid var(--green-dark);
 }
 .textArray .textSubtitle {
     background-color: #EDF8F8; /* 主色的超淡背景 */
@@ -3924,7 +3934,7 @@ h2 .titleBefore {
 }
 
 .select_Text li.selected {
-    background-color: #14A6B3;
+    background-color: var(--green-dark);
     color: #FFF;
     cursor: pointer;
 }
@@ -3953,7 +3963,7 @@ h2 .titleBefore {
 
 
 .textArray .textSubtitle>.total {
-    color: #14A6B3;
+    color: var(--green-dark);
     font-weight: bold;
     padding: 0;
     font-size: 14px;
@@ -4010,7 +4020,7 @@ h2 .titleBefore {
     z-index: 2;
     position: absolute;
     top: 50%;
-    right: 16px;
+    right: 24px;
     transform: translateY(-50%);
     display: inline-block;
     cursor: pointer;
@@ -4201,7 +4211,7 @@ h2 .titleBefore {
 }
 
 .select_help .selected{
-    border: solid #14A6B3;
+    border: solid var(--green-dark);
     border-width: 0 0 0  10px;
 }
 
@@ -4230,7 +4240,7 @@ h2 .titleBefore {
 }
 
 .select_help li:hover {
-    background-color: #14A6B3;
+    background-color: var(--green-dark);
     color: #fff;
 }
 
@@ -4259,7 +4269,7 @@ h2 .titleBefore {
 }
 
 .n-button{
-    background-color: #14A6B3;
+    background-color: var(--green-dark);
     color: #FFFFFF;
     font-weight: bold;
     margin:0 0 20px 0;
@@ -4294,7 +4304,7 @@ h2 .titleBefore {
 
 .select_helpContents .title {
     font-weight: bold;
-    background-color: #F4F4F4;
+    background-color: #f4f4f4;
     width: 90%;
     align-items: center;
     margin: 0 auto 20px auto;
@@ -4368,7 +4378,7 @@ h2 .titleBefore {
 .firstRes li{font-size: 14px;line-height: 20px;}
 
 .linkStyle{
-    color: #FA8373;
+    color: var(--pink-dark);
     text-decoration: underline;
     font-weight: bold;
 }
@@ -4388,7 +4398,7 @@ h2 .titleBefore {
 
 .netchina_contents .lessonTrial_head_navi li.selected {
     background-color: #fff9ec;  /* 背景顏色變為淺色 */
-    color: #FA8373;  /* Change the text color to match the selected state */
+    color: var(--pink-dark);  /* Change the text color to match the selected state */
     font-weight: bold;  /* Make the font bold to highlight the selection */
     border-radius: 8px 8px 0 0;  /* Apply rounded corners only on the top */
     border-top: 4px solid #FFAA47;  /* Add a border on the top to make it stand out */
@@ -4396,7 +4406,7 @@ h2 .titleBefore {
 }
 
 .netchina_contents .lessonTrial_head_navi li.selected .Bit {
-    color: #FA8373;  /* Ensure that the text within the selected element also changes color */
+    color: var(--pink-dark);  /* Ensure that the text within the selected element also changes color */
 }
 
 /* Contact */
@@ -4498,7 +4508,7 @@ h2 .titleBefore {
     font-size: 13px;
     border-radius: 24px;
     font-weight: bold;
-    border: 1px solid #FA8373;
+    border: 1px solid var(--pink-dark);
     margin: 4px;
     height: 32px;
     line-height: 32px;
@@ -4547,7 +4557,7 @@ h2 .titleBefore {
 
 .roadmap_container {
     /*min-height: 112px;*/
-    /*border: solid #FA8373;*/
+    /*border: solid var(--pink-dark);*/
     /*border-width: 0 0 0  10px;*/
     /*background-color: #fff;*/
     /*width: 100%;*/
@@ -4581,7 +4591,7 @@ h2 .titleBefore {
 .thirdList li a {
     padding: 6px 12px;             /* 增加內距讓按鈕更飽滿 */
     margin: 0 4px;
-    background-color: #FA8373;
+    background-color: var(--pink-dark);
     color: #FFFFFF;
     border: none;
     border-radius: 8px;
@@ -4595,7 +4605,7 @@ h2 .titleBefore {
     box-shadow: 0 2px 3px rgba(0,0,0,0.3); /* 懸停時陰影更深 */
 }
 .openBtn{
-    background: linear-gradient(to right, #66bb6a, #43a047); /* 蘋果綠 → 清新綠 */
+    background: linear-gradient(to right, #FCA69A 0%, #FA8373 100%);
     color: #ffffff;
     font-size: 12px;
     padding: 6px 10px 3px 10px;
@@ -4659,7 +4669,7 @@ h2 .titleBefore {
     right: 30px;
     position: absolute;
     top:20px;
-    color: #FA8373;
+    color: var(--pink-dark);
     text-decoration: underline;
 }
 
@@ -4670,8 +4680,8 @@ h2 .titleBefore {
 .lessonDesAttention {
     font-size: 16px;
     font-weight: bold;
-    color: #424242;
-    background-color: #FFC73B;
+    color: var(--green-dark);
+    background-color: var(--green-light);
     border-radius: 8px;
     padding: 12px 24px 0 50px;
     width: 100%;
@@ -4689,7 +4699,8 @@ h2 .titleBefore {
     font-size: 16px;
     font-weight: bold;
     color: #C6383A;
-    background-color: #FAE0E0;
+    background-color: #FFCEC866;  /* 淡黃色底 */
+    border: 1px solid #FFCEC8;
     border-radius: 8px;
     padding: 12px 24px 0 50px;
     width: 100%;
@@ -4708,6 +4719,7 @@ h2 .titleBefore {
     width: 100%;
     background-color: #fff;
     position: relative;
+    border-radius: 8px 8px 0 0;
 }
 
 
@@ -4813,7 +4825,7 @@ h2 .titleBefore {
     width: 236px;
     height: 60px;
     margin: 20px auto;
-    background-color: #FA8373;
+    background-color: var(--green-dark);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -5469,7 +5481,7 @@ footer {
 .snone{
     text-align: center;
     width: 100%;
-    background-color: #fff9ec;
+    background-color: #f9f9f9;
     height: 40px;
     vertical-align: middle;
     line-height: 40px;
@@ -5483,7 +5495,7 @@ footer {
     line-height: 48px;
     color: #FFFFFF;
     border-radius: 30px;
-    background-color: #FA8373;
+    background-color: var(--pink-dark);
     text-align: center;
     margin: 40px auto;
     cursor: pointer;
@@ -5677,7 +5689,7 @@ footer {
 }
 
 .my-curriculum input[type="checkbox"]:checked {
-    background-color: #FA8373; /* 選中後的背景顏色 */
+    background-color: var(--pink-dark); /* 選中後的背景顏色 */
     background-image: url("../../assets/images/white_check.png");
     background-repeat: no-repeat;
     background-size: 14px;
@@ -5824,12 +5836,12 @@ footer {
     height:20px;
     transition: background-color 0.3s, color 0.3s;
     color: #FEF9F5;
-    background-color: #ED7E32;
+    background-color: var(--pink-dark);
 }
 
 .more-button-c:hover {
     color: #FEF9F5;
-    background-color: #ED7E32;
+    background-color: var(--pink-dark);
 }
 .more-button-c:hover .arrow-circle-c {
     background-color: #FEF9F5;
@@ -5938,13 +5950,13 @@ footer {
 .category-button:hover {
     background-color: #E6F7F9; /* 超淡綠 */
     color: #424242;
-    border-color: #14A6B3;     /* 主綠 */
+    border-color: var(--green-dark);     /* 主綠 */
 }
 
 .category-button.active {
     background-color: #E6F7F9;
     color: #424242;
-    border-color: #14A6B3;
+    border-color: var(--green-dark);
     box-shadow: 0 2px 6px rgba(0,0,0,.08);
 }
 
@@ -5966,12 +5978,12 @@ footer {
 }
 
 .tag-badge.active {
-    background-color: #FA8373;
+    background-color: var(--pink-dark);
     color: #FFFFFF;
 }
 
 .category-button:hover .tag-badge:not(.active) {
-    background-color: #FA8373;
+    background-color: var(--pink-dark);
     color: #FFFFFF;
 }
 .class_len{font-size: 16px; font-weight: bold;}
@@ -6021,7 +6033,7 @@ footer {
     border-bottom: 5px solid #EEEEEE;
 }
 
-.tab-btn .left span { color: #FA8373; }
+.tab-btn .left span { color: var(--pink-dark); }
 .tab-btn .right span { color: #30A186; }
 
 .tab-btn:hover {
@@ -6047,7 +6059,7 @@ footer {
     height: 5px;
     width: 565px;
     transform: translateX(0);
-    background-color: #FA8373;
+    background-color: var(--pink-dark);
     /*transition: transform 0.4s ease, background-color 0.4s ease;*/
 }
 
@@ -6079,7 +6091,7 @@ footer {
 .course-book h2{font-size: 27px; font-weight: bold; margin-top: 50px; text-shadow: 0 2px 3px rgba(255, 255, 255, 1);}
 .course-book p{font-size: 15px; margin-top: 2px; font-weight: bold; text-shadow: 0 2px 3px rgba(255, 255, 255, 1);}
 
-.course-book.learning h2,.course-book.learning p{color: #FA8373; }
+.course-book.learning h2,.course-book.learning p{color: var(--pink-dark); }
 .course-book.conversation h2,.course-book.conversation p{color: #30A186; }
 
 
@@ -6594,7 +6606,7 @@ footer {
 }
 .k-cta{
     width:100%;
-    background:#25909A;          /* 綠背景，可依品牌調整 */
+    background:var(--green-darker);          /* 綠背景，可依品牌調整 */
     color:#fff;
     padding: 64px 24px;
     overflow:hidden;              /* 防止裝飾超出 */
@@ -6628,18 +6640,19 @@ footer {
 }
 
 .top-cta {
-    display: flex;
+    display: inline-flex;         /* 讓 span + img 水平對齊 */
     align-items: center;
     gap: 8px;
+    text-decoration: none;        /* 移除 <a> 預設底線 */
+    border: none;                 /* 移除 button 風格 */
+    cursor: pointer;
     padding: 10px 24px;
     margin: 12px auto;
-    background-color: #25909A; /* 按鈕背景色 */
+    background-color: var(--green-darker); /* 按鈕背景色 */
     color: #fff;
     font-size: 18px;
     font-weight: bold;
-    border: none;
     border-radius: 999px; /* 膠囊形狀 */
-    cursor: pointer;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     transition: background-color 0.25s ease, transform 0.2s ease;
 }
@@ -6651,7 +6664,7 @@ footer {
     padding: 10px 24px;
     margin: 12px auto; /* 左右 auto 就置中 */
     background-color: #FFFFFF; /* 按鈕背景色 */
-    color: #25909A;
+    color: var(--green-darker);
     font-size: 18px;
     font-weight: bold;
     border: none;
@@ -6671,7 +6684,7 @@ footer {
     height: 18px;
 }
 .top-cta:hover {
-    background-color: #14A6B3;
+    background-color: var(--green-dark);
     transform: translateY(-1px);
 }
 /* 通用進場動畫：由下往上淡入 */
@@ -6708,7 +6721,7 @@ footer {
     width: 7px;
     height: 22px;
     border-radius: 16px;
-    background: #14A6B3; /* 主綠 */
+    background: var(--green-dark); /* 主綠 */
 }
 
 /* 共用 switch 樣式（你已經有就不用重複） */
@@ -6717,7 +6730,7 @@ footer {
     display:inline-flex; align-items:center; gap:8px;
     padding:8px 14px; border-radius:999px; text-decoration:none;
     font-size:14px; font-weight:700;
-    border:1px solid #14A6B3; color:#14A6B3; background:#fff;
+    border:1px solid var(--green-dark); color:var(--green-dark); background:#fff;
     transition:all .2s ease;
 }
 
@@ -6725,7 +6738,7 @@ footer {
 .seg-switch__btn.is-active,
 .seg-switch__btn.teacher_active,
 .seg-switch__btn.time_active {
-    background:#14A6B3; color:#fff;
+    background:var(--green-dark); color:#fff;
 }
 
 /* --- 想要圖示（選配）--- */
@@ -7048,7 +7061,7 @@ footer {
         text-align: center;
         line-height: 44px;
         font-weight: bold;
-        color: #FA8373;
+        color: var(--pink-dark);
         border: 1px solid #eee;
         box-sizing: border-box;
     }
@@ -7069,7 +7082,7 @@ footer {
         left: 0;
         width: 50%;
         height: 4px;
-        background-color: #FA8373;
+        background-color: var(--pink-dark);
         transition: transform 0.4s ease;
     }
 
@@ -7715,7 +7728,7 @@ footer {
         margin: auto;
         text-align: center;
         width: 50%;
-        background-color: #FA8373;
+        background-color: var(--pink-dark);
         height: 40px;
         border-radius: 100px;
         line-height: 40px;
@@ -8031,7 +8044,7 @@ footer {
 
     .loginArea ul li:nth-child(odd) {width: 100%;}
     .loginArea ul li:nth-child(odd) img{ margin: auto; width: 50%;}
-    .loginArea ul li:nth-child(odd) .title{ text-align:center; display: block; font-size: 24px; font-weight: bold; color: #FA8373; margin-top: 20px;}
+    .loginArea ul li:nth-child(odd) .title{ text-align:center; display: block; font-size: 24px; font-weight: bold; color: var(--pink-dark); margin-top: 20px;}
     .loginArea ul li:nth-child(odd) .des{ text-align:center; color: #424242; width: 70%; margin: auto; display: block; font-size: 14px; margin-top: 10px; line-height: 20px;}
 
     .loginArea ul li:nth-child(even) {width: 100%; height: 50px; position: relative;}
@@ -8039,7 +8052,7 @@ footer {
 
     .happyM{background-color: #FFF2DF; height: auto; width: 85%; margin: 40px auto 10px auto; padding:20px; vertical-align: center; border-radius: 24px; position: relative;}
     .happyM img{position: absolute; top: -10px; left: 30px;}
-    .happyM .happyT {font-size:17px; font-weight: bold; color: #FA8373; display: block; line-height: 40px; margin-right: 10px;}
+    .happyM .happyT {font-size:17px; font-weight: bold; color: var(--pink-dark); display: block; line-height: 40px; margin-right: 10px;}
     .happyM .happyD {font-size: 14px; color: #424242;}
 
     .teacherArea{width: 100%; padding-bottom: 30px;
@@ -8701,7 +8714,7 @@ footer {
     }
 
     .select_help .selected{
-        border: solid #FA8373;
+        border: solid var(--pink-dark);
         border-width: 10px 0 0 0;
     }
 

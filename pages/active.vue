@@ -50,7 +50,7 @@ onMounted(async () => {
   width: 550px; height: 130px; margin: 0 auto 100px auto; vertical-align: center; background-color: #FFF9EC;
 }
 .loginColor{
-  color: #FA8373;
+  color: var(--pink-dark);
   text-decoration: underline;
 }
 @media screen and (max-width: 520px) {

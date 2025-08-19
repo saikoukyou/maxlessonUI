@@ -209,7 +209,7 @@
                   <span class="planSDes">{{useStore?.studentInfo?.next_plan_name}}</span>
                 </div>
                 <nuxt-link v-if="useStore?.studentInfo?.monthly_learn_type == 0" @click="closeMenu" to="/mypage/searchTeacher?learnType=0">
-                  <button class="lbutton">総合レッスン予約</button>
+                  <button class="lbutton">レッスン予約</button>
                 </nuxt-link>
                 <nuxt-link v-else  to="/mypage/searchTeacher?learnType=1" @click="closeMenu">
                   <button class="sbutton">会話レッスン予約</button>
@@ -229,7 +229,7 @@
                   <span class="planSDes">{{useStore.studentInfo.ticket_plan_validity_period_end_day}}</span>
                 </div>
                 <nuxt-link v-if="useStore.studentInfo.ticket_learn_type == 0" @click="closeMenu" to="/mypage/searchTeacher?learnType=0">
-                  <button class="lbutton">総合レッスン予約</button>
+                  <button class="lbutton">レッスン予約</button>
                 </nuxt-link>
                 <nuxt-link v-else to="/mypage/searchTeacher?learnType=1" @click="closeMenu">
                   <button class="sbutton">会話レッスン予約</button>
@@ -371,7 +371,7 @@ function closeMenu() {
 //}
 .mypageSideMenu li:not(.bannerTrial):not(.active):hover {
   font-weight: bold;
-  background-color: #eeeeee;
+  background-color: #FFFFFF;
   border-radius: 8px;
 }
 
@@ -414,10 +414,10 @@ function closeMenu() {
 .userFile .userid{color: #ACACAC; font-size: 11px; margin-top: 6px; font-weight: bold;}
 .userFile .orangew{color: #333333; margin-left: 6px;}
 
-.lightw{color: #E4670C;}
+.lightw{color: var(--pink-dark);}
 
 .planBlock{
-  background-color: #F6F6F6;
+  background-color: #F9F9F9;
   padding: 12px 24px 12px 24px; text-align: left;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
@@ -426,12 +426,12 @@ function closeMenu() {
 }
 
 .planTitle{font-size: 11px; color: #848484; margin-bottom: 4px; font-weight: bold;}
-.lt{color: #E4670C; font-size: 15px; font-weight: bold; display: block; margin: 2px 0;}
+.lt{color: var(--green-darker); font-size: 15px; font-weight: bold; display: block; margin: 2px 0;}
 .st{color: #30A186; font-size: 15px; font-weight: bold; display: block; margin: 2px 0;}
 .vt{color: #2E6190; font-size: 15px; font-weight: bold; display: block; margin: 2px 0;}
 
 .lbutton {
-  background-color: #E4670C;
+  background-color: var(--green-darker);
   color: #FFFFFF;
   font-size: 15px;
   font-weight: bold;
@@ -443,7 +443,7 @@ function closeMenu() {
 }
 
 .lbutton:hover {
-  background-color: #cc5c09;
+  background-color: var(--green-dark);
 }
 
 .sbutton {
@@ -557,7 +557,7 @@ function closeMenu() {
   width: 540px;
 }
 .reComa{
-  color: #E4670C;
+  color:var(--pink-dark);
   font-weight: bold;
   font-size: 10px;
   margin: 0 0 0  8px;
@@ -610,6 +610,7 @@ function closeMenu() {
 
 .expiry {
   color: #A94442;
+  font-weight: bold;
 }
 .expiry_w {
   color: #6F6F6F;

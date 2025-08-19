@@ -731,7 +731,7 @@ label{margin-right: 20px; min-width: 138px;}
 
 .resetPw{
   font-size: 9px;
-  color: #FA8373;
+  color: var(--pink-dark);
   display: block;
   position: absolute;
   height: 20px;

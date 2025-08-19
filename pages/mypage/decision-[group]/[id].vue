@@ -12,8 +12,6 @@
           <nuxt-link :to="'/teachers/'+lesson.teacher_id">
               <div class="teacherPhoto">
 <!--                <div class="cnRibbon"></div>-->
-                <span v-if="lesson.teacher_learn_type == 0" class="tagL">総合</span>
-                <span v-else class="tagS">会話</span>
                 <img :src="lesson.face_img5" alt="" class="tphoto">
               </div>
           </nuxt-link>
@@ -21,21 +19,13 @@
             <li class="pinyin">{{lesson.name_pinyin}}</li>
             <li class="name">{{ lesson.name_cn }}<span class="teacherID">ID:{{lesson.teacher_id}}</span></li>
             <li class="cityT">{{lesson.province_addr}}{{lesson.current_address}}</li>
-            <li v-if="lesson.teacher_learn_type == 0">
+            <li>
               <span class="sptitle">日本語</span>
               <span class="spdes">{{lesson.japanese_level}}{{maps['japanese_level'][lesson.japanese_level]}}</span>
             </li>
-            <li v-else class="jpT">
+            <li>
               <span class="sptitle">業界の得意分野</span>
               <span class="spdes">{{ lesson.teacher_topic_str }}</span>
-            </li>
-            <li v-if="lesson.teacher_learn_type == 0">
-              <span class="sptitle">英語</span>
-              <span class="spdes">{{lesson.english_level}}{{maps['english_level'][lesson.english_level]}}</span>
-            </li>
-            <li v-else class="enT">
-              <span class="sptitle">対応可能な方言</span>
-              <span class="spdes">{{ lesson.teacher_dialect }}</span>
             </li>
 <!--            <li>{{lesson.integral_rank}}ポイント</li>-->
           </ul>
@@ -59,7 +49,7 @@
   <ul v-else>
     <li>
       講師が生徒の
-      <span style="font-weight: bold; color: #FA8373">
+      <span style="font-weight: bold; color: var(--pink-dark)">
         {{lesson.software}}
         <span>（ID： {{lesson.software === 'wechat' ? lesson.student_wechat : lesson.student_teams_id}} ）</span>
       </span>
@@ -68,7 +58,7 @@
     <li>
       レッスン開始5分前になっても講師から友人追加申請が来ない場合、または安心のため早めに講師と繋がりたい場合、生徒から講師に友人追加申請をしてください。<br>
       講師の
-      <span style="font-weight: bold; color: #FA8373">
+      <span style="font-weight: bold; color: var(--pink-dark)">
         {{lesson.software}}
         <span>（ID： {{lesson.software === 'wechat' ? lesson.teacher_wechat : lesson.teacher_teams_id}} ）</span>
       </span>

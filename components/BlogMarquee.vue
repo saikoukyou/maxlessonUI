@@ -96,21 +96,20 @@ onUnmounted(() => pause())
 </script>
 
 <style scoped>
-
 .marqueeWrapper {
   height: 40px;
   line-height: 40px;
   overflow: hidden;
   position: relative;
-  background-color: #F6F9FF; /* 淡藍灰底，清爽穩重 */
-  color: #123A70;
+  background-color: var(--pink-light, #FDF1EF);
+  color: #B2463B; /* 深桃作為文字色，對比清楚 */
   font-weight: bold;
   border-radius: 6px;
   margin-bottom: 12px;
-  border: 1px solid #A3C1F0;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.08);
-  border-left: 5px solid #3A7BFF;
-  transition: border-color 0.2s ease;
+  border: 1px solid rgba(250, 131, 115, 0.35); /* #FA8373 35% */
+  border-left: 5px solid var(--pink-dark, #FA8373);
+  box-shadow: 0 0 4px rgba(250, 131, 115, 0.12);
+  transition: border-color .2s ease, box-shadow .2s ease;
 }
 
 .marqueeItem {
@@ -118,41 +117,56 @@ onUnmounted(() => pause())
   display: flex;
   align-items: center;
   font-size: 13px;
-  color: #123A70;
+  color: #B2463B;
   white-space: nowrap;
   padding: 0 10px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background .2s ease, color .2s ease;
 }
 
 .marqueeItem:hover {
-  background: linear-gradient(to right, #D7E9FF, #F0DDF7); /* 藍紫漸層 hover */
-  color: #2F296B;
+  background: linear-gradient(to right, #FFE9E6, #FDF1EF); /* 桃→粉 */
+  color: #8F392F; /* 略深一階 */
 }
 
 .marqueeWrapper:hover {
-  border-color: #91B8F2;
+  border-color: rgba(250, 131, 115, 0.55);
+  box-shadow: 0 2px 8px rgba(250, 131, 115, 0.18);
 }
-
 .date {
   margin-right: 8px;
   font-size: 13px;
   font-weight: bold;
-  color: #123A70;
+  color: #8F392F; /* 深桃：和整體主色一致、對比清楚 */
+  opacity: .95;
 }
 
+/* 粉桃膠囊標籤 */
 .category-tag-new {
-  color: white;
-  background: linear-gradient(to right, #3A7BFF, #FF5C8A); /* 藍 → 藍紅 tag */
+  color: #fff;
+  background: linear-gradient(to right,
+  var(--pink-dark, #FA8373),
+  #F95B46
+  );
   height: 20px;
+  line-height: 18px;
   padding: 0 8px;
-  line-height: 20px;
-  margin-right: 8px;
+  margin: 0 8px 0 10px;
   font-size: 11px;
-  border-radius: 999px;
-  margin-left: 10px;
   font-weight: bold;
+  border-radius: 999px;
+  border: 1px solid rgba(249, 91, 70, 0.5);
+  box-shadow:
+      0 1px 0 rgba(249, 91, 70, 0.18),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.25);
 }
+
+/* hover 時讓 tag 更有層次，但仍維持粉桃 */
+.marqueeItem:hover .category-tag-new {
+  background: linear-gradient(to right, #FCA69A, #F84D36);
+  border-color: rgba(248, 77, 54, 0.6);
+}
+
 
 .title {
   overflow: hidden;

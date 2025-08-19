@@ -402,7 +402,7 @@ onMounted(() => {
   position: absolute;
   justify-content: center;
   align-items: center;
-  background-color: #FA8373;
+  background-color: var(--pink-dark);
   border-radius: 4px;
   color: #fff;
   font-weight: bold;
@@ -437,7 +437,7 @@ onMounted(() => {
   padding: 6px 12px 4px 30px;
   width: fit-content;
   border-radius: 40px;
-  color: #FA8373;
+  color: var(--pink-dark);
   background-image: url('../../assets/images/delete_btn.png');
   background-size: 22px;
   background-repeat: no-repeat;
@@ -573,7 +573,7 @@ onMounted(() => {
   padding: 8px 12px 6px 30px;
   width: fit-content;
   border-radius: 40px;
-  color: #FA8373;
+  color: var(--pink-dark);
   background-image: url('../../assets/images/done_btn.png');
   background-size: 11px;
   background-repeat: no-repeat;

@@ -352,7 +352,7 @@
 .addTitle{
   display: inline-block; line-height: 40px; text-align: center; font-weight: bold;
   border-radius: 8px; width: 112px; height: 40px; position: relative;
-  background-color: #FA8373; color: #FFFFFF;
+  background-color: var(--pink-dark); color: #FFFFFF;
   bottom: -2px;
 }
 .addTitle2{
@@ -559,7 +559,7 @@
 
 .dg-underline {
   text-decoration: underline;
-  text-decoration-color: #FA8373;
+  text-decoration-color: var(--pink-dark);
   text-decoration-thickness: 2px;
   text-decoration-style: solid;
   display: block;
@@ -578,7 +578,7 @@
   margin: 0 6px;
 }
 .dg-button {
-  background-color: #FA8373;
+  background-color: var(--pink-dark);
   color: #FFF;
   padding: 10px 20px;
   height: 40px;
@@ -649,12 +649,12 @@
   display: block;
   --n-border: 0 !important;
   --n-border-hover: 0 !important;
-  --n-color:#FA8373 !important;
-  --n-color-hover:#FA8373 !important;
-  --n-color-pressed:#FA8373 !important;
-  --n-color-focus:#FA8373 !important;
-  --n-color-disabled:#FA8373 !important;
-  --n-ripple-color:#FA8373 !important;
+  --n-color:var(--pink-dark) !important;
+  --n-color-hover:var(--pink-dark) !important;
+  --n-color-pressed:var(--pink-dark) !important;
+  --n-color-focus:var(--pink-dark) !important;
+  --n-color-disabled:var(--pink-dark) !important;
+  --n-ripple-color:var(--pink-dark) !important;
 }
 .n-dialog .n-dialog__action > *:not(:last-child){
   background-color: #EEEEEE;

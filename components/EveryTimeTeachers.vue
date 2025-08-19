@@ -227,8 +227,8 @@ swiper-container::part(button-prev) {
   transition: .12s ease;
   font-weight: bold;
   border-radius: 4px;
-  border:1px solid #FA8373;
-  color: #FA8373;
+  border:1px solid var(--pink-dark);
+  color: var(--pink-dark);
   cursor: pointer;
 }
 .select_teachers .teacherInfo{

@@ -129,7 +129,7 @@ function changeReserveType(value) {
   padding: 40px;
 }
 .netchina_contents .userInfoMenu .selected{
-  background-color: #FA8373;
+  background-color: var(--pink-dark);
   color: #FFFFFF;
 }
 @media screen and (max-width: 520px) {

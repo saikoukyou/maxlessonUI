@@ -310,7 +310,7 @@ swiper-container::part(button-next),swiper-container::part(button-prev) {
   border-top: 1px solid #E7E7E7;
   border-right: 1px solid #E7E7E7;
   border-bottom: 0;
-  border-left: 11px solid #FA8373;
+  border-left: 11px solid var(--pink-dark);
   padding: 20px 0;
   position: relative;
 }
@@ -405,7 +405,7 @@ swiper-container::part(button-next),swiper-container::part(button-prev) {
   left: 32px;
 }
 .openBtn{
-  background-color: #FA8373; color: #FFFFFF; font-size: 12px; padding: 6px 8px 3px 8px; font-weight: bold;
+  background-color: var(--pink-dark); color: #FFFFFF; font-size: 12px; padding: 6px 8px 3px 8px; font-weight: bold;
   position: absolute;
   top: 32px;
   right: 24px;
@@ -481,7 +481,7 @@ swiper-container::part(button-next),swiper-container::part(button-prev) {
     margin-left: 15px;
   }
   .openBtn{
-    background-color: #FA8373; color: #FFFFFF;
+    background-color: var(--pink-dark); color: #FFFFFF;
     font-size: 12px; padding: 6px 8px 3px 8px;
     font-weight: bold;
     position: absolute;

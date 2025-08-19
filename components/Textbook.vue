@@ -166,7 +166,7 @@ export default {
 }
 
 .image-list li:hover {
-  color: #FA8373;
+  color: var(--pink-dark);
 }
 
 .content h3 {

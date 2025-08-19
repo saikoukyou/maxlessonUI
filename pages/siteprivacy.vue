@@ -1,5 +1,5 @@
 <template>
-  <div class="overview">
+  <div class="overview page-wrapper topTemplate">
     <section class="PlanPrice">
       <div class="PlanPrice__inner">
       <div class="subPosition">
@@ -255,7 +255,8 @@
   font-size: 14px;
   line-height: 20px;
   color: #424242;
-  margin: 20px auto;
+  margin: auto;
+  padding-bottom: 40px;
 }
 .maeBlock{
   margin: 20px 0;

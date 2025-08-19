@@ -170,7 +170,7 @@ export default {
   line-height: 30px;
 }
 .orangeWord {
-  color: #FA8373;
+  color: var(--pink-dark);
   font-weight: bold;
 }
 .list li {

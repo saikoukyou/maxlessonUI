@@ -1,4 +1,5 @@
 <template>
+  <div class="topTemplate page-wrapper">
   <section class="PlanPrice">
     <div class="PlanPrice__inner">
     <div class="subPosition">
@@ -65,7 +66,7 @@
 
   </div>
 
-
+  </div>
 </template>
 
 <style scoped>
@@ -92,6 +93,7 @@
   box-sizing: border-box;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* 輕微陰影 */
   padding: 10px 20px;
+  background-color: #FFFFFF;
 }
 
 /* footer 標題樣式 */
@@ -144,11 +146,11 @@ NuxtLink:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #ffe5cc; /* 橘色淡背景 */
+  background-color: #FAE0E0;
   padding: 0.8rem 1rem;
   font-size: 1rem;
   font-weight: bold;
-  border-left: 4px solid #c0392b; /* 深橘紅線條 */
+  border-left: 4px solid var(--pink-dark);
   color: #333;
   margin-bottom: 1rem;
   transition: background-color 0.2s ease;

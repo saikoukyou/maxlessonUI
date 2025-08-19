@@ -617,12 +617,11 @@ onMounted(() => {
 
 .page-num{
   padding: 0 0 40px 0;
-  background-color: #f9f9f9;
+  background-color:#FAF7F3;
 }
 .timeGrid li.lesson_disabled{
   display: none;
 }
-
 
 .teacherInfo ul{
   margin-left: 4px;
@@ -793,7 +792,7 @@ swiper-container::part(button-prev) {
     text-align: center;
     line-height: 44px;
     font-weight: bold;
-    color: #14A6B3;
+    color: var(--green-dark);
     border: 1px solid #eee;
     box-sizing: border-box;
   }

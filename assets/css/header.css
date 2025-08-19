@@ -11,7 +11,7 @@
   left: 0;               /* 貼齊左邊 */
   width: 100%;           /* 滿版寬度 */
   z-index: 999;          /* 蓋住其他內容 */
-  background-color: #25909A;
+  background-color: var(--green-darker);
   display: flex;
   align-items: center; /* 垂直置中 */
   justify-content: flex-start; /* 從左開始排列 */
@@ -133,7 +133,7 @@
 #top-head #global-nav .BtnLogin,
 #top-head #global-nav .BtnLogin2 {
   width: 110px;
-  color: #25909A;
+  color: var(--green-darker);
   border-radius: 20px;
   font-size: 14px;
   font-weight: bold;
@@ -148,7 +148,7 @@
 /* hover：加輕陰影 + 文字變亮 */
 #top-head #global-nav .BtnLogin:hover,
 #top-head #global-nav .BtnLogin2:hover {
-  color: #32aeb8; /* 比原本 #25909A 亮一階 */
+  color: #32aeb8; /* 比原本 var(--green-darker) 亮一階 */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
 }
 
@@ -503,7 +503,7 @@ header .no_icon_logo {
 
   .GsapMenu .menu .BtnLogin:hover {
     background: #FFFFFF;
-    color: #FA8373;
+    color: var(--pink-dark);
     background-image: url("../images/logo_login.png");
     background-size: cover;
     background-repeat: no-repeat;

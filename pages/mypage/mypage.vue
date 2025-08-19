@@ -972,7 +972,7 @@ const onSubmit = (plan) => {
   }
 
   .tabCourse li:nth-child(2) {
-    background-color: #FA8373;
+    background-color: var(--pink-dark);
   }
 }
 

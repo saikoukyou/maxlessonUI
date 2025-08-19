@@ -8,13 +8,13 @@
       <div class="top-bg-wrap">
       <div class="top-section">
         <div class="content">
-          <button class="peach-cta fade-up">
+          <router-link to="/plan" class="peach-cta fade-up">
             <span>
               <b>今から</b>
               <b>始める</b>
             </span>
             <img src="../assets/images/top_arrow.png">
-          </button>
+          </router-link>
         </div>
       </div>
       <div class="mobile-section">
@@ -33,10 +33,10 @@
             <h2 class="topPage">ネットコリアが<br>選ばれている理由</h2>
             <span class="leadWord">韓国人ネイティブ講師が日本語で優しく指導。初心者も安心して学べます。
               好きな時に受講でき、日本人スタッフのサポートも万全！</span>
-            <button class="top-cta">
+            <router-link to="/plan" class="top-cta">
               <span>100円体験</span>
               <img src="../assets/images/arrow_w.png" alt="arrow">
-            </button>
+            </router-link>
           </div>
 
           <ul class="reasons__grid">
@@ -525,7 +525,7 @@ function goBlogInfo(bid) {
 .step3-wrap,
 .point5-wrap{
   width:100%;
-  background:#25909A;          /* 綠背景，可依品牌調整 */
+  background:var(--green-darker);          /* 綠背景，可依品牌調整 */
   color:#fff;
   padding: 64px 24px;
   overflow:hidden;              /* 防止裝飾超出 */
@@ -669,7 +669,7 @@ function goBlogInfo(bid) {
   font-size: 13px;
 }
 .tutor-card__loc{
-  color: #1aa7ad;
+  color: var(--green-dark);
   margin: 6px 0 4px;
   font-size: 14px;
 }
@@ -767,6 +767,11 @@ h2.topPage{
 .reasons__grid .hours     { top: 580px; right:0; }
 
 .peach-cta{
+  /* 關鍵：變成可排版元素 */
+  display: flex;
+  flex-direction: column;           /* 文字在上、箭頭在下 */
+  justify-content: center;          /* 垂直置中（以自身高度） */
+  align-items: center;              /* 水平置中 */
   position: absolute;
   right: 240px;
   top: 414px;

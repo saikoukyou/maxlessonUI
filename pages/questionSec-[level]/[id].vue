@@ -127,13 +127,13 @@ async function onSubmit() {
   transform: translateY(-50%);
   border-top: 25px solid transparent;
   border-bottom: 25px solid transparent;
-  border-left: 20px solid #FA8373;
+  border-left: 20px solid var(--pink-dark);
 }
 .step:nth-child(1) {
   background-color: #D9D9D9;
 }
 .step:nth-child(2) {
-  background-color: #FA8373;
+  background-color: var(--pink-dark);
   font-weight: bold;
 }
 .step:nth-child(3) {

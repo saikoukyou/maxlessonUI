@@ -1,48 +1,12 @@
 <template>
-  <div class="page-wrapper" :class="currentTab">
+  <div :class="currentTab">
     <div v-if="useStore?.learn_type === 3"></div>
-    <div v-else class="textbookBG">
+    <div v-else>
       <!-- tab 區塊 -->
-      <div class="course-tab" v-if="useStore.learn_type === 2">
-
-        <div class="course-tab-inner">
-          <!-- 學習 tab -->
-          <div
-              class="tab-btn left"
-              :class="{ active: currentTab === 'learning' }"
-              @click="changeTab('learning')"
-          >
-            <img src="../../assets/images/class_learn.png" />
-            <span>総合コース</span>
-          </div>
-
-          <!-- divider -->
-          <div class="divider"></div>
-
-          <!-- 會話 tab -->
-          <div
-              class="tab-btn right"
-              :class="{ active: currentTab === 'conversation' }"
-              @click="changeTab('conversation')"
-          >
-            <img src="../../assets/images/class_speak.png" />
-            <span>会話コース</span>
-          </div>
-
-          <!-- active line -->
-          <div class="active-line" :class="currentTab"></div>
-        </div>
+      <div class="course-book">
+        <h2>教材一覧</h2>
       </div>
-
-
-      <div class="course-book" :class="currentTab">
-        <h2 v-if="currentTab === 'learning'">総合コース教材一覧</h2>
-        <h2 v-else>会話コース教材一覧</h2>
-        <p v-if="currentTab === 'learning'">・文法/会話/ビジネス/HSK等</p>
-        <p v-else>・トピック会話/フリートーク等</p>
-      </div>
-
-      <section class="contentsWrap textbookPage">
+      <section class="contentsWrap">
         <ul class="select_Text">
           <a
               v-for="(course, index) in course_list"
@@ -57,19 +21,14 @@
                 v-if="course.course"
             >
               {{ course.course.name }}
-              <span class="name_cn">{{ course.course.name_cn }}</span>
             </li>
           </a>
         </ul>
 
-<!--        <div class="bookSection">-->
-<!--          <div class="bookTitle" v-if="course_list.length">{{course_list[selected_index]['course']['name']}}</div>-->
-<!--          <p class="jp-text">文法や言葉の用法など全般的な文法基礎を学びます。予習動画も利用できます。</p>-->
-<!--          <p class="cn-text">提供系统的语法知识体系，让学习者全面了解中文的语法规则。教材提供预习视频。</p>-->
-<!--        </div>-->
+        <br>
 
         <div v-if="course_list[selected_index]" class="textArray" v-for="(category,cindex) in course_list[selected_index].categories">
-          <nuxt-link :to="`/mypage/textbookList?category=${category.id}&tab=${currentTab}`" class="textLink">
+          <nuxt-link :to="`/mypage/textbookList?category=${category.id}`" class="textLink">
             <div class="textSubtitle">
               <!--            <span class="tagL" v-if="category.learn_type === 0">学習</span>-->
               <!--            <span class="tagS" v-else>会話</span>-->
@@ -77,7 +36,7 @@
               <p class="total">{{category.tnum}}課</p>
             </div>
           </nuxt-link>
-          <nuxt-link :to="`/mypage/textbookList?category=${category.id}&tab=${currentTab}`">
+          <nuxt-link :to="`/mypage/textbookList?category=${category.id}`">
             <div class="textDetails">
               <ul>
                 <li
@@ -92,8 +51,6 @@
           </nuxt-link>
         </div>
       </section>
-
-
     </div>
   </div>
 </template>
@@ -202,10 +159,7 @@ onMounted(async () => {
   background-color: white;
 }
 .course-book h2{
-  border-radius: 8px;
-  margin-top: 0;
-  padding-top: 30px;
-  background-color: #ffffff;
+  margin: 40px auto 20px auto;
 }
 /* Swiper 按鈕顏色 */
 swiper-container::part(button-next), swiper-container::part(button-prev) {
@@ -260,7 +214,6 @@ swiper-container::part(button-next), swiper-container::part(button-prev) {
 }
 .contentsWrap{
   width: 100%;
-  padding: 0 2%;
 }
 
 @media screen and (max-width: 520px) {

@@ -1,35 +1,7 @@
 <template>
   <div class="mypageTemplate">
   <div class="blockW">
-    <p class="headline">プランお選びください</p>
-    <div class="plan_img"></div>
-    <div class="plan_img_m"><img src="../../assets/images/plan_m.png" width="100%"/></div>
-    <div v-if="imgFlag == 1" class="event_img"></div>
-    <div class="event_img_m"><img src="../../assets/images/event_m.png" width="100%"/></div>
-
-    <div class="containerPlan">
-      <div class="tabs">
-        <img class="ori_ing" src="../../assets/images/or_ing.png" width="40"/>
-        <div
-            class="tab"
-            :class="{ 'active': activeTabIndex === 0 }"
-            @mouseover="activateTab(0)"
-            :style="{ backgroundColor: activeTabIndex === 0 ? '#FA8373' : '' }"
-        >
-          総合コース
-        </div>
-        <div
-            class="tab"
-            :class="{ 'active': activeTabIndex === 1 }"
-            @mouseover="activateTab(1)"
-            :style="{ backgroundColor: activeTabIndex === 1 ? '#30A186' : '' }"
-        >
-          会話コース
-        </div>
-      </div>
       <div
-          id="content1"
-          class="contentPlan"
           :class="{ 'active': activeTabIndex === 0 }"
       >
         <p class="headlinePos">サブスクタイプ</p>
@@ -196,7 +168,7 @@
           <div class="PricelistWrap_add">
             <div class="PricelistChild_add lColorbg_light" v-for="(ticket_plan) in pay_plans_ticket">
 
-              <div class="addTitle">総合コース</div>
+              <div class="addTitle">チケット</div>
               <div class="addLesson"><span class="font32">{{ticket_plan.buy_issued_lesson_num}}</span>回</div>
               <div class="addLesson">有効期限<span class="font32">{{ticket_plan.validity_term}}</span>日</div>
               <img class="redArrow" src="../../assets/images/redarrow.png" width="12"/>
@@ -238,88 +210,7 @@
         <p class="headlinePos">サブスクタイプ</p>
         <p class="headlineDes">初回の課金後、毎月自動更新する支払いタイプ</p>
         <div class="PricelistWrap">
-          <div class="PricelistChild" v-for="(plan) in talk_pay_plans">
-            <div v-if="plan.every_month_off == 1 && plan.every_month_off_rate != 0">
-<!--              <ul><li>ずっと</li><li>{{plan.every_month_off_rate*100}}</li><li>%</li><li>OFF</li></ul>-->
-              <img src="../../assets/images/saleStamp.png" class="saleStamp">
-            </div>
-            <div v-else-if="plan.first_month_off == 1 && plan.first_month_off_rate != 0" class="courseStamp">
-              <ul><li>初月</li><li>{{plan.first_month_off_rate*100}}</li><li>%</li><li>OFF</li></ul>
-            </div>
-            <h4 class="sColorbg">{{plan.plan_name}}</h4>
-            <div class="month-plan-main">
-              <div class="month-plan-sub-r">
-                <span v-if="plan.every_month_off == 1 && plan.every_month_off_rate != 0" class="saleWord">今なら、ず━━っと</span>
-<!--                <span class="ori_font" v-if="(plan.every_month_off == 1 && plan.every_month_off_rate != 0) || (plan.first_month_off == 1 && plan.first_month_off_rate != 0)"><span class="monthNone">月額{{plan.final_amount_show}}円</span> 税込</span>-->
-                <div class="month-plan-sub-r-child">
-                  <span class="monthFont">月額</span>
-                  <div class="month-plan-sub-r-child-l">
-                    <span v-if="plan.every_month_off == 1 && plan.every_month_off_rate != 0">
-                      {{plan.paypal_amount_show}}
-                    </span>
-                    <span v-else-if="plan.first_month_off == 1 && plan.first_month_off_rate != 0">
-                      {{plan.first_month_off_amount_show}}
-                    </span>
-                    <span v-else>
-                      {{plan.paypal_amount_show}}
-                    </span>
-                  </div>
-                  <div class="month-plan-sub-r-child-r">
-                    <span class="font-size-11 font-weight-700">税込</span><br>
-                    <span>円</span>
-                  </div>
-                </div>
-                <span class="singleLesson">1レッスン {{plan.lesson_price}}円</span>
-              </div>
-            </div>
-            <div>
-              <span v-if="!studentInfo.is_corporate_member">
-                <span v-if="plan.id == studentInfo.monthly_plan_id">
-                  <span v-if="studentInfo.subscription_id">
-                    <div class="pay-desc">カード現在利用中</div>
-                    <a @click="planConfirm(plan.plan_code,'',plan.learn_type)" class="buttonCVtrial">今すぐ更新</a>
-                  </span>
-                  <span v-else-if="studentInfo?.recurring_payment_id && studentInfo?.paypal_cancel == 0">
-                    <div class="pay-desc">Paypal現在利用中</div>
-                    <span v-if="studentInfo.payjp_customer_id">
-                      <a @click="planConfirm(plan.plan_code,'',plan.learn_type)" class="buttonCVtrial">プラン変更</a>
-                    </span>
-                    <span v-else>
-                      <a @click="changePayjpPlanPc(plan.plan_code,'',plan.learn_type)" class="buttonCVtrial">カード決済</a>
-                    </span>
-                  </span>
-                  <span v-else>
-                    <div class="pay-desc">現在利用中</div>
-                    <span v-if="studentInfo.payjp_customer_id">
-                      <a @click="planConfirm(plan.plan_code,'',plan.learn_type)" class="buttonCVtrial">プラン変更</a>
-                    </span>
-                    <span v-else>
-                      <a v-if="studentInfo.paypal_cancel == 0 && use_paypal === 1" @click="changePaypalMonthPc(plan.plan_code,'',plan.learn_type)" class="buttonCVtrial">Paypal決済</a>
-                      <a @click="changePayjpPlanPc(plan.plan_code,'',plan.learn_type)" class="buttonCVtrial">カード決済</a>
-                    </span>
-                  </span>
-                </span>
-                <span v-else>
-                <span v-if="studentInfo.payjp_customer_id">
-                  <a @click="planConfirm(plan.plan_code,'',plan.learn_type)" class="buttonCVtrial">プラン変更</a>
-                </span>
-                <span v-else>
-                  <a @click="changePayjpPlanPc(plan.plan_code,'',plan.learn_type)" class="buttonCVtrial">カード決済</a>
-                  <a v-if="studentInfo.paypal_cancel == 0 && use_paypal === 1" @click="changePaypalMonthPc(plan.plan_code,'',plan.learn_type)" class="buttonCVtrial">Paypal決済</a>
-                </span>
-              </span>
-                <div class="reservationplandes">
-                  1日{{plan.reservation_limit_per_day}}回まで 予約保持{{plan.reservation_limit_per_range}}回まで
-                </div>
-            </span>
-              <!--          <a @click="changePaypalMonthPc(plan.plan_code)" class="buttonCVtrial">Paypal決済</a>-->
-            </div>
-            <!--            <p class="lessonTitle">{{plan.paypal_amount}}税込円-->
-            <!--              毎月{{plan.reservation_limit_per_range}}レッスン-->
-            <!--              <font v-if="plan.type == 1">{{plan.buy_issued_lesson_num}}ポイント</font>-->
-            <!--              <img src="~/assets/SVG/lessonTitle01.svg" alt=""></p>-->
-            <!--            <p class="buttonCVtrial">購 入</p>-->
-          </div>
+
           <!--          <div class="PricelistChild" >-->
           <!--            <h4>毎日１回プラン</h4>-->
           <!--            <p class="lessonTitle"><img src="~/assets/SVG/lessonTitle02.svg" alt=""></p>-->
@@ -332,50 +223,7 @@
           <!--          </div>-->
         </div>
 
-        <ul class="courseList">
-          <li>会話教材のみ使用可能、その他文法等の教材はご利用いただけません。</li>
-          <li>講師は「会話コース」担当講師のみ予約可能、日本語での対応不可。</li>
-          <li>上記プランはサブスクプランとなっておりますので、毎月自動的に更新されます。</li>
-        </ul>
-
-        <div v-if="pay_plans_ticket.length || talk_pay_plans_ticket.length">
-          <p class="headlinePos">チケットタイプ</p>
-          <p class="headlineDes">都度購入で自動更新されないタイプ</p>
-          <div class="PricelistWrap_add">
-            <div class="PricelistChild_add sColorbg_light" v-for="(ticket_plan) in talk_pay_plans_ticket">
-              <div class="addTitle2">会話コース</div>
-              <div class="addLesson"><span class="font32">{{ticket_plan.buy_issued_lesson_num}}</span>回</div>
-              <div class="addLesson">有効期限<span class="font32">{{ticket_plan.validity_term}}</span>日</div>
-              <img class="redArrow" src="../../assets/images/redarrow.png" width="12"/>
-              <div class="addPlan">{{ticket_plan.paypal_amount_show}}
-                <div class="taxFont">税込</div><br />
-                <div class="dollarFont">円</div>
-              </div>
-
-              <span v-if="studentInfo.is_corporate_member"></span>
-              <span v-else>
-                  <span v-if="studentInfo.payjp_customer_id">
-                    <a style="display: inline-block;" @click="planConfirm(ticket_plan.plan_code,'ticket',ticket_plan.learn_type)" class="buttonCVtrial">今すぐ購入</a>
-                  </span>
-                  <span v-else>
-                    <span v-if="studentInfo.paypal_cancel == 0 && use_paypal === 1">
-                      <a @click="changePaypalMonthPc(ticket_plan.plan_code,'ticket',ticket_plan.learn_type)" class="buttonCVtrial">Paypal決済</a>
-                    </span>
-                    <span v-if="ticket_plan.use_paypay === 1 && ticket_plan.paypay_img">
-                      <a @click="changePaypayPlanPc(ticket_plan)" class="buttonCVtrial">PayPay</a>
-                    </span>
-                      <a @click="changePayjpPlanPc(ticket_plan.plan_code,'ticket',ticket_plan.learn_type)" class="buttonCVtrial">カード決済</a>
-                  </span>
-                </span>
-              <div class="reservationplandes">
-                1日{{ticket_plan.reservation_limit_per_day}}回まで 予約保持{{ticket_plan.reservation_limit_per_range}}回まで
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
-    </div>
   </div>
   </div>
   <payjp v-show="payjp_show" :code="selected_plans" :ptype="selected_plan_type" :umode="update_mode" :flag="flag"></payjp>
@@ -1029,7 +877,7 @@ export default {
 .addTitle{
   display: inline-block; line-height: 40px; text-align: center; font-weight: bold;
   border-radius: 8px; height: 40px; position: relative;
-  background-color: #FA8373; color: #FFFFFF;
+  background-color: var(--pink-dark); color: #FFFFFF;
   bottom: -2px;
   padding: 0 8px;
 }
@@ -1204,7 +1052,7 @@ export default {
 
 .dg-underline {
   text-decoration: underline;
-  text-decoration-color: #FA8373;
+  text-decoration-color: var(--pink-dark);
   text-decoration-thickness: 2px;
   text-decoration-style: solid;
   display: block;
@@ -1223,7 +1071,7 @@ export default {
   margin: 0 6px;
 }
 .dg-button {
-  background-color: #FA8373;
+  background-color: var(--pink-dark);
   color: #FFF;
   padding: 10px 20px;
   height: 40px;
@@ -1294,12 +1142,12 @@ export default {
   display: block;
   --n-border: 0 !important;
   --n-border-hover: 0 !important;
-  --n-color:#FA8373 !important;
-  --n-color-hover:#FA8373 !important;
-  --n-color-pressed:#FA8373 !important;
-  --n-color-focus:#FA8373 !important;
-  --n-color-disabled:#FA8373 !important;
-  --n-ripple-color:#FA8373 !important;
+  --n-color:var(--pink-dark) !important;
+  --n-color-hover:var(--pink-dark) !important;
+  --n-color-pressed:var(--pink-dark) !important;
+  --n-color-focus:var(--pink-dark) !important;
+  --n-color-disabled:var(--pink-dark) !important;
+  --n-ripple-color:var(--pink-dark) !important;
 }
 .n-dialog .n-dialog__action > *:not(:last-child){
   background-color: #EEEEEE;

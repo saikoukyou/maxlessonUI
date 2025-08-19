@@ -213,7 +213,7 @@
     width: 10px; /* 内部橙色圈圈的大小 */
     height: 10px;
     border-radius: 50%;
-    background: #FA8373; /* 橙色 */
+    background: var(--pink-dark); /* 橙色 */
     position: absolute;
     top: 50%;
     left: 50%;

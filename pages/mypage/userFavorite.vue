@@ -31,22 +31,14 @@
                     <li class="pinyin">{{teacher.teacher_name_pinyin}}</li>
                     <li class="name">{{ teacher.teacher_name_cn }}
                       <span class="teacherID">ID:{{teacher.teacher_id}}</span></li>
-                    <span v-if="teacher.learn_type == 0" class="tagL">総合</span>
-                    <span v-else class="tagS">会話</span>
                     <li class="cityT">{{teacher.province_addr}}{{teacher.current_address}}</li>
-                    <li v-if="teacher.learn_type == 0">
+                    <li>
                       <span class="sptitle">日本語</span>
                       <span class="spdes">{{teacher.japanese_level}}{{maps['japanese_level'][teacher.japanese_level]}}</span>
-                      <br>
-                      <span class="sptitle">英語</span>
-                      <span class="spdes">{{teacher.english_level}}{{maps['english_level'][teacher.english_level]}}</span>
-                    </li>
-                    <li v-else>
+                      </li>
+                    <li>
                       <span class="sptitle">業界の得意分野</span>
                       <span class="spdes">{{teacher.topic_str}}</span>
-                      <br>
-                      <span class="sptitle">対応可能な方言</span>
-                      <span class="spdes">{{teacher.dialect}}</span>
                     </li>
 <!--                    <li>{{teacher.integral_rank}}ポイント</li>-->
                   </ul>

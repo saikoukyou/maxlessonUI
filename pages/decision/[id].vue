@@ -44,7 +44,7 @@
 
         <div class="lessonDecision_notes">
           <ul>
-            <li>講師がお客様の<span style="font-weight: bold; color: #FA8373"> {{lesson.software}}（ID： {{lesson.software == 'web' ? '' : (lesson.software == 'wechat' ? lesson.teacher_wechat : lesson.teacher_teams_id) }} ）</span>に連絡先を追加します。ご承認ください。</li>
+            <li>講師がお客様の<span style="font-weight: bold; color: var(--pink-dark)"> {{lesson.software}}（ID： {{lesson.software == 'web' ? '' : (lesson.software == 'wechat' ? lesson.teacher_wechat : lesson.teacher_teams_id) }} ）</span>に連絡先を追加します。ご承認ください。</li>
             <li>万が一レッスン開始５分前までになっても追加が来ない場合、お客様のほうから講師の連絡先を追加してください。講師の{{lesson.software}}（ID： {{lesson.software == 'web' ? '' : (lesson.software == 'wechat' ? lesson.student_wechat : lesson.student_teams_id) }} ）</li>
             <li>予約時間を変更したい場合、予約済みのレッスンをキャンセルしてから、再度ご予約ください。（マイページTOPにて）</li>
             <li>初回レッスン時の教材は講師が知らせてくれますので、前もって準備する必要はありません</li>

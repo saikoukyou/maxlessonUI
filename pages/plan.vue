@@ -8,7 +8,7 @@
       </div>
     </section>
 
-    <div class="planTitleFront mj">体験レッスンは、<span style="color: #FA8373;">100円で5日間!</span></div>
+    <div class="planTitleFront mj">体験レッスンは、<span style="color: var(--pink-dark);">100円で5日間!</span></div>
     <div class="planDes100">
       決済後、即時にメールにてアカウント情報を送信します<br>
       25分のレッスンを7回受講できます。 最終日に自動的に月額プランヘ移行されます。<br>
@@ -1297,7 +1297,7 @@ function getDes(type='',learnType) {
   font-size: 22px;
   font-weight: bold;
   margin-bottom: 4px;
-  color: #FA8373; /* 學習預設橘色 */
+  color: var(--pink-dark); /* 學習預設橘色 */
 }
 
 .speak-bg .signup-text h2 {
@@ -1401,7 +1401,7 @@ function getDes(type='',learnType) {
   }
 
   .tabCourse li:nth-child(2) {
-    background-color: #FA8373;
+    background-color: var(--pink-dark);
   }
   .courseContainer {
     flex-direction: column;
@@ -1494,7 +1494,7 @@ function getDes(type='',learnType) {
 
 .dg-underline {
   text-decoration: underline;
-  text-decoration-color: #FA8373;
+  text-decoration-color: var(--pink-dark);
   text-decoration-thickness: 2px;
   text-decoration-style: solid;
   display: block;
@@ -1513,7 +1513,7 @@ function getDes(type='',learnType) {
   margin: 0 6px;
 }
 .dg-button {
-  background-color: #FA8373;
+  background-color: var(--pink-dark);
   color: #FFF;
   padding: 10px 20px;
   height: 40px;
@@ -1584,12 +1584,12 @@ function getDes(type='',learnType) {
   display: block;
   --n-border: 0 !important;
   --n-border-hover: 0 !important;
-  --n-color:#FA8373 !important;
-  --n-color-hover:#FA8373 !important;
-  --n-color-pressed:#FA8373 !important;
-  --n-color-focus:#FA8373 !important;
-  --n-color-disabled:#FA8373 !important;
-  --n-ripple-color:#FA8373 !important;
+  --n-color:var(--pink-dark) !important;
+  --n-color-hover:var(--pink-dark) !important;
+  --n-color-pressed:var(--pink-dark) !important;
+  --n-color-focus:var(--pink-dark) !important;
+  --n-color-disabled:var(--pink-dark) !important;
+  --n-ripple-color:var(--pink-dark) !important;
 }
 .n-dialog .n-dialog__action > *:not(:last-child){
   background-color: #EEEEEE;
