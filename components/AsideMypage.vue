@@ -427,7 +427,7 @@ function closeMenu() {
 
 .planTitle{font-size: 11px; color: #848484; margin-bottom: 4px; font-weight: bold;}
 .lt{color: var(--green-darker); font-size: 15px; font-weight: bold; display: block; margin: 2px 0;}
-.st{color: #30A186; font-size: 15px; font-weight: bold; display: block; margin: 2px 0;}
+.st{color: var(--green-dark); font-size: 15px; font-weight: bold; display: block; margin: 2px 0;}
 .vt{color: #2E6190; font-size: 15px; font-weight: bold; display: block; margin: 2px 0;}
 
 .lbutton {
@@ -447,7 +447,7 @@ function closeMenu() {
 }
 
 .sbutton {
-  background-color: #30A186;
+  background-color: var(--green-dark);
   color: #FFFFFF;
   font-size: 15px;
   font-weight: bold;

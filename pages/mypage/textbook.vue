@@ -176,7 +176,7 @@ swiper-container::part(button-next), swiper-container::part(button-prev) {
 
 /* 學習 / 會話 樣式 */
 .learning .active-tag {
-  background-color: #E46722;
+  background-color: var(--pink-dark);
   color: white;
 }
 
