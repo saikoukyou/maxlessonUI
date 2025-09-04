@@ -259,11 +259,11 @@
     <div>
       <div
           class="signup-header"
-          :class="selectRegisterPlan.learn_type === 0 ? 'learn-bg' : 'speak-bg'"
       >
         <img class="fakeClose" src="../assets/images/logo_close_w.png" @click="showRegister = false">
         <div class="signup-text">
           <h2>
+            <span class="type-name">{{ selectRegisterType === 'ticket' ? 'チケットタイプ' : 'サブスクタイプ' }}</span>
             <span>{{ selectRegisterPlan.plan_name }}</span>
           </h2>
           <div v-if="singleFlag === 1">
@@ -273,16 +273,16 @@
               <li>WEB教材 ＋ 動画 ＋ 音声</li>
             </ul>
           </div>
-          <div v-else>
-            <ul v-if="selectRegisterPlan.learn_type === 0">
-              <li>初級者から上級者まで</li>
-              <li>講師が日本語で対応可</li>
-            </ul>
-            <ul v-else>
-              <li>オール中国語（日本語不可）</li>
-              <li>会話に特化（文法の解説なし）</li>
-            </ul>
-          </div>
+<!--          <div v-else>-->
+<!--            <ul v-if="selectRegisterPlan.learn_type === 0">-->
+<!--              <li>初級者から上級者まで</li>-->
+<!--              <li>講師が日本語で対応可</li>-->
+<!--            </ul>-->
+<!--            <ul v-else>-->
+<!--              <li>オール中国語（日本語不可）</li>-->
+<!--              <li>会話に特化（文法の解説なし）</li>-->
+<!--            </ul>-->
+<!--          </div>-->
         </div>
       </div>
 
@@ -1102,7 +1102,6 @@ function getDes(type='',learnType) {
 
 
 <style scoped>
-
 .pay-desc{
   top: 48px;
 }
@@ -1267,41 +1266,38 @@ function getDes(type='',learnType) {
 .register-modal{
   width: 520px;
 }
+
 .signup-header {
   width: 100%;
-  height: 130px;
+  height: 80px;
   display: flex;
   align-items: center;
   padding: 0 40px;
-  background-size: 90%;
-  background-position: right;
-  background-repeat: no-repeat;
   box-sizing: border-box;
-}
-
-/* 背景圖片切換 */
-.learn-bg {
-  background-image: url('../assets/images/signup_learn.png');
-}
-
-.speak-bg {
-  background-image: url('../assets/images/signup_speak.png');
-}
-
-/* 左側文字內容區 */
-.signup-text {
-  max-width: 60%;
+  background-color: #25909A;
+  background-size: cover;
+  background-position: center;
+  background-image: url("../assets/images/bubble.png");
 }
 
 .signup-text h2 {
   font-size: 22px;
   font-weight: bold;
-  margin-bottom: 4px;
-  color: var(--pink-dark); /* 學習預設橘色 */
+  margin: auto 4px;
+  color: #FFFFFF;
+  display: flex;              /* 左右並排 */
+  justify-content: space-between; /* 左右兩端對齊 */
+  align-items: center;        /* 垂直置中 */
 }
 
-.speak-bg .signup-text h2 {
-  color: #12794b; /* 會話改為綠色 */
+.signup-text h2 .type-name {
+  margin-left: auto;          /* 類型推到最右邊 */
+  background-color: #FFFFFF;
+  border-radius: 24px;
+  font-size: 12px;
+  color: #25909A;
+  padding: 2px 12px;
+  margin-right: 16px;
 }
 
 .signup-text ul {

@@ -138,10 +138,6 @@ onMounted(async () => {
       menus.push({ name: '料金プラン', path: '/mypage/mypagePlan', img: `background-image: url(${iconPlan})`, active_img: `background-image: url(${iconPlanActive})` })
     }
 
-    if (!student?.all_plan_expire_datetime) {
-      menus.push({ name: 'パンダ先生', path: '/mypage/solution', img: `background-image: url(${iconPanda})`, active_img: `background-image: url(${iconPandaActive})` })
-    }
-
     if (student?.is_corporate_member === 1) {
       if (student?.business_is_routemap === 1) {
         menus.push({ name: 'MYカリキュラム', path: '/mypage/roadmap', img: `background-image: url(${iconRoadmap})`, active_img: `background-image: url(${iconRoadmapActive})` })

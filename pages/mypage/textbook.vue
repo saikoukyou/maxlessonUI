@@ -4,7 +4,7 @@
     <div v-else>
       <!-- tab 區塊 -->
       <div class="course-book">
-        <h2>教材一覧</h2>
+        <div class="textBookT">教材一覧</div>
       </div>
       <section class="contentsWrap">
         <ul class="select_Text">
