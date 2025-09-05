@@ -2862,6 +2862,7 @@ text-align: center; padding-top: 140px; letter-spacing: 0.08em; font-weight: bol
     top: 140px;
     left: 36px;
     text-align: center;
+    border: 1px solid #f4f4f4;
 }
 
 teacherInfo .favorite:hover {
@@ -4838,7 +4839,7 @@ h2 .titleBefore {
 .mobileV{display: none;}
 
 .button_confirm:hover {
-    background-color: #ff7f00;
+    background-color: #25909A;
     color: #fff;
 }
 
@@ -6072,7 +6073,7 @@ footer {
     text-align: center;
     border-radius: 0 0 8px 8px;
     font-size: 11px;
-    color: #36676D;
+    color:#12919E;
     padding:3px 0 6px 0;
     font-weight: bold;
 }
@@ -6225,7 +6226,7 @@ footer {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     text-align: center;
     box-sizing: border-box;
-    margin: 20px auto;
+    margin: auto;
 }
 
 .resultIcon {

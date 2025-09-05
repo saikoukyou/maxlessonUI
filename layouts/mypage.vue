@@ -17,7 +17,7 @@
                   class="head_navi swiper-slide">
                 <li>次回レッスン<br><span class="fs18 Bit">{{ useStore.studentInfo.lesson.lesson_time }}</span></li>
                 <li>講師<br><span class="fs18 Bit">{{ useStore.studentInfo.lesson.name_kanji }} {{ useStore.studentInfo.lesson.name_pinyin }}</span></li>
-                <li>レッスン種類<br><span class="fs18 Bit">{{ useStore.studentInfo.lesson.learn_type === 0 ? '総合' : '会話' }}</span></li>
+<!--                <li>レッスン種類<br><span class="fs18 Bit">{{ useStore.studentInfo.lesson.learn_type === 0 ? '総合' : '会話' }}</span></li>-->
               </ul>
 
 

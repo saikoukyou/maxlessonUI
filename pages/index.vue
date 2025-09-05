@@ -101,69 +101,49 @@
           <h2 class="topPage">経験豊富な講師陣と楽しく学ぶ</h2>
           <span class="leadWord">いつでも、どこでも韓国人講師とマンツーマン</span>
           <ul class="tutor-grid">
-            <!-- 1 -->
-            <li class="tutor-card">
+            <!-- 資料還沒回來：骨架卡片 -->
+            <li v-if="!teachers_today?.length" class="tutor-card" v-for="i in 5" :key="'skeleton-'+i">
               <div class="tutor-card__meta">
-                <strong class="tutor-card__name">パク・ヒヨン</strong><span class="tutor-card__role">講師</span>
-                <div class="tutor-card__loc"><b>韓国・群山</b></div>
-                <div class="tutor-card__bio">専攻 生物情報工学<br>趣味 食べ歩き、ゴロゴロ</div>
+                <strong class="tutor-card__name" style="opacity:.35;">＊＊＊＊＊</strong>
+                <span class="tutor-card__role">講師</span>
+                <div class="tutor-card__loc" style="opacity:.35;"><b>－－・－－</b></div>
+                <div class="tutor-card__bio" style="opacity:.35;">－－－－－－－－－－</div>
               </div>
-              <div class="tutor-card__photo">
-                <img src="../assets/images/tutor1.png" alt="パク・ヒヨン">
-              </div>
+              <div class="tutor-card__photo" style="background:#eef3f2;"></div>
             </li>
 
-            <!-- 2 -->
-            <li class="tutor-card">
+            <!-- 真實講師資料 -->
+            <li
+                v-for="t in teachers_today.slice(0,5)"
+                :key="t.id"
+                class="tutor-card"
+            >
               <div class="tutor-card__meta">
-                <strong class="tutor-card__name">キム・ヒジョン</strong><span class="tutor-card__role">講師</span>
-                <div class="tutor-card__loc"><b>韓国・群山</b></div>
-                <div class="tutor-card__bio">専攻 国語国文学科<br>趣味 日本旅行</div>
-              </div>
-              <div class="tutor-card__photo">
-                <img src="../assets/images/tutor2.png" alt="キム・ヒジョン">
-              </div>
-            </li>
+                <strong class="tutor-card__name">{{ t.name_cn }}</strong>
+                <span class="tutor-card__role">講師</span>
+                <div class="tutor-card__loc">
+                  <b>{{ (t.province_addr || '').trim() }}・{{ (t.current_address || '').trim() }}</b>
+                </div>
 
-            <!-- 3 -->
-            <li class="tutor-card">
-              <div class="tutor-card__meta">
-                <strong class="tutor-card__name">キム・ヒジョン</strong><span class="tutor-card__role">講師</span>
-                <div class="tutor-card__loc"><b>韓国・釜山</b></div>
-                <div class="tutor-card__bio">専攻 ホテル経営学<br>趣味 ベーキング、サーフィン</div>
-              </div>
-              <div class="tutor-card__photo">
-                <img src="../assets/images/tutor3.png" alt="キム・ヒジョン">
-              </div>
-            </li>
 
-            <!-- 4 -->
-            <li class="tutor-card">
-              <div class="tutor-card__meta">
-                <strong class="tutor-card__name">イ・スンヒ</strong><span class="tutor-card__role">講師</span>
-                <div class="tutor-card__loc"><b>韓国・ソウル</b></div>
-                <div class="tutor-card__bio">専攻 日本語<br>趣味 旅行、登山</div>
               </div>
-              <div class="tutor-card__photo">
-                <img src="../assets/images/tutor4.png" alt="イ・スンヒ">
-              </div>
-            </li>
-            <!-- 5 -->
-            <li class="tutor-card">
-              <div class="tutor-card__meta">
-                <strong class="tutor-card__name">ファン・ジホ</strong><span class="tutor-card__role">講師</span>
-                <div class="tutor-card__loc"><b>韓国・ソウル</b></div>
-                <div class="tutor-card__bio">韓国語教育課程2級取得<br>趣味 映画</div>
-              </div>
-              <div class="tutor-card__photo">
-                <img src="../assets/images/tutor5.png" alt="ファン・ジホ">
-              </div>
+
+              <!-- 照片：帶連結進講師頁 -->
+              <nuxt-link class="tutor-card__photo" :to="`/teachers/${t.id}`">
+                <img
+                    :src="t.face_img5 || placeholderFace"
+                    :alt="t.name_cn || '講師'"
+                    loading="lazy"
+                    referrerpolicy="no-referrer"
+                >
+              </nuxt-link>
             </li>
           </ul>
-          <button class="top-cta">
+
+          <router-link to="/timetable" class="top-cta">
             <span>講師一覧</span>
             <img src="../assets/images/arrow_w.png" alt="arrow">
-          </button>
+          </router-link>
         </div>
       </section>
 
@@ -349,7 +329,8 @@ import {
   useHomeTeacherListDataApi,
 } from "~/apis";
 import {useMainStore} from "~/composables/store";
-import { onMounted, ref, computed, watchEffect } from 'vue'
+import { onMounted, ref, computed, watchEffect } from 'vue';
+import placeholderFace from '../assets/images/placeholder_face.png';
 
 useHead({
   title: "オンライン中国語のビズチャイナ【100円で7日間体験】",
@@ -640,7 +621,7 @@ function goBlogInfo(bid) {
   overflow: hidden;
   display: grid;
   grid-template-rows: auto 1fr;
-  height: 300px;
+  height: 288px;
   transition: transform 0.25s ease, box-shadow 0.25s ease; /* 加過渡 */
   cursor: pointer;
 }

@@ -120,7 +120,7 @@
     display: block;
     width: 56px; /* 寬度可以根據需要調整 */
     height: 36px; /* 高度可以根據需要調整 */
-    background-color: #F2762E; /* 背景色，灰色 */
+    background-color: #14A6B3;
     color: #FFFFFF;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="overview">
+  <div class="topTemplate page-wrapper">
     <div class="resultCard">
       <img
           v-if="flag === 1"
@@ -77,14 +77,9 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.overview {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-  background: #f5f5f5;
+.topTemplate{
+  padding: 48px 0;
 }
-
-
 .emailNote {
   font-size: 13px;
   color: #666;
@@ -105,8 +100,8 @@ onMounted(() => {
   margin-bottom: 30px;
 }
 
-.mainBtn {
-  background-color: #fc8a24;
+.mainBtn{
+  background-color: #14A6B3;
   color: #fff;
   border-radius: 6px;
   padding: 12px 32px;
@@ -116,8 +111,8 @@ onMounted(() => {
 
 .secondaryBtn {
   background-color: #fff;
-  color: #fc8a24;
-  border: 1px solid #fc8a24;
+  color: #25909A;
+  border: 1px solid #25909A;
   border-radius: 6px;
   font-size: 14px;
   padding: 10px 20px;

@@ -102,7 +102,6 @@
                 レッスンの60分前から共有ファイルのアップロードが可能です。<br>
                 しばらくお待ちください。
               </div>
-               <img src="../../../assets/images/panda_wait.png" alt="レッスン待機" />
             </div>
           </div>
             <!-- 進入教室後的提示 -->
@@ -670,7 +669,7 @@ function previewImg(img) {
   font-size: 12px;
   color: #333;
   text-align: left;
-  padding: 8px 0 0 0;
+  padding: 16px;
 }
 .wait-board img {
   width: 80px;

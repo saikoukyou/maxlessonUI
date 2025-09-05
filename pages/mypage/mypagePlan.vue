@@ -825,6 +825,9 @@ export default {
 </script>
 
 <style scoped>
+.headlinePos{
+  font-size: 24px;
+}
 .study-plan-box{
   margin-top: 16px;
   border: 1px solid #eeeeee;

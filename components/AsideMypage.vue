@@ -9,7 +9,7 @@
         >
           <div class="corner-ribbon"><span>体験中</span></div>
         </div>
-        <li class="hello">ニーハオ</li>
+        <li class="hello">アンニョンハセヨ</li>
         <li class="userPhoto">
           <img v-if="useStore?.studentInfo?.face_image" :src="useStore?.studentInfo?.face_image" alt="" />
           <img v-else src="../assets/images/userfile.png" alt="" />

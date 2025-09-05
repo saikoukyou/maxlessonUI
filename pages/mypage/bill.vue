@@ -225,7 +225,7 @@ function goBack() {
   width: 30%;
 }
 .bill-font {
-  color: #E68345;
+  color: var(--pink-dark);
   cursor: pointer;
 }
 

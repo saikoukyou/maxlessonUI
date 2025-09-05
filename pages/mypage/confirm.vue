@@ -66,9 +66,7 @@
     </div>
 
     <div class="lessonConfirmContents">
-      <p class="ConDes">
-        <img src="../../assets/images/webbanner.png">
-      </p>
+      <p class="ConDes"></p>
       <div class="form-group">
         <label for="time_select">受講用ソフト</label>
         <select id="time_select" @change="changeSoftwares()" v-model="useSoftware">
@@ -461,7 +459,7 @@ function changeAccount() {
   font-weight: bold;
   width: 100%;
   height: 16px;
-  margin-top: 44px;
+  margin-top: 8px;
   position: relative;
 }
 .ConDes img{
